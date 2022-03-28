@@ -17,9 +17,9 @@ class HomeBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: defaultPadding, bottom: 5),
-              child: const CircleAvatar(
+            const Padding(
+              padding: EdgeInsets.only(left: defaultPadding, bottom: 5),
+              child: CircleAvatar(
                 radius: 35,
                 backgroundImage: AssetImage('assets/ucc.jpeg'),
               ),
