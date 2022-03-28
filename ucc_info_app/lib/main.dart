@@ -12,16 +12,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Preferencias',
-        home: HomePage()
-        // routes: {
-        //   '/': (_) => HomePage(),
-        //   '/courses': (context) => const CoursesDetails(),
-        //   '/galery': (context) => const GaleryDetails(),
-        //   '/setting': (context) => const SettingsPage()
-        // },
-
-        );
+      debugShowCheckedModeBanner: false,
+      title: 'Preferencias',
+      initialRoute: HomePage.routeName,
+      routes: {
+        HomePage.routeName: (BuildContext context) => const HomePage(),
+        CoursesDetails.routeName: (BuildContext context) =>
+            const CoursesDetails(),
+        '/setting': (context) => const SettingsPage(),
+      },
+    );
   }
 }
