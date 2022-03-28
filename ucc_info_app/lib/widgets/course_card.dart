@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ucc_info_app/src/pages/course_details.dart';
-import 'package:ucc_info_app/src/pages/home_page.dart';
 import 'package:ucc_info_app/utils/consts.dart';
 
 class CourseCard extends StatelessWidget {
@@ -12,7 +10,8 @@ class CourseCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushReplacementNamed(context, CoursesDetails.routeName);
+        //  Navigator.pushReplacementNamed(context, CoursesDetails.routeName);
+        Navigator.pushNamed(context, '/courseDetails');
       },
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 10),

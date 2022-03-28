@@ -35,7 +35,7 @@ class HeaderDetails extends StatelessWidget {
                     color: Colors.white.withOpacity(0.70),
                     boxShadow: [
                       BoxShadow(
-                        offset: const Offset(0, 0.5),
+                        offset: const Offset(0, 5),
                         blurRadius: 5,
                         color: shadowColor.withOpacity(0.30),
                       ),
@@ -45,10 +45,10 @@ class HeaderDetails extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: const [
+                    children: [
                       Icon(
                         Icons.arrow_back_ios,
-                        color: iconColor1,
+                        color: Colors.black.withOpacity(0.70),
                       ),
                     ],
                   ),
