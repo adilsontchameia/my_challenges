@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:ucc_info_app/utils/consts.dart';
 import 'package:ucc_info_app/widgets/header_details.dart';
 
-class CoursesDetails extends StatelessWidget {
+class CoursesDetails extends StatefulWidget {
   const CoursesDetails({Key? key}) : super(key: key);
 
+  @override
+  State<CoursesDetails> createState() => _CoursesDetailsState();
+}
+
+class _CoursesDetailsState extends State<CoursesDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +18,7 @@ class CoursesDetails extends StatelessWidget {
           color: backgroundColor,
           child: Column(
             children: [
-              const HeaderDetails(),
+              HeaderDetails(),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: defaultPadding),
                 child: Column(

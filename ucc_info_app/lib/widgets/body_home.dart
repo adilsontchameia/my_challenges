@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:ucc_info_app/utils/consts.dart';
-import 'package:ucc_info_app/widgets/course_card.dart';
-import 'package:ucc_info_app/widgets/galery_card.dart';
-import 'package:ucc_info_app/widgets/search_bar.dart';
+import 'package:ucc_info_app/widgets/custom_card.dart';
 import 'icon_header.dart';
 
 class HomeBody extends StatelessWidget {
@@ -48,7 +46,7 @@ class HomeBody extends StatelessWidget {
                   ]),
             ),
             const SizedBox(height: 30.0),
-            const SearchBar(),
+            searchBar(),
             const SizedBox(height: 20.0),
             const Padding(
               padding: EdgeInsets.only(left: defaultPadding),
@@ -59,7 +57,7 @@ class HomeBody extends StatelessWidget {
                     color: Colors.grey,
                   )),
             ),
-            const CourseCard(),
+            courseCard(),
             const SizedBox(height: 10.0),
             const Padding(
               padding: EdgeInsets.only(left: defaultPadding),
@@ -70,7 +68,7 @@ class HomeBody extends StatelessWidget {
                     color: Colors.grey,
                   )),
             ),
-            const GaleryCard(),
+            galeryCard(context),
           ],
         ),
       ),

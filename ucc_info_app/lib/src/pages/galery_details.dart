@@ -13,7 +13,7 @@ class GaleryDetails extends StatelessWidget {
           color: backgroundColor,
           child: Column(
             children: [
-              const HeaderDetails(),
+              HeaderDetails(),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: defaultPadding),
                 child: Column(

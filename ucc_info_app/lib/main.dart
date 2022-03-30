@@ -13,13 +13,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Preferencias',
-      initialRoute: HomePage.routeName,
+      title: 'UCC APP',
+      initialRoute: '/',
       routes: {
-        HomePage.routeName: (BuildContext context) => const HomePage(),
-        CoursesDetails.routeName: (BuildContext context) =>
-            const CoursesDetails(),
-        '/setting': (context) => const SettingsPage(),
+        '/': (context) => const HomePage(),
+        '/courseDetails': (context) => const CoursesDetails(),
+        '/galeryDetails': (context) => const GaleryDetails(),
       },
     );
   }

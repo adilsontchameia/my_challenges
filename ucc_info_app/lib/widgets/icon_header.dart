@@ -11,8 +11,6 @@ class IconHeader extends StatefulWidget {
   State<IconHeader> createState() => _IconHeaderState();
 }
 
-int selectedIndex = 0;
-
 class _IconHeaderState extends State<IconHeader> {
   @override
   Widget build(BuildContext context) {

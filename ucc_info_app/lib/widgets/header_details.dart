@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:ucc_info_app/utils/consts.dart';
 
-class HeaderDetails extends StatelessWidget {
-  const HeaderDetails({
-    Key? key,
-  }) : super(key: key);
+class HeaderDetails extends StatefulWidget {
+  const HeaderDetails({Key? key}) : super(key: key);
 
+  @override
+  State<HeaderDetails> createState() => _HeaderDetailsState();
+}
+
+class _HeaderDetailsState extends State<HeaderDetails> {
   @override
   Widget build(BuildContext context) {
     return Stack(
