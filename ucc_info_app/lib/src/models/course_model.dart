@@ -4,14 +4,17 @@ class CourseModel {
   String courseName;
   String coorName;
   int star;
+  String id;
   String imgUrl;
   List<CourseActiviti> activities;
+
   CourseModel({
     required this.courseName,
     required this.coorName,
     required this.star,
     required this.activities,
     required this.imgUrl,
+    required this.id,
   });
 }
 
@@ -27,6 +30,7 @@ List<CourseModel> courseModel = [
     star: 1,
     activities: activities,
     imgUrl: 'assets/ucc.jpeg',
+    id: 'one',
   ),
   CourseModel(
     courseName: 'Biologia',
@@ -34,6 +38,7 @@ List<CourseModel> courseModel = [
     star: 2,
     activities: activities,
     imgUrl: 'assets/img.JPG',
+    id: 'two',
   ),
   CourseModel(
     courseName: 'Enfermagem',
@@ -41,6 +46,7 @@ List<CourseModel> courseModel = [
     star: 3,
     activities: activities,
     imgUrl: 'assets/img.JPG',
+    id: 'three',
   ),
   CourseModel(
     courseName: 'Matematica',
@@ -48,5 +54,6 @@ List<CourseModel> courseModel = [
     star: 4,
     activities: activities,
     imgUrl: 'assets/img.JPG',
+    id: 'four',
   ),
 ];

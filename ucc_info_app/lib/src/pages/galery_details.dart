@@ -4,7 +4,7 @@ import 'package:ucc_info_app/widgets/header_details.dart';
 
 class GaleryDetails extends StatelessWidget {
   const GaleryDetails({Key? key}) : super(key: key);
-  static const String routeName = 'galery';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

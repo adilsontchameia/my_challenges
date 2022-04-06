@@ -1,26 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:ucc_info_app/src/models/course_model.dart';
 import 'package:ucc_info_app/utils/consts.dart';
 
-class HeaderDetails extends StatefulWidget {
-  const HeaderDetails({Key? key}) : super(key: key);
-
-  @override
-  State<HeaderDetails> createState() => _HeaderDetailsState();
-}
-
-class _HeaderDetailsState extends State<HeaderDetails> {
+class HeaderDetails extends StatelessWidget {
+  int index = 0;
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        const ClipRRect(
-          borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(30.0),
-              bottomRight: Radius.circular(30.0)),
-          child: Image(
-            height: 380.0,
-            fit: BoxFit.cover,
-            image: AssetImage('assets/img.JPG'),
+        Hero(
+          tag: courseModel,
+          child: const ClipRRect(
+            borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(30.0),
+                bottomRight: Radius.circular(30.0)),
+            child: Image(
+              height: 380.0,
+              fit: BoxFit.cover,
+              image: AssetImage('assets/img.JPG'),
+            ),
           ),
         ),
         Padding(
