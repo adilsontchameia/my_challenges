@@ -1,59 +1,70 @@
 import 'package:ucc_info_app/src/models/course_activitie.dart';
 
 class CourseModel {
-  String courseName;
-  String coorName;
-  int star;
-  String id;
-  String imgUrl;
+  final String courseName;
+  final String coorName;
+  final double star;
+  final String imgUrl;
+  final String info;
+  final String feedbacks;
+
   List<CourseActiviti> activities;
 
   CourseModel({
     required this.courseName,
     required this.coorName,
     required this.star,
-    required this.activities,
     required this.imgUrl,
-    required this.id,
+    required this.info,
+    required this.feedbacks,
+    required this.activities,
   });
 }
 
 //Informacoes da pagina dos cursos
 List<CourseActiviti> activities = [
-  CourseActiviti(informationCourse: 'Exemplo'),
+  CourseActiviti(informationCourse: 'Exemplo1'),
 ];
 //Cursos
 List<CourseModel> courseModel = [
   CourseModel(
-    courseName: 'Informatica Para \nGestao',
-    coorName: 'Adilson Tchameia',
-    star: 1,
+    courseName: 'Informatica Para Gestao',
+    coorName: 'Adilson Tchameia1',
+    star: 2.2,
     activities: activities,
-    imgUrl: 'assets/ucc.jpeg',
-    id: 'one',
+    imgUrl: 'assets/img.JPG',
+    info:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and ',
+    feedbacks: '5',
   ),
   CourseModel(
     courseName: 'Biologia',
     coorName: 'Adilson Tchameia2',
-    star: 2,
+    star: 4.5,
     activities: activities,
     imgUrl: 'assets/img.JPG',
-    id: 'two',
+    info:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and ',
+    feedbacks: '14',
   ),
   CourseModel(
     courseName: 'Enfermagem',
     coorName: 'Adilson Tchameia3',
-    star: 3,
+    star: 5,
     activities: activities,
     imgUrl: 'assets/img.JPG',
-    id: 'three',
+    info:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and ',
+    feedbacks: '20',
   ),
   CourseModel(
     courseName: 'Matematica',
     coorName: 'Adilson Tchameia4',
-    star: 4,
+    star: 3.0,
     activities: activities,
     imgUrl: 'assets/img.JPG',
-    id: 'four',
+    info:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and ',
+    feedbacks: '11',
   ),
 ];

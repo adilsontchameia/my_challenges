@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ucc_info_app/utils/consts.dart';
-import 'package:ucc_info_app/widgets/header_details.dart';
 
 class GaleryDetails extends StatelessWidget {
   const GaleryDetails({Key? key}) : super(key: key);
@@ -13,7 +12,7 @@ class GaleryDetails extends StatelessWidget {
           color: backgroundColor,
           child: Column(
             children: [
-              HeaderDetails(),
+              //  HeaderDetails(),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: defaultPadding),
                 child: Column(

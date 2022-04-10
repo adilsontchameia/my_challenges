@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
-import 'package:ucc_info_app/src/models/course_model.dart';
-import 'package:ucc_info_app/src/pages/course_details.dart';
 import 'package:ucc_info_app/utils/consts.dart';
-import 'package:ucc_info_app/widgets/custom_card.dart';
-import 'icon_header.dart';
+import 'package:ucc_info_app/widgets/course/course_card.dart';
+import 'package:ucc_info_app/widgets/search_bar.dart';
+import 'package:ucc_info_app/widgets/galery_card.dart';
+import 'icons_header.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({Key? key}) : super(key: key);
@@ -49,7 +49,7 @@ class HomeBody extends StatelessWidget {
                   ]),
             ),
             const SizedBox(height: 30.0),
-            searchBar(),
+            const SearchBar(),
             const SizedBox(height: 15.0),
             const Padding(
               padding: EdgeInsets.only(left: defaultPadding),
@@ -60,7 +60,7 @@ class HomeBody extends StatelessWidget {
                     color: Colors.grey,
                   )),
             ),
-            courseCard(),
+            const CourseCard(),
             const SizedBox(height: 10.0),
             const Padding(
               padding: EdgeInsets.only(left: defaultPadding),
@@ -71,107 +71,10 @@ class HomeBody extends StatelessWidget {
                     color: Colors.grey,
                   )),
             ),
-            galeryCard(context),
+            const GaleryCard(),
           ],
         ),
       ),
     );
   }
-}
-
-//CourseCard
-Widget courseCard() {
-  return Container(
-    margin: const EdgeInsets.symmetric(horizontal: 10),
-    height: 300.0,
-    // color: Colors.red,
-    child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: courseModel.length,
-        itemBuilder: (BuildContext context, int index) {
-          //  CourseModel courseModels = courseModel[index].id;
-          return Container(
-            margin: const EdgeInsets.all(5.0),
-            width: 210.0,
-            child: Stack(
-              alignment: Alignment.topCenter,
-              children: [
-                Positioned(
-                  bottom: 60.0,
-                  child: Container(
-                    height: 100.0,
-                    width: 190.0,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10.0),
-                        boxShadow: [
-                          BoxShadow(
-                            offset: const Offset(0, 5),
-                            blurRadius: 5,
-                            color: shadowColor.withOpacity(0.30),
-                          ),
-                        ]),
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            courseModel[index].courseName,
-                            style: textStyle,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text(
-                                '⭐ 4.5',
-                                style: textStyle,
-                              ),
-                              Text(
-                                courseModel[index].coorName,
-                                style: const TextStyle(
-                                    fontSize: 10.0, color: textColor),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30.0),
-                  ),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (_) => CoursesDetails()));
-                    },
-                    child: Stack(
-                      children: [
-                        Hero(
-                          tag: courseModel[index].imgUrl,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(30.0),
-                            child: Image(
-                              height: 150,
-                              width: 190.0,
-                              fit: BoxFit.cover,
-                              image: AssetImage(courseModel[0].imgUrl),
-                              //image: AssetImage(courseModel[index].imgUrl),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          );
-        }),
-  );
 }

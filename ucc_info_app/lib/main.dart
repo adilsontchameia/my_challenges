@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ucc_info_app/src/pages/course_details.dart';
 import 'package:ucc_info_app/src/pages/galery_details.dart';
-import 'package:ucc_info_app/src/pages/settings_page.dart';
 import 'src/pages/home_page.dart';
 
 void main() {
@@ -17,8 +16,6 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const HomePage(),
-        '/courseDetails': (context) => const CoursesDetails(),
-        '/galeryDetails': (context) => const GaleryDetails(),
       },
     );
   }

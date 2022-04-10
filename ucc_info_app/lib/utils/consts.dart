@@ -15,8 +15,6 @@ const String titleCourse = 'Courses';
 const String titleGalery = 'Galery';
 const String titleSearch = 'Search';
 //Texts - Courses
-const String courseName = 'Informatica Para \nGestao';
-const String coordName = 'Adilson Tchameia';
 const String ratingCourse = '4.5 (10 Opnioes)';
 //Texts - Galery
 const String photoTitle = 'Informatica Para \nGestao';
