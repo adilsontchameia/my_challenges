@@ -36,7 +36,7 @@ List<CourseModel> courseModel = [
     coorName: 'Alberto Vatal',
     star: 2.2,
     activities: activities,
-    imgUrl: 'assets/img.JPG',
+    imgUrl: 'assets/it.jpg',
     workAt:
         'O licenciado em Engenharia Informática de Gestão possui competências para se integrar no mercado de trabalho a vários níveis: \n➤ Consultoria e assessoria de projectos informáticos; \n➤ Instituições públicas ou privadas de saúde; \n➤ Empresas de marketing, publicidade e multimédia; \n➤ Gestores de projectos informáticos em diversos domínios industriais; \n➤ Projectos na área da banca, seguros e telecomunicações; \n➤ Empresas de serviços para a Internet e de desenvolvimento WEB. ',
     years: 4,
@@ -49,7 +49,7 @@ List<CourseModel> courseModel = [
     coorName: 'Yago Tchameia',
     star: 4.5,
     activities: activities,
-    imgUrl: 'assets/img.JPG',
+    imgUrl: 'assets/biology.jpg',
     workAt:
         'Os Licenciados poderão desempenhar-se como: \n➤ Compreender as teorias científicas contemporâneas das ciências biológicas, para a permanente actualização dos conteúdos de Ciências da Natureza, Biologia e outras do ensino primário e secundário, em correspondência com o contexto social; \n➤ Demonstrar o domínio profundo dos fundamentos teórico-conceptuais para a integração do contexto no processo de ensino-aprendizagem da Biologia, numa perspectiva da contextualização curricular;Demonstrar o domínio dos fundamentos da educação e da formação biológica, para a solução dos problemas profissionais de forma interdisciplinar e com o recurso às tecnologias que propiciem a formação integral do aluno; \n➤ Ser capaz de dar resposta às exigências da sociedade no âmbito de educação, conservação dos recursos naturais, ambiente, saúde pública e comunitária; \n➤ Ter aptidões para manusear os instrumentos e recursos didácticos da sua especialidade;',
     info:
@@ -62,7 +62,7 @@ List<CourseModel> courseModel = [
     coorName: 'Anair Calembe',
     star: 5,
     activities: activities,
-    imgUrl: 'assets/img.JPG',
+    imgUrl: 'assets/nurse.jpeg',
     workAt:
         'O Licenciado em enfermagem devera ser um profissional com as seguintes capacidades e habilidades: \n➤ Assumir o cuidado integral do paciente com distintos graus de risco e dentro de especializações críticas; \n➤ Gerenciar enfermagem em instituições de saúde pública, desenvolver linhas de pesquisa para fortalecer e inovar práticas profissionais; \n➤ Planear, implementar e avaliar as acções para a promoção da saúde e prevenção de doenças, nas Unidades Hospitalares públicas ou privadas;',
     info:
@@ -75,7 +75,7 @@ List<CourseModel> courseModel = [
     coorName: 'Nelson Tchinoia',
     star: 3.0,
     activities: activities,
-    imgUrl: 'assets/img.JPG',
+    imgUrl: 'assets/math.jpeg',
     workAt:
         'Técnico Superior com competências para : \n➤ Leccionar Matemática em instituições públicas e/ou privadas; \n➤ Resolver os problemas com que se venha deparar no desempenho das suas actividades.',
     info:
