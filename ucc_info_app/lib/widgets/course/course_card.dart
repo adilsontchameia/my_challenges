@@ -112,7 +112,7 @@ class CourseCard extends StatelessWidget {
                               final Widget toHero = toHeroContext.widget;
                               return ScaleTransition(
                                 scale: animation.drive(
-                                  Tween<double>(begin: 0.0, end: 1.0).chain(
+                                  Tween<double>(begin: 0.0, end: 2.0).chain(
                                     CurveTween(
                                       curve: Interval(0.0, 1.0,
                                           curve: PeakQuadraticCurve()),

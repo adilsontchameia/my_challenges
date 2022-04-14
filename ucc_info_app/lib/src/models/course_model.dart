@@ -34,7 +34,7 @@ List<CourseModel> courseModel = [
     activities: activities,
     imgUrl: 'assets/img.JPG',
     info:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and ',
+        'É uma licenciatura de nova geração que resulta da integração de duas áreas importantes de desenvolvimento científico: uma ciência técnica e de existência recente, a Informática, e outra social e mais antiga, a Gestão. O objectivo passa pela formação de pessoas capazes de levarem para o terreno tradicional das Tecnologias de Informação (TI) – as grandes e médias organizações – a inovação e competência técnica no domínio das TI aliado a conhecimentos de Gestão.',
     feedbacks: '5',
   ),
   CourseModel(

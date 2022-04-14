@@ -23,6 +23,7 @@ const String ratingGalery = '5.0 (10 Opnioes)';
 //TextStyle
 const TextStyle textStyle =
     TextStyle(color: textColor, fontWeight: FontWeight.bold);
-//LorenIpsun
-const String infoCourse =
-    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.';
+//String
+const String information = 'Informações Geral';
+const String working =
+    'O licenciado em Engenharia Informática de Gestão possui competências para se integrar no mercado de trabalho a vários níveis: \n➤ Consultoria e assessoria de projectos informáticos; \n➤ Instituições públicas ou privadas de saúde; \n➤ Empresas de marketing, publicidade e multimédia; \n➤ Gestores de projectos informáticos em diversos domínios industriais; \n➤ Projectos na área da banca, seguros e telecomunicações; \n➤ Empresas de serviços para a Internet e de desenvolvimento WEB. ';

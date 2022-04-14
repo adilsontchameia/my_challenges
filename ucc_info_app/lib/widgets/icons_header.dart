@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ucc_info_app/utils/consts.dart';
 
 class IconHeader extends StatefulWidget {
-  @required
   final IconData icon;
 
   const IconHeader({Key? key, required this.icon}) : super(key: key);
