@@ -70,7 +70,7 @@ class GaleryDetails extends StatelessWidget {
                             Padding(
                               padding: EdgeInsets.all(8.0),
                               child: Text(
-                                information,
+                                generalInformation,
                                 style: TextStyle(
                                   color: textColor,
                                   fontSize: 12.0,

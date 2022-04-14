@@ -9,6 +9,8 @@ class BottomInfo extends StatelessWidget {
     required this.star,
     required this.feedBack,
     required this.info,
+    required this.workAt,
+    required this.years,
   }) : super(key: key);
 
   final String courseName;
@@ -16,6 +18,8 @@ class BottomInfo extends StatelessWidget {
   final double star;
   final String feedBack;
   final String info;
+  final String workAt;
+  final int years;
 
   final List<int> items = [1, 2, 3, 4, 5];
   @override
@@ -25,7 +29,7 @@ class BottomInfo extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          courseName.toUpperCase(),
+          'CURSO: ' + courseName.toUpperCase(),
           style: const TextStyle(
             color: textColor,
             fontSize: 25.0,
@@ -40,7 +44,14 @@ class BottomInfo extends StatelessWidget {
           ),
         ),
         Text(
-          'Classificacao: ⭐  $star | ($feedBack) Opnioes',
+          'Classificacao: ⭐  $star | ($feedBack) Opniões',
+          style: const TextStyle(
+            color: textColor,
+            fontSize: 15.0,
+          ),
+        ),
+        Text(
+          'Duração: 🕛  $years',
           style: const TextStyle(
             color: textColor,
             fontSize: 15.0,
@@ -48,15 +59,15 @@ class BottomInfo extends StatelessWidget {
         ),
         const SizedBox(height: 10.0),
         InformationCard(
-          info: info,
+          headerCourse: generalInformation,
+          infoCourse: info,
           size: 13.0,
-          header: working1,
         ),
         const SizedBox(height: 15.0),
         InformationCard(
-          info: working,
+          headerCourse: whereToWork,
+          infoCourse: workAt,
           size: 13.0,
-          header: working1,
         ),
       ],
     );
@@ -66,13 +77,13 @@ class BottomInfo extends StatelessWidget {
 class InformationCard extends StatelessWidget {
   const InformationCard({
     Key? key,
-    required this.info,
-    required this.header,
+    required this.infoCourse,
+    required this.headerCourse,
     required this.size,
   }) : super(key: key);
 
-  final String info;
-  final String header;
+  final String infoCourse;
+  final String headerCourse;
   final double size;
 
   @override
@@ -97,16 +108,16 @@ class InformationCard extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              information,
+              headerCourse,
               style: TextStyle(
-                color: textColor,
+                color: iconColor1.withOpacity(0.4),
                 fontSize: 25.0,
               ),
             ),
             Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                info,
+                infoCourse,
                 style: TextStyle(
                   color: textColor,
                   fontSize: size,

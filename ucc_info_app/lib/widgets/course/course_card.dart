@@ -25,6 +25,8 @@ class CourseCard extends StatelessWidget {
                           star: courseModel[index].star,
                           imgUrl: courseModel[index].imgUrl,
                           info: courseModel[index].info,
+                          workAt: courseModel[index].workAt,
+                          years: courseModel[index].years,
                           feedBack: courseModel[index].feedbacks,
                         )));
               },

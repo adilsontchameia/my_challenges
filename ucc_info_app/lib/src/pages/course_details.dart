@@ -9,6 +9,8 @@ class CourseDetails extends StatelessWidget {
   double star;
   String imgUrl;
   String info;
+  String workAt;
+  int years;
   String feedBack;
 
   CourseDetails({
@@ -18,6 +20,8 @@ class CourseDetails extends StatelessWidget {
     required this.star,
     required this.imgUrl,
     required this.info,
+    required this.workAt,
+    required this.years,
     required this.feedBack,
   }) : super(key: key);
 
@@ -41,6 +45,8 @@ class CourseDetails extends StatelessWidget {
                   star: star,
                   feedBack: feedBack,
                   info: info,
+                  workAt: workAt,
+                  years: years,
                 ),
               ),
             ],
