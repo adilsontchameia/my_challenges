@@ -25,5 +25,6 @@ const TextStyle textStyle =
     TextStyle(color: textColor, fontWeight: FontWeight.bold);
 //String
 const String information = 'Informações Geral';
+const String working1 = 'Saídas Profissionais';
 const String working =
     'O licenciado em Engenharia Informática de Gestão possui competências para se integrar no mercado de trabalho a vários níveis: \n➤ Consultoria e assessoria de projectos informáticos; \n➤ Instituições públicas ou privadas de saúde; \n➤ Empresas de marketing, publicidade e multimédia; \n➤ Gestores de projectos informáticos em diversos domínios industriais; \n➤ Projectos na área da banca, seguros e telecomunicações; \n➤ Empresas de serviços para a Internet e de desenvolvimento WEB. ';

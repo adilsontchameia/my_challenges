@@ -47,9 +47,17 @@ class BottomInfo extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 10.0),
-        InformationCard(info: info),
+        InformationCard(
+          info: info,
+          size: 13.0,
+          header: working1,
+        ),
         const SizedBox(height: 15.0),
-        InformationCard(info: working),
+        InformationCard(
+          info: working,
+          size: 13.0,
+          header: working1,
+        ),
       ],
     );
   }
