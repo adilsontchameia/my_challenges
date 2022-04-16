@@ -1,15 +1,23 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
+import 'package:ucc_info_app/src/models/slide_show.dart';
 import 'package:ucc_info_app/utils/consts.dart';
 import 'package:ucc_info_app/widgets/course/course_card.dart';
 import 'package:ucc_info_app/widgets/search_bar.dart';
-import 'package:ucc_info_app/widgets/galery_card.dart';
+import 'package:ucc_info_app/widgets/updates_card.dart';
+import 'package:ucc_info_app/widgets/slide_show.dart';
 import 'icons_header.dart';
 
-class HomeBody extends StatelessWidget {
+class HomeBody extends StatefulWidget {
   const HomeBody({Key? key}) : super(key: key);
 
+  @override
+  _HomeBodyState createState() => _HomeBodyState();
+}
+
+class _HomeBodyState extends State<HomeBody> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -53,28 +61,49 @@ class HomeBody extends StatelessWidget {
             const SizedBox(height: 15.0),
             const Padding(
               padding: EdgeInsets.only(left: defaultPadding),
-              child: Text('Cursos',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey,
-                  )),
+              child: Text('Cursos', style: cardsTextStyle),
             ),
             const CourseCard(),
             const SizedBox(height: 10.0),
             const Padding(
               padding: EdgeInsets.only(left: defaultPadding),
-              child: Text('Galeria',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey,
-                  )),
+              child: Text('Atualizações', style: cardsTextStyle),
             ),
             const GaleryCard(),
+            const Padding(
+              padding: EdgeInsets.only(left: defaultPadding),
+              child: Text('Galeria', style: cardsTextStyle),
+            ),
+            CarouselSlide(),
           ],
         ),
       ),
     );
   }
 }
+
+
+
+/*
+CarouselSlider(
+      options: CarouselOptions(
+        autoPlay: true,
+        autoPlayInterval: Duration(seconds: 1),
+        reverse: false,
+        autoPlayCurve: Curves.fastOutSlowIn,
+        height: 200.0,
+      ),
+      items: [1, 2, 3, 4, 5].map((i) {
+        return Builder(
+          builder: (BuildContext context) {
+            return Container(
+                width: MediaQuery.of(context).size.width,
+                margin: EdgeInsets.symmetric(horizontal: 5.0),
+                child: Image(
+                  image: AssetImage('assets/it.jpg'),
+                ));
+          },
+        );
+      }).toList(),
+    );
+*/

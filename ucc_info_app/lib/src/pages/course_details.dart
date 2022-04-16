@@ -3,6 +3,7 @@ import 'package:ucc_info_app/utils/consts.dart';
 import 'package:ucc_info_app/widgets/course/bottom_info.dart';
 import 'package:ucc_info_app/widgets/header_details.dart';
 
+// ignore: must_be_immutable
 class CourseDetails extends StatelessWidget {
   String courseName;
   String coorName;
@@ -40,14 +41,13 @@ class CourseDetails extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: defaultPadding),
                 child: BottomInfo(
-                  courseName: courseName,
-                  coorName: coorName,
-                  star: star,
-                  feedBack: feedBack,
-                  info: info,
-                  workAt: workAt,
-                  years: years,
-                ),
+                    courseName: courseName,
+                    coorName: coorName,
+                    star: star,
+                    feedBack: feedBack,
+                    info: info,
+                    workAt: workAt,
+                    years: years),
               ),
             ],
           ),

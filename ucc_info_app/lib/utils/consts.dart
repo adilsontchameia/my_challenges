@@ -21,8 +21,20 @@ const String photoTitle = 'Informatica Para \nGestao';
 const String photName = 'CSK STUDIO';
 const String ratingGalery = '5.0 (10 Opnioes)';
 //TextStyle
-const TextStyle textStyle =
-    TextStyle(color: textColor, fontWeight: FontWeight.bold);
+const TextStyle textStyle = TextStyle(
+  color: textColor,
+  fontWeight: FontWeight.bold,
+);
+const TextStyle carouselTextStyle = TextStyle(
+  color: Colors.white,
+  fontWeight: FontWeight.bold,
+  fontSize: 20.0,
+);
+const TextStyle cardsTextStyle = TextStyle(
+  fontSize: 20.0,
+  fontWeight: FontWeight.bold,
+  color: Colors.grey,
+);
 //String
 const String generalInformation = 'Informações Geral';
 const String whereToWork = 'Saídas Profissionais';

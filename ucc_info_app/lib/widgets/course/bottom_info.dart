@@ -110,7 +110,7 @@ class InformationCard extends StatelessWidget {
             Text(
               headerCourse,
               style: TextStyle(
-                color: iconColor1.withOpacity(0.4),
+                color: iconColor1.withOpacity(0.5),
                 fontSize: 25.0,
               ),
             ),
