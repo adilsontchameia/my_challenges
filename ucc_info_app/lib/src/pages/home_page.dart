@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ucc_info_app/utils/consts.dart';
-import 'package:ucc_info_app/widgets/body_home.dart';
-import 'package:ucc_info_app/widgets/bottom_nav.dart';
+import 'package:ucc_info_app/widgets/home/body_home.dart';
+import 'package:ucc_info_app/widgets/home/bottom_nav.dart';
 import 'package:flutter/painting.dart';
 
 class HomePage extends StatelessWidget {

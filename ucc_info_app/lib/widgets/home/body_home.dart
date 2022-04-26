@@ -5,8 +5,8 @@ import 'package:flutter/widgets.dart';
 import 'package:ucc_info_app/src/models/slide_show.dart';
 import 'package:ucc_info_app/utils/consts.dart';
 import 'package:ucc_info_app/widgets/course/course_card.dart';
-import 'package:ucc_info_app/widgets/search_bar.dart';
-import 'package:ucc_info_app/widgets/updates_card.dart';
+import 'package:ucc_info_app/widgets/home/search_bar.dart';
+import 'package:ucc_info_app/widgets/update/updates_card.dart';
 import 'package:ucc_info_app/widgets/slide_show.dart';
 import 'icons_header.dart';
 
