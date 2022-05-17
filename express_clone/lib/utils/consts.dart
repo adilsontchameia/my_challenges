@@ -7,7 +7,3 @@ const enteredPinCircleColor = Colors.black;
 const numPadColor = Color(0xFF757676);
 const titlePadColor = Color(0xFF919190);
 const iconAndHeadMainColor = Color(0xFFF58300);
-
-//IconData passFieldDisabled = IconData(0xe657, fontFamily: 'MaterialIcons');
-IconData passFieldEnabled = IconData(0xe657, fontFamily: 'MaterialIcons');
-IconData passFieldDisabled = IconData(0xe657, fontFamily: 'MaterialIcons');

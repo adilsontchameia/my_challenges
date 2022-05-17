@@ -2,6 +2,7 @@ import 'package:express_clone/utils/consts.dart';
 import 'package:express_clone/widgets/custom_fields/animation.dart';
 import 'package:express_clone/widgets/custom_fields/pin_code_fields.dart';
 import 'package:express_clone/widgets/custom_fields/pin_theme.dart';
+import 'package:express_clone/widgets/progress_indicator.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -36,7 +37,19 @@ class _PinCodeFieldState extends State<PinCodeField> {
       ),
       animationDuration: const Duration(milliseconds: 300),
       controller: widget.controller,
-      onCompleted: (v) {},
+      onCompleted: (v) {
+        setState(() {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: Text('title'),
+                content: Text('message'),
+              );
+            },
+          );
+        });
+      },
       onChanged: (value) {
         debugPrint(value);
         /*

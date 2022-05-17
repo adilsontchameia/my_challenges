@@ -108,23 +108,12 @@ class CustomDelButton extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(8.0),
       ),
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-            primary: backGroundColor, shadowColor: Colors.transparent),
-        onPressed: () {},
-        child: Center(
-          child: Text(
-            'DEL',
-            style: const TextStyle(
-              fontFamily: 'RobotoSlab',
-              fontWeight: FontWeight.w100,
-              decoration: TextDecoration.underline,
-              color: titlePadColor,
-              fontSize: 6,
-            ),
-          ),
-        ),
-      ),
+      child: IconButton(
+          iconSize: 25,
+          icon: Image(image: AssetImage('assets/del.png')),
+          onPressed: () {
+            controller.text += '';
+          }),
     );
   }
 }

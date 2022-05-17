@@ -2,6 +2,7 @@ import 'package:express_clone/widgets/custom_num_pad.dart';
 import 'package:express_clone/widgets/login_header.dart';
 import 'package:express_clone/utils/consts.dart';
 import 'package:express_clone/widgets/password_field.dart';
+import 'package:express_clone/widgets/progress_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -47,6 +48,14 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
             SizedBox(height: 10.0),
+            TextButton(
+              child: Text("OK"),
+              onPressed: () {
+                setState(() {
+                  CupertinoActivityIndicator();
+                });
+              },
+            ),
             Center(
               child: CustomNumPad(
                 controller: textEditingController,
