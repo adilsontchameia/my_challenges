@@ -2,7 +2,6 @@ import 'package:express_clone/utils/consts.dart';
 import 'package:express_clone/widgets/custom_fields/animation.dart';
 import 'package:express_clone/widgets/custom_fields/pin_code_fields.dart';
 import 'package:express_clone/widgets/custom_fields/pin_theme.dart';
-import 'package:express_clone/widgets/progress_indicator.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable

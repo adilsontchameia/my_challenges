@@ -1,5 +1,4 @@
 import 'package:express_clone/utils/consts.dart';
-import 'package:express_clone/widgets/progress_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +13,10 @@ class SplashScreen extends StatelessWidget {
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           color: splashColor,
-          child: customProgressIndicator(context),
+          child: Center(
+            child: Image(image: AssetImage('assets/logo.png')),
+          ),
+          // child: customProgressIndicator(context),
         ),
       ]),
     );

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:math';
+
 import 'package:express_clone/utils/consts.dart';
 import 'package:express_clone/widgets/custom_fields/animation.dart';
 import 'package:express_clone/widgets/custom_fields/cursor_painter.dart';
