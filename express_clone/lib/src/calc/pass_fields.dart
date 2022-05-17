@@ -1,6 +1,6 @@
 // main.dart
-import 'package:express_clone/src/calc/custom_num_pad.dart';
-import 'package:express_clone/src/calc/login_page.dart';
+import 'package:express_clone/widgets/custom_num_pad.dart';
+import 'package:express_clone/widgets/login_header.dart';
 import 'package:express_clone/utils/consts.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -23,23 +23,10 @@ class _PassPadAndFieldsPageState extends State<PassPadAndFieldsPage> {
       backgroundColor: backGroundColor,
       body: Column(
         children: [
-          Column(
-            children: [
-              Container(
-                height: 370 / 2,
-                width: MediaQuery.of(context).size.width,
-                color: splashColor,
-                child: SafeArea(
-                  child: Center(
-                    child: Text('LOGO'),
-                  ),
-                ),
-              ),
-            ],
-          ),
+          LoginHeader(),
           SizedBox(height: 30.0),
           Padding(
-            padding: const EdgeInsets.only(left: 70.0, right: 70.0),
+            padding: const EdgeInsets.only(left: 50.0, right: 50.0),
             child: Center(
               child: PinCodeTextField(
                 length: 6,
@@ -64,7 +51,7 @@ class _PassPadAndFieldsPageState extends State<PassPadAndFieldsPage> {
                 controller: textEditingController,
                 onCompleted: (v) {
                   if (textEditingController.text.length == 6) {
-                    CupertinoActivityIndicator(
+                    return CupertinoActivityIndicator(
                       animating: false,
                       radius: 50.0,
                     );
@@ -89,6 +76,7 @@ class _PassPadAndFieldsPageState extends State<PassPadAndFieldsPage> {
                   );
                   */
                 },
+
                 onChanged: (value) {
                   debugPrint(value);
                   setState(() {
@@ -117,8 +105,8 @@ class _PassPadAndFieldsPageState extends State<PassPadAndFieldsPage> {
               ),
             ],
           ),
-          SizedBox(height: 30.0),
-          CustomNumPad(controller: textEditingController),
+          SizedBox(height: 10.0),
+          Center(child: CustomNumPad(controller: textEditingController)),
         ],
       ),
     );
