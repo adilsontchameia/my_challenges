@@ -19,7 +19,6 @@ class CustomNumPad extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        // padding: const EdgeInsets.all(10.0),
         margin: const EdgeInsets.symmetric(horizontal: 100.0),
         child: Column(
           children: [
@@ -121,7 +120,7 @@ class CustomDelButton extends StatelessWidget {
               fontWeight: FontWeight.w100,
               decoration: TextDecoration.underline,
               color: titlePadColor,
-              fontSize: 10,
+              fontSize: 6,
             ),
           ),
         ),

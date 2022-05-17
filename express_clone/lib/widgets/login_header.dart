@@ -18,7 +18,7 @@ class LoginHeader extends StatelessWidget {
               Container(
                 height: 300 / 2,
                 width: MediaQuery.of(context).size.width,
-                color: splashColor,
+                color: iconAndHeadMainColor,
                 child: Column(
                   children: [
                     Stack(
@@ -33,7 +33,7 @@ class LoginHeader extends StatelessWidget {
                               child: Container(
                                 height: 480,
                                 width: 270.0,
-                                color: Colors.white.withOpacity(.12),
+                                color: Colors.white.withOpacity(.15),
                               ),
                             ),
                           ),
