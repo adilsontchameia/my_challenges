@@ -341,7 +341,7 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
     _checkForInvalidValues();
     _assignController();
     if (_pinTheme.shape != PinCodeFieldShapeOne.circle &&
-        _pinTheme.shape != PinCodeFieldShapeOne.underline) {
+        _pinTheme.shape != PinCodeFieldShapeOne.none) {
       borderRadius = _pinTheme.borderRadius;
     }
     _focusNode = widget.focusNode ?? FocusNode();
@@ -526,24 +526,6 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
   }
 
   // selects the right color for the field
-  Color _getColorFromIndex(int index) {
-    if (!widget.enabled) {
-      return _pinTheme.disabledColor;
-    }
-    if (((_selectedIndex == index) ||
-            (_selectedIndex == index + 1 && index + 1 == widget.length)) &&
-        _focusNode.hasFocus) {
-      return _pinTheme.selectedColor;
-    } else if (_selectedIndex > index) {
-      Color relevantActiveColor = _pinTheme.activeColor;
-      if (isInErrorMode) relevantActiveColor = _pinTheme.errorBorderColor;
-      return relevantActiveColor;
-    }
-
-    Color relevantInActiveColor = _pinTheme.inactiveColor;
-    if (isInErrorMode) relevantInActiveColor = _pinTheme.errorBorderColor;
-    return relevantInActiveColor;
-  }
 
   Widget _renderPinField({
     @required int index,
@@ -858,7 +840,7 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
                     ? BoxShape.circle
                     : BoxShape.rectangle,
                 borderRadius: borderRadius,
-                border: _pinTheme.shape == PinCodeFieldShapeOne.underline
+                border: _pinTheme.shape == PinCodeFieldShapeOne.none
                     ? Border(
                         bottom: BorderSide(
                           color: backGroundColor,
@@ -975,6 +957,6 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
   }
 }
 
-enum PinCodeFieldShapeOne { box, underline, circle, none }
+enum PinCodeFieldShapeOne { box, circle, none }
 
 enum ErrorAnimationType { shake }

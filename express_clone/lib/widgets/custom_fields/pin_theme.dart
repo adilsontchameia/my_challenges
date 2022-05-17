@@ -51,7 +51,7 @@ class PinThemeOne {
     this.fieldWidth = 40,
     this.borderWidth = 2,
     this.fieldOuterPadding = EdgeInsets.zero,
-    this.shape = PinCodeFieldShapeOne.underline,
+    this.shape = PinCodeFieldShapeOne.none,
     this.activeColor = Colors.green,
     this.selectedColor = Colors.blue,
     this.inactiveColor = Colors.red,
