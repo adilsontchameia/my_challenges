@@ -5,7 +5,7 @@ class Gradiented extends StatelessWidget {
   final Gradient gradient;
   final Widget child;
 
-  const Gradiented({@required this.child, @required this.gradient});
+  const Gradiented({required this.child, required this.gradient});
 
   @override
   Widget build(BuildContext context) {

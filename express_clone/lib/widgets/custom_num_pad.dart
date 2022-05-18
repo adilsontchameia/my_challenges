@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 // This widget is reusable and its buttons are customizable (color, size)
 class CustomNumPad extends StatelessWidget {
   final TextEditingController controller;
-  final Function delete;
-  final Function onSubmit;
+  final Function? delete;
+  final Function? onSubmit;
 
   const CustomNumPad({
-    Key key,
+    Key? key,
     this.delete,
     this.onSubmit,
-    @required this.controller,
+    required this.controller,
   }) : super(key: key);
 
   @override
@@ -74,7 +74,9 @@ class CustomNumPad extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 // this button is used to delete the last number
-                CustomDelButton(),
+                CustomDelButton(
+                  controller: controller,
+                ),
                 NumberButton(
                   number: 0,
                   controller: controller,
@@ -91,8 +93,8 @@ class CustomNumPad extends StatelessWidget {
 class CustomDelButton extends StatelessWidget {
   final TextEditingController controller;
   const CustomDelButton({
-    Key key,
-    this.controller,
+    Key? key,
+    required this.controller,
   }) : super(key: key);
 
   @override
@@ -123,14 +125,14 @@ class CustomDelButton extends StatelessWidget {
 class NumberButton extends StatelessWidget {
   final int number;
 
-  final double size;
+  final double? size;
   final TextEditingController controller;
 
   const NumberButton({
-    Key key,
-    this.number,
+    Key? key,
+    required this.number,
     this.size,
-    @required this.controller,
+    required this.controller,
   }) : super(key: key);
 
   @override

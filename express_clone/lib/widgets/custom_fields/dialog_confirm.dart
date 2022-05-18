@@ -16,19 +16,19 @@ class DialogConfig {
   /// The default dialog theme, should it be iOS or other(including web and Android)
   final Platform platform;
   DialogConfig._internal({
-    this.dialogContent,
-    this.dialogTitle,
-    this.affirmativeText,
-    this.negativeText,
+    required this.dialogContent,
+    required this.dialogTitle,
+    required this.affirmativeText,
+    required this.negativeText,
     this.platform = Platform.other,
   });
 
   factory DialogConfig(
-      {String affirmativeText,
-      String dialogContent,
-      String dialogTitle,
-      String negativeText,
-      Platform platform}) {
+      {String? affirmativeText,
+      String? dialogContent,
+      String? dialogTitle,
+      String? negativeText,
+      Platform? platform}) {
     return DialogConfig._internal(
       affirmativeText: affirmativeText == null ? "Paste" : affirmativeText,
       dialogContent: dialogContent == null

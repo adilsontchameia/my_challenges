@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class PinCodeField extends StatefulWidget {
   TextEditingController controller = TextEditingController();
-  PinCodeField({@required this.controller});
+  PinCodeField({required this.controller});
 
   @override
   State<PinCodeField> createState() => _PinCodeFieldState();
