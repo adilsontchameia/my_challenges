@@ -159,7 +159,7 @@ class NumberButton extends StatelessWidget {
             number.toString(),
             style: const TextStyle(
               fontFamily: 'RobotoSlab',
-              fontWeight: FontWeight.w100,
+              fontWeight: FontWeight.w600,
               decoration: TextDecoration.underline,
               color: titlePadColor,
               fontSize: 30,

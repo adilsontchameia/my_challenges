@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
                   style: TextStyle(
                       color: titlePadColor,
                       fontSize: 13,
-                      fontWeight: FontWeight.w100),
+                      fontWeight: FontWeight.w600),
                 ),
                 Text(
                   'MULTICAIXA',

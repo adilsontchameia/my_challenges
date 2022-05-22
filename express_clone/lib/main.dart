@@ -1,7 +1,6 @@
+import 'package:express_clone/bio/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'src/pages/login_page.dart';
 
 void main() {
   // To Disable the LandsCapeMode
@@ -16,7 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      // home: LoginPage(),
+      home: MyHomePage(title: 'BioApp'),
       //home: SplashScreen(),
     );
   }

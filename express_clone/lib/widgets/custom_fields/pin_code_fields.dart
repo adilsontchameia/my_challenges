@@ -130,7 +130,7 @@ class PinCodeTextFieldAd extends StatefulWidget {
 
   /// Callback method to validate if text can be pasted. This is helpful when we need to validate text before pasting.
   /// e.g. validate if text is number. Default will be pasted as received.
-  final bool Function(String text)? beforeTextPaste;
+  final bool Function(String? text)? beforeTextPaste;
 
   /// Method for detecting a pin_code form tap
   /// work with all form windows
@@ -291,7 +291,7 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
   late FocusNode _focusNode;
   late List<String> _inputList;
   int _selectedIndex = 0;
-  late BorderRadius borderRadius;
+  BorderRadius? borderRadius;
 
   // Whether the character has blinked
   bool _hasBlinked = false;
@@ -493,7 +493,7 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
         _hasBlinked = false;
       });
 
-      if (_blinkDebounce.isActive ?? false) {
+      if (_blinkDebounce.isActive) {
         _blinkDebounce.cancel();
       }
 
@@ -800,11 +800,11 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
                         var data = await Clipboard.getData("text/plain");
                         if (data?.text?.isNotEmpty ?? false) {
                           if (widget.beforeTextPaste != null) {
-                            if (widget.beforeTextPaste!(data.text)) {
-                              _showPasteDialog(data.text);
+                            if (widget.beforeTextPaste!(data!.text)) {
+                              _showPasteDialog(data.text!);
                             }
                           } else {
-                            _showPasteDialog(data!.text);
+                            _showPasteDialog(data!.text!);
                           }
                         }
                       }

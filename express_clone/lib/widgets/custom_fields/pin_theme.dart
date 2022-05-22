@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 
 class PinThemeOne {
   /// Colors of the input fields which have inputs. Default is [Colors.green]
-  final Color activeColor;
+  final Color? activeColor;
 
   /// Color of the input field which is currently selected. Default is [Colors.blue]
-  final Color selectedColor;
+  final Color? selectedColor;
 
   /// Colors of the input fields which don't have inputs. Default is [Colors.red]
-  final Color inactiveColor;
+  final Color? inactiveColor;
 
   /// Colors of the input fields if the [PinCodeTextField] is disabled. Default is [Colors.grey]
   final Color disabledColor;
@@ -25,7 +25,7 @@ class PinThemeOne {
   final Color inactiveFillColor;
 
   /// Color of the input field when in error mode. Default is [Colors.redAccent]
-  final Color errorBorderColor;
+  final Color? errorBorderColor;
 
   /// Border radius of each pin code field
   final BorderRadius borderRadius;
@@ -63,20 +63,20 @@ class PinThemeOne {
   });
 
   factory PinThemeOne(
-      {Color activeColor,
-      Color selectedColor,
-      Color inactiveColor,
-      Color disabledColor,
-      Color activeFillColor,
-      Color selectedFillColor,
-      Color inactiveFillColor,
-      Color errorBorderColor,
-      BorderRadius borderRadius,
-      double fieldHeight,
-      double fieldWidth,
-      double borderWidth,
-      PinCodeFieldShapeOne shape,
-      EdgeInsetsGeometry fieldOuterPadding}) {
+      {Color? activeColor,
+      Color? selectedColor,
+      Color? inactiveColor,
+      Color? disabledColor,
+      Color? activeFillColor,
+      Color? selectedFillColor,
+      Color? inactiveFillColor,
+      Color? errorBorderColor,
+      BorderRadius? borderRadius,
+      required double fieldHeight,
+      required double fieldWidth,
+      required double borderWidth,
+      PinCodeFieldShapeOne? shape,
+      EdgeInsetsGeometry? fieldOuterPadding}) {
     final defaultValues = PinThemeOne.defaults();
     return PinThemeOne.defaults(
       activeColor:
