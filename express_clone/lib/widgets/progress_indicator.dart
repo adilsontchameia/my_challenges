@@ -1,6 +1,7 @@
 import 'package:express_clone/utils/consts.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:nuts_activity_indicator/nuts_activity_indicator.dart';
 
 Widget customProgressIndicator(BuildContext context) {
@@ -23,18 +24,3 @@ Widget customProgressIndicator(BuildContext context) {
     ),
   );
 }
-
- /*
-                    2 - 
-                     FutureBuilder<String>(
-                      future: null,
-                      builder: (context, snapshot) {
-                        if (snapshot.hasData) {
-                          //UI
-                          return null;
-                        } else {
-                          return CupertinoActivityIndicator();
-                        }
-                      },
-                    );
-                    */

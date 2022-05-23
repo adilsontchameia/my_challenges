@@ -1,4 +1,4 @@
-import 'package:express_clone/bio/main.dart';
+import 'package:express_clone/src/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: LoginPage(),
-      home: MyHomePage(title: 'BioApp'),
+      home: LoginPage(),
+     
       //home: SplashScreen(),
     );
   }

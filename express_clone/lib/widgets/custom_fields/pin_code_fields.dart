@@ -287,9 +287,9 @@ class PinCodeTextFieldAd extends StatefulWidget {
 
 class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
     with TickerProviderStateMixin {
-  late TextEditingController _textEditingController;
-  late FocusNode _focusNode;
-  late List<String> _inputList;
+  TextEditingController? _textEditingController;
+  FocusNode? _focusNode;
+  List<String>? _inputList;
   int _selectedIndex = 0;
   BorderRadius? borderRadius;
 
@@ -297,7 +297,7 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
   bool _hasBlinked = false;
 
   // AnimationController for the error animation
-  late AnimationController _controller;
+  AnimationController? _controller;
 
   late AnimationController _cursorController;
 
@@ -346,7 +346,7 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
       borderRadius = _pinTheme.borderRadius;
     }
     _focusNode = widget.focusNode ?? FocusNode();
-    _focusNode.addListener(() {
+    _focusNode!.addListener(() {
       setState(() {});
     }); // Rebuilds on every change to reflect the correct color on each field.
     _inputList = List<String>.filled(widget.length, "");
@@ -370,16 +370,16 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
       begin: Offset.zero,
       end: const Offset(.1, 0.0),
     ).animate(CurvedAnimation(
-      parent: _controller,
+      parent: _controller!,
       curve: Curves.elasticIn,
     ));
     if (widget.showCursor) {
       _cursorController.repeat();
     }
 
-    _controller.addStatusListener((status) {
+    _controller!.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        _controller.reverse();
+        _controller!.reverse();
       }
     });
 
@@ -387,14 +387,14 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
       _errorAnimationSubscription =
           widget.errorAnimationController!.stream.listen((errorAnimation) {
         if (errorAnimation == ErrorAnimationType.shake) {
-          _controller.forward();
+          _controller!.forward();
           setState(() => isInErrorMode = true);
         }
       });
     }
     // If a default value is set in the TextEditingController, then set to UI
-    if (_textEditingController.text.isNotEmpty)
-      _setTextToInput(_textEditingController.text);
+    if (_textEditingController!.text.isNotEmpty)
+      _setTextToInput(_textEditingController!.text);
     super.initState();
   }
 
@@ -449,7 +449,7 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
       _textEditingController = widget.controller!;
     }
 
-    _textEditingController.addListener(() {
+    _textEditingController!.addListener(() {
       if (widget.useHapticFeedback) {
         runHapticFeedback();
       }
@@ -460,9 +460,9 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
 
       _debounceBlink();
 
-      var currentText = _textEditingController.text;
+      var currentText = _textEditingController!.text;
 
-      if (widget.enabled && _inputList.join("") != currentText) {
+      if (widget.enabled && _inputList!.join("") != currentText) {
         if (currentText.length >= widget.length) {
           if (widget.onCompleted != null) {
             if (currentText.length > widget.length) {
@@ -474,7 +474,7 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
                 () => widget.onCompleted!(currentText));
           }
 
-          if (widget.autoDismissKeyboard) _focusNode.unfocus();
+          if (widget.autoDismissKeyboard) _focusNode!.unfocus();
         }
         widget.onChanged(currentText);
       }
@@ -487,8 +487,8 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
     // set has blinked to false and back to true
     // after duration
     if (widget.blinkWhenObscuring &&
-        _textEditingController.text.length >
-            _inputList.where((x) => x.isNotEmpty).length) {
+        _textEditingController!.text.length >
+            _inputList!.where((x) => x.isNotEmpty).length) {
       setState(() {
         _hasBlinked = false;
       });
@@ -510,8 +510,8 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
   @override
   void dispose() {
     if (widget.autoDisposeControllers) {
-      _textEditingController.dispose();
-      _focusNode.dispose();
+      _textEditingController!.dispose();
+      _focusNode!.dispose();
       // if (!kReleaseMode) {
       //   print(
       //       "*** Disposing _textEditingController and _focusNode, To disable this feature please set autoDisposeControllers = false***");
@@ -522,7 +522,7 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
 
     _cursorController.dispose();
 
-    _controller.dispose();
+    _controller!.dispose();
     super.dispose();
   }
 
@@ -535,40 +535,40 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
 
     bool showObscured = !widget.blinkWhenObscuring ||
         (widget.blinkWhenObscuring && _hasBlinked) ||
-        index != _inputList.where((x) => x.isNotEmpty).length - 1;
+        index != _inputList!.where((x) => x.isNotEmpty).length - 1;
 
     if (widget.obscuringWidget != null) {
       if (showObscured) {
-        if (_inputList[index].isNotEmpty) {
+        if (_inputList![index].isNotEmpty) {
           return widget.obscuringWidget!;
         }
       }
     }
 
-    if (_inputList[index].isEmpty && _hintAvailable) {
+    if (_inputList![index].isEmpty && _hintAvailable) {
       return Text(
         widget.hintCharacter!,
-        key: ValueKey(_inputList[index]),
+        key: ValueKey(_inputList![index]),
         style: _hintStyle,
       );
     }
 
     final text =
-        widget.obscureText && _inputList[index].isNotEmpty && showObscured
+        widget.obscureText && _inputList![index].isNotEmpty && showObscured
             ? widget.obscuringCharacter
-            : _inputList[index];
+            : _inputList![index];
     return widget.textGradient != null
         ? Gradiented(
             gradient: widget.textGradient!,
             child: Text(
               text,
-              key: ValueKey(_inputList[index]),
+              key: ValueKey(_inputList![index]),
               style: _textStyle.copyWith(color: Colors.white),
             ),
           )
         : Text(
             text,
-            key: ValueKey(_inputList[index]),
+            key: ValueKey(_inputList![index]),
             style: _textStyle,
           );
   }
@@ -580,7 +580,7 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
     }
     if (((_selectedIndex == index) ||
             (_selectedIndex == index + 1 && index + 1 == widget.length)) &&
-        _focusNode.hasFocus) {
+        _focusNode!.hasFocus) {
       return _pinTheme.selectedFillColor;
     } else if (_selectedIndex > index) {
       return _pinTheme.activeFillColor;
@@ -592,7 +592,7 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
   Widget buildChild(int index) {
     if (((_selectedIndex == index) ||
             (_selectedIndex == index + 1 && index + 1 == widget.length)) &&
-        _focusNode.hasFocus &&
+        _focusNode!.hasFocus &&
         widget.showCursor) {
       final cursorColor = widget.cursorColor ??
           Theme.of(widget.appContext).textSelectionTheme.cursorColor ??
@@ -892,16 +892,16 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
 
   void _onFocus() {
     if (widget.autoUnfocus) {
-      if (_focusNode.hasFocus &&
+      if (_focusNode!.hasFocus &&
           MediaQuery.of(widget.appContext).viewInsets.bottom == 0) {
-        _focusNode.unfocus();
+        _focusNode!.unfocus();
         Future.delayed(
-            const Duration(microseconds: 1), () => _focusNode.requestFocus());
+            const Duration(microseconds: 1), () => _focusNode!.requestFocus());
       } else {
-        _focusNode.requestFocus();
+        _focusNode!.requestFocus();
       }
     } else {
-      _focusNode.requestFocus();
+      _focusNode!.requestFocus();
     }
   }
 
@@ -932,7 +932,7 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
         CupertinoDialogAction(
           child: Text(_dialogConfig.affirmativeText),
           onPressed: () {
-            _textEditingController.text = pastedText;
+            _textEditingController!.text = pastedText;
             Navigator.of(context, rootNavigator: true).pop();
           },
         ),
@@ -948,7 +948,7 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
         TextButton(
           child: Text(_dialogConfig.affirmativeText),
           onPressed: () {
-            _textEditingController.text = pastedText;
+            _textEditingController!.text = pastedText;
             Navigator.of(context, rootNavigator: true).pop();
           },
         ),
