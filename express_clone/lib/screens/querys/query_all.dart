@@ -1,18 +1,19 @@
-import 'package:express_clone/src/screens/home/widgets/rounded_button.dart';
+import 'package:express_clone/screens/home/widgets/rounded_button.dart';
+import 'package:express_clone/screens/querys/query_nib.dart';
 import 'package:express_clone/utils/consts.dart';
 import 'package:express_clone/widgets/app_bar.dart';
+import 'package:express_clone/widgets/atm_card.dart';
 import 'package:flutter/material.dart';
 
-import 'widgets/custom_drawer.dart';
+import 'query_amount.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class QueryAll extends StatelessWidget {
+  const QueryAll({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(),
-      drawer: CustomDrawer(),
       body: SingleChildScrollView(
         child: Container(
           color: backGroundColor,
@@ -30,14 +31,7 @@ class HomePage extends StatelessWidget {
                               fontSize: 30.0)),
                     ),
                     SizedBox(height: 10.0),
-                    Container(
-                      height: 250.0,
-                      width: 360.0,
-                      decoration: BoxDecoration(
-                        color: Colors.blue.shade400,
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                    ),
+                    AtmCard(),
                     SizedBox(height: 5.0),
                     Text(
                       'Adilson Kamati Tchameia',
@@ -48,6 +42,10 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 15),
+                    SizedBox(
+                      width: 350,
+                      child: Divider(thickness: 1),
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Column(
@@ -55,29 +53,29 @@ class HomePage extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => QueryAmount()));
+                                },
+                                child: RoundedButton(
+                                    icon: Icons.document_scanner,
+                                    text: 'SALDOS'),
+                              ),
                               RoundedButton(
-                                  icon: Icons.data_saver_off,
-                                  text: 'PAGAMENTOS'),
-                              RoundedButton(
-                                  icon: Icons.compare_arrows_rounded,
-                                  text: 'TRANSFÊRENCIAS'),
-                              RoundedButton(
-                                  icon: Icons.payments,
-                                  text: 'LEVANTAMENTO SEM CARTÃO'),
+                                  icon: Icons.history, text: 'MOVIMENTOS'),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => QueryNib()));
+                                },
+                                child: RoundedButton(
+                                  icon: Icons.image_search_rounded,
+                                  text: 'IBAN',
+                                ),
+                              ),
                             ],
                           ),
-                          SizedBox(height: 20.0),
-                          Row(
-                            children: [
-                              RoundedButton(
-                                  icon: Icons.search_rounded,
-                                  text: 'CONSULTAS'),
-                              SizedBox(width: 25.0),
-                              RoundedButton(
-                                  icon: Icons.timelapse,
-                                  text: 'COMPRAS EM \n CURSO'),
-                            ],
-                          )
                         ],
                       ),
                     ),

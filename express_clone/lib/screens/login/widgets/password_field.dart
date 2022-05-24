@@ -1,6 +1,6 @@
-import 'package:express_clone/src/screens/login/widgets/custom_fields/animation.dart';
-import 'package:express_clone/src/screens/login/widgets/custom_fields/pin_code_fields.dart';
-import 'package:express_clone/src/screens/login/widgets/custom_fields/pin_theme.dart';
+import 'package:express_clone/screens/login/widgets/custom_fields/animation.dart';
+import 'package:express_clone/screens/login/widgets/custom_fields/pin_code_fields.dart';
+import 'package:express_clone/screens/login/widgets/custom_fields/pin_theme.dart';
 import 'package:express_clone/utils/consts.dart';
 import 'package:flutter/material.dart';
 

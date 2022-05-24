@@ -1,4 +1,5 @@
-import 'package:express_clone/src/screens/home/widgets/custom_drawer.dart';
+
+import 'package:express_clone/screens/home/widgets/custom_drawer.dart';
 import 'package:express_clone/utils/consts.dart';
 import 'package:express_clone/widgets/app_bar.dart';
 import 'package:flutter/material.dart';

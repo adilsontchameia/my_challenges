@@ -3,6 +3,8 @@ import 'package:express_clone/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'widgets/custom_snack.dart';
+
 class QueryNib extends StatelessWidget {
   const QueryNib({Key? key}) : super(key: key);
 
@@ -83,7 +85,8 @@ class QueryNib extends StatelessWidget {
                                   child: IconButton(
                                       onPressed: () {
                                         Clipboard.setData(new ClipboardData(
-                                                text: "Your Copy text"))
+                                                text:
+                                                    'A006.0055.1111.2222.4444.5555.1'))
                                             .then((_) =>
                                                 showCustomSnackBar(context));
                                       },
@@ -114,23 +117,5 @@ class QueryNib extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  void showCustomSnackBar(BuildContext context) {
-    final snackBar = SnackBar(
-      content: Text(
-        'IBAN copiado para o seu clipboard.',
-        textAlign: TextAlign.center,
-        style: TextStyle(
-            color: numPadColor, fontWeight: FontWeight.bold, wordSpacing: 2),
-      ),
-      backgroundColor: Colors.white.withOpacity(0.90),
-      elevation: 0.90,
-      behavior: SnackBarBehavior.floating,
-      //shape: StadiumBorder(),
-      width: 380,
-      duration: Duration(seconds: 2),
-    );
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }

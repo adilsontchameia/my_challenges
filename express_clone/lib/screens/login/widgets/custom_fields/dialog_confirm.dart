@@ -1,4 +1,4 @@
-import 'package:express_clone/src/screens/login/widgets/custom_fields/platform.dart';
+import 'package:express_clone/screens/login/widgets/custom_fields/platform.dart';
 
 class DialogConfig {
   /// title of the [AlertDialog] while pasting the code. Default to [Paste Code]
