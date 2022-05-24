@@ -1,4 +1,4 @@
-import 'package:express_clone/src/pages/login_page.dart';
+import 'package:express_clone/src/screens/login/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

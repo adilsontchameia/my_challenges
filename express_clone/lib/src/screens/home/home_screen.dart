@@ -1,4 +1,7 @@
 import 'package:express_clone/utils/consts.dart';
+import 'package:express_clone/src/screens/home/widgets/custom_list_title.dart';
+import 'package:express_clone/widgets/app_bar.dart';
+import 'package:express_clone/src/screens/home/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -20,7 +23,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     CustomListTile(
                         text: 'Início',
-                        icon: Icons.keyboard_arrow_up_outlined,
+                        icon: Icons.arrow_drop_up,
                         function: () {
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute(builder: (context) => HomePage()),
@@ -30,11 +33,10 @@ class HomePage extends StatelessWidget {
                     CustomListTile(
                         text: 'Gestão de Cartões',
                         icon: Icons.payment,
-                        function: () {
-                          Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(builder: (context) => HomePage()),
-                          );
-                        }),
+                        function: () => Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (context) => HomePage()),
+                            )),
                     SizedBox(height: 5.0),
                     CustomListTile(
                         text: 'Actividades',
@@ -153,91 +155,6 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-
-  //CustomAppBar
-  AppBar customAppBar() {
-    return AppBar(
-      iconTheme: IconThemeData(color: Colors.black),
-      centerTitle: true,
-      backgroundColor: iconAndHeadMainColor,
-      elevation: 0,
-      title: Builder(
-        builder: (BuildContext context) {
-          return Image(
-            width: 300,
-            image: AssetImage('assets/logo2.png'),
-          );
-        },
-      ),
-    );
-  }
-}
-
-class RoundedButton extends StatelessWidget {
-  final IconData icon;
-  final String text;
-  const RoundedButton({
-    Key? key,
-    required this.icon,
-    required this.text,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 115.0,
-      width: 115.0,
-      decoration: BoxDecoration(
-        // color: Colors.blue.shade400,
-        border: Border.all(color: numPadColor.withOpacity(0.60)),
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      child: Column(
-        children: [
-          SizedBox(height: 10.0),
-          Icon(icon, color: splashColor, size: 55.0),
-          SizedBox(height: 15.0),
-          Text(
-            text,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 13.0,
-              fontFamily: 'RobotoSlab',
-              color: numPadColor.withOpacity(0.55),
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class CustomListTile extends StatelessWidget {
-  final String text;
-  final IconData icon;
-  final Function function;
-  const CustomListTile(
-      {Key? key,
-      required this.text,
-      required this.icon,
-      required this.function})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      leading: Icon(icon, color: numPadColor),
-      title: Transform(
-        transform: Matrix4.translationValues(-20, 0.0, 0.0),
-        child: Text(text,
-            style: TextStyle(
-                color: splashColor,
-                fontWeight: FontWeight.bold,
-                fontSize: 15.0)),
-      ),
-      onTap: () => function,
     );
   }
 }

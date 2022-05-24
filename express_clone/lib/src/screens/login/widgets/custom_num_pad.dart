@@ -114,7 +114,7 @@ class CustomDelButton extends StatelessWidget {
           iconSize: 25,
           icon: Image(image: AssetImage('assets/del.png')),
           onPressed: () {
-            controller.text += '';
+            controller.text == null;
           }),
     );
   }

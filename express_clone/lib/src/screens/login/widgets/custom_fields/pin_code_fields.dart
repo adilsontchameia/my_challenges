@@ -1,14 +1,14 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:express_clone/src/screens/login/widgets/custom_fields/animation.dart';
+import 'package:express_clone/src/screens/login/widgets/custom_fields/cursor_painter.dart';
+import 'package:express_clone/src/screens/login/widgets/custom_fields/dialog_confirm.dart';
+import 'package:express_clone/src/screens/login/widgets/custom_fields/gradiented.dart';
+import 'package:express_clone/src/screens/login/widgets/custom_fields/haptic_feedback_type.dart';
+import 'package:express_clone/src/screens/login/widgets/custom_fields/pin_theme.dart';
+import 'package:express_clone/src/screens/login/widgets/custom_fields/platform.dart';
 import 'package:express_clone/utils/consts.dart';
-import 'package:express_clone/widgets/custom_fields/animation.dart';
-import 'package:express_clone/widgets/custom_fields/cursor_painter.dart';
-import 'package:express_clone/widgets/custom_fields/dialog_confirm.dart';
-import 'package:express_clone/widgets/custom_fields/gradiented.dart';
-import 'package:express_clone/widgets/custom_fields/haptic_feedback_type.dart';
-import 'package:express_clone/widgets/custom_fields/pin_theme.dart';
-import 'package:express_clone/widgets/custom_fields/platform.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
