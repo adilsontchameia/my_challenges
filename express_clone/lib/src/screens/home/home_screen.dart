@@ -1,8 +1,9 @@
-import 'package:express_clone/src/screens/home/widgets/custom_list_title.dart';
 import 'package:express_clone/src/screens/home/widgets/rounded_button.dart';
 import 'package:express_clone/utils/consts.dart';
 import 'package:express_clone/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
+
+import 'widgets/custom_drawer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,7 +12,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(),
-      drawer: customDrawer(),
+      drawer: CustomDrawer(),
       body: SingleChildScrollView(
         child: Container(
           color: backGroundColor,
@@ -85,84 +86,6 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class customDrawer extends StatelessWidget {
-  const customDrawer({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Drawer(
-      child: SafeArea(
-        child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 10.0, left: 5.0),
-              child: Column(
-                children: [
-                  CustomListTile(
-                      text: 'Início',
-                      icon: Icons.arrow_drop_up,
-                      function: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => HomePage()),
-                        );
-                      }),
-                  SizedBox(height: 5.0),
-                  CustomListTile(
-                      text: 'Gestão de Cartões',
-                      icon: Icons.payment,
-                      function: () => Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(builder: (context) => HomePage()),
-                          )),
-                  SizedBox(height: 5.0),
-                  CustomListTile(
-                      text: 'Actividades',
-                      icon: Icons.schedule,
-                      function: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => HomePage()),
-                        );
-                      }),
-                  SizedBox(height: 5.0),
-                  CustomListTile(
-                      text: 'Configurações',
-                      icon: Icons.settings,
-                      function: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => HomePage()),
-                        );
-                      }),
-                  SizedBox(height: 5.0),
-                  CustomListTile(
-                      text: 'Apoio ao Cliente',
-                      icon: Icons.gpp_good_sharp,
-                      function: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => HomePage()),
-                        );
-                      }),
-                  SizedBox(height: 5.0),
-                  CustomListTile(
-                      text: 'Sobre o MCX Express',
-                      icon: Icons.gpp_good_sharp,
-                      function: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => HomePage()),
-                        );
-                      }),
-                ],
-              ),
-            ),
-          ],
         ),
       ),
     );

@@ -1,4 +1,4 @@
-import 'package:express_clone/src/screens/home/home_screen.dart';
+import 'package:express_clone/src/screens/home/widgets/custom_drawer.dart';
 import 'package:express_clone/utils/consts.dart';
 import 'package:express_clone/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +10,7 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(),
-      drawer: customDrawer(),
+      drawer: CustomDrawer(),
       body: Container(
         color: backGroundColor,
         child: Column(
