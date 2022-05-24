@@ -301,7 +301,7 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
 
   late AnimationController _cursorController;
 
-  late StreamSubscription<ErrorAnimationType> _errorAnimationSubscription;
+  StreamSubscription<ErrorAnimationType>? _errorAnimationSubscription;
   bool isInErrorMode = false;
 
   // Animation for the error animation
@@ -518,7 +518,7 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
       // }
     }
 
-    _errorAnimationSubscription.cancel();
+    //_errorAnimationSubscription!.cancel();
 
     _cursorController.dispose();
 

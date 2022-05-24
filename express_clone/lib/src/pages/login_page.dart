@@ -1,11 +1,10 @@
-import 'dart:async';
-
+import 'package:express_clone/src/pages/home_screen.dart';
+import 'package:express_clone/src/pages/loading.dart';
 import 'package:express_clone/utils/consts.dart';
 import 'package:express_clone/utils/local_auth.dart';
 import 'package:express_clone/widgets/custom_num_pad.dart';
 import 'package:express_clone/widgets/login_header.dart';
 import 'package:express_clone/widgets/password_field.dart';
-import 'package:express_clone/widgets/progress_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
-    //  checkAuthentication();
+    checkAuthentication();
   }
 
   @override
@@ -76,11 +75,8 @@ class _LoginPageState extends State<LoginPage> {
     final isAuthenticated = await LocalAuthApi.authenticate();
 
     if (isAuthenticated) {
-      Timer(Duration(seconds: 10), () {
-        customProgressIndicator(context);
-      });
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => LoginPage()),
+        MaterialPageRoute(builder: (context) => HomePage()),
       );
     }
   }
