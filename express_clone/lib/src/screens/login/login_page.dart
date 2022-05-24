@@ -1,9 +1,9 @@
 import 'package:express_clone/src/screens/home/home_screen.dart';
+import 'package:express_clone/src/screens/login/widgets/custom_num_pad.dart';
+import 'package:express_clone/src/screens/login/widgets/password_field.dart';
 import 'package:express_clone/utils/consts.dart';
 import 'package:express_clone/utils/finger_print.dart';
-import 'package:express_clone/src/screens/login/widgets/custom_num_pad.dart';
 import 'package:express_clone/widgets/login_app_bar.dart';
-import 'package:express_clone/src/screens/login/widgets/password_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -32,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            LoginHeader(),
+            LoginAppBar(),
             SizedBox(height: 30.0),
             Padding(
                 padding: const EdgeInsets.only(left: 50.0, right: 50.0),

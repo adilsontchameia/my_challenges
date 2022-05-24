@@ -3,9 +3,11 @@ import 'dart:math';
 import 'package:express_clone/utils/consts.dart';
 import 'package:flutter/material.dart';
 
-class LoginHeader extends StatelessWidget {
-  const LoginHeader({
+class LoginAppBar extends StatelessWidget {
+  final double? size;
+  const LoginAppBar({
     Key? key,
+    this.size,
   }) : super(key: key);
 
   @override

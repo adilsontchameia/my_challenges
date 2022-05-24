@@ -7,3 +7,4 @@ const enteredPinCircleColor = Colors.black;
 const numPadColor = Color(0xFF757676);
 const titlePadColor = Color(0xFF919190);
 const iconAndHeadMainColor = Color(0xFFF58300);
+const okTextButtons = Color(0xFFF58300);

@@ -1,4 +1,4 @@
-import 'package:express_clone/src/screens/login/login_page.dart';
+import 'package:express_clone/src/screens/customer_care/customer_care.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
-     
+      home: CustomerCare(),
+
       //home: SplashScreen(),
     );
   }
