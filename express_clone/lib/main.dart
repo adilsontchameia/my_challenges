@@ -1,4 +1,4 @@
-import 'package:express_clone/src/screens/card_managment/card_managment.dart';
+import 'package:express_clone/src/screens/configurations/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CardManagment(),
+      home: SettingsScreen(),
 
       //home: SplashScreen(),
     );
