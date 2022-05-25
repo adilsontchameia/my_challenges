@@ -36,6 +36,10 @@ dependencies:
   #pin_code_fields: ^7.4.0 
   nuts_activity_indicator: ^0.1.0
   font_awesome_flutter: ^10.1.0
+  flutter_svg: ^1.0.1
+  smooth_page_indicator: 
+  loading_indicator: ^3.0.3
+  
   
 dev_dependencies:
   flutter_test:

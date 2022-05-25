@@ -3,6 +3,8 @@ import 'package:express_clone/widgets/progress_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'splash_screen.dart';
+
 class LoadingScreen extends StatefulWidget {
   const LoadingScreen({Key? key}) : super(key: key);
 
@@ -11,12 +13,12 @@ class LoadingScreen extends StatefulWidget {
 }
 
 class _LoadingScreenState extends State<LoadingScreen> {
-  //Read biometric auth on start
+  //Solucao provisoria para tela com progress indicator
   @override
   void initState() {
     super.initState();
-    /*
-    Future.delayed(Duration(seconds: 5), () {
+
+    Future.delayed(Duration(seconds: 10), () {
       // <-- Delay here
       setState(() {
         Navigator.of(context).pushReplacement(
@@ -24,7 +26,6 @@ class _LoadingScreenState extends State<LoadingScreen> {
         ); // <-- Code run after delay
       });
     });
-  */
   }
 
   @override

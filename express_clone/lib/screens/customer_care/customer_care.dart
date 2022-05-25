@@ -1,5 +1,6 @@
 import 'package:express_clone/utils/consts.dart';
 import 'package:express_clone/widgets/login_app_bar.dart';
+import 'package:express_clone/widgets/ok_button.dart';
 import 'package:flutter/material.dart';
 
 class CustomerCare extends StatelessWidget {
@@ -61,28 +62,7 @@ class CustomerCare extends StatelessWidget {
               SizedBox(
                 height: 45,
                 width: 350,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                    primary: iconAndHeadMainColor,
-                    elevation: 0,
-                  ),
-                  onPressed: () {},
-                  child: Center(
-                    child: Text(
-                      'OK',
-                      style: const TextStyle(
-                        // fontFamily: 'RobotoSlab',
-                        fontWeight: FontWeight.w600,
-                        decoration: TextDecoration.underline,
-                        color: titlePadColor,
-                        fontSize: 30,
-                      ),
-                    ),
-                  ),
-                ),
+                child: OkButton(),
               ),
             ],
           ),
