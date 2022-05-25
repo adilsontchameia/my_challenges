@@ -1,6 +1,6 @@
+import 'package:express_clone/screens/home/home_screen.dart';
 import 'package:express_clone/utils/consts.dart';
 import 'package:flutter/material.dart';
-
 
 class OkButton extends StatelessWidget {
   const OkButton({
@@ -17,7 +17,8 @@ class OkButton extends StatelessWidget {
         primary: iconAndHeadMainColor,
         elevation: 0,
       ),
-      onPressed: () {},
+      onPressed: () => Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => HomePage())),
       child: Center(
         child: Text(
           'OK',
@@ -25,7 +26,7 @@ class OkButton extends StatelessWidget {
             // fontFamily: 'RobotoSlab',
             fontWeight: FontWeight.w600,
             decoration: TextDecoration.underline,
-            color: titlePadColor,
+            color: okButtonTextColor,
             fontSize: 30,
           ),
         ),
