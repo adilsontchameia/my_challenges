@@ -1,5 +1,6 @@
 import 'package:express_clone/utils/consts.dart';
 import 'package:express_clone/widgets/app_bar.dart';
+import 'package:express_clone/widgets/atm_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -29,14 +30,7 @@ class QueryNib extends StatelessWidget {
                               fontSize: 30.0)),
                     ),
                     SizedBox(height: 10.0),
-                    Container(
-                      height: 250.0,
-                      width: 360.0,
-                      decoration: BoxDecoration(
-                        color: Colors.blue.shade400,
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                    ),
+                    AtmCard(),
                     SizedBox(height: 5.0),
                     Text(
                       'Adilson Kamati Tchameia',

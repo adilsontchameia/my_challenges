@@ -1,4 +1,4 @@
-
+import 'package:express_clone/screens/querys/query_all.dart';
 import 'package:express_clone/utils/consts.dart';
 import 'package:express_clone/widgets/app_bar.dart';
 import 'package:express_clone/widgets/atm_card.dart';
@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 30.0),
+                      padding: const EdgeInsets.only(top: 20.0),
                       child: Text('CARTÕES',
                           style: TextStyle(
                               color: splashColor,
@@ -64,9 +64,14 @@ class HomePage extends StatelessWidget {
                           SizedBox(height: 20.0),
                           Row(
                             children: [
-                              RoundedButton(
-                                  icon: Icons.search_rounded,
-                                  text: 'CONSULTAS'),
+                              GestureDetector(
+                                onTap: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) => QueryAll())),
+                                child: RoundedButton(
+                                    icon: Icons.search_rounded,
+                                    text: 'CONSULTAS'),
+                              ),
                               SizedBox(width: 25.0),
                               RoundedButton(
                                   icon: Icons.timelapse,

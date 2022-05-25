@@ -4,13 +4,12 @@ import 'package:flutter/material.dart';
 class CustomListTile extends StatelessWidget {
   final String text;
   final IconData icon;
-  final Function() function;
-  const CustomListTile(
-      {Key? key,
-      required this.text,
-      required this.icon,
-      required this.function})
-      : super(key: key);
+
+  const CustomListTile({
+    Key? key,
+    required this.text,
+    required this.icon,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +23,6 @@ class CustomListTile extends StatelessWidget {
               color: splashColor, fontWeight: FontWeight.bold, fontSize: 15.0),
         ),
       ),
-      onTap: () => function,
     );
   }
 }

@@ -1,3 +1,8 @@
+import 'package:express_clone/screens/about/about_mcx.dart';
+import 'package:express_clone/screens/activities/activities.dart';
+import 'package:express_clone/screens/card_managment/card_managment.dart';
+import 'package:express_clone/screens/configurations/settings.dart';
+import 'package:express_clone/screens/customer_care/customer_care.dart';
 import 'package:flutter/material.dart';
 
 import '../home_screen.dart';
@@ -20,57 +25,59 @@ class CustomDrawer extends StatelessWidget {
               padding: const EdgeInsets.only(top: 10.0, left: 5.0),
               child: Column(
                 children: [
-                  CustomListTile(
+                  GestureDetector(
+                    onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => HomePage())),
+                    child: CustomListTile(
                       text: 'Início',
                       icon: Icons.arrow_drop_up,
-                      function: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => HomePage()),
-                        );
-                      }),
+                    ),
+                  ),
                   SizedBox(height: 5.0),
-                  CustomListTile(
+                  GestureDetector(
+                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => CardManagment())),
+                    child: CustomListTile(
                       text: 'Gestão de Cartões',
                       icon: Icons.payment,
-                      function: () => Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(builder: (context) => HomePage()),
-                          )),
+                    ),
+                  ),
                   SizedBox(height: 5.0),
-                  CustomListTile(
+                  GestureDetector(
+                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => HistoryScreen())),
+                    child: CustomListTile(
                       text: 'Actividades',
                       icon: Icons.schedule,
-                      function: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => HomePage()),
-                        );
-                      }),
+                    ),
+                  ),
                   SizedBox(height: 5.0),
-                  CustomListTile(
+                  GestureDetector(
+                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => SettingsScreen())),
+                    child: CustomListTile(
                       text: 'Configurações',
                       icon: Icons.settings,
-                      function: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => HomePage()),
-                        );
-                      }),
+                    ),
+                  ),
                   SizedBox(height: 5.0),
-                  CustomListTile(
+                  GestureDetector(
+                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => CustomerCare())),
+                    child: CustomListTile(
                       text: 'Apoio ao Cliente',
                       icon: Icons.gpp_good_sharp,
-                      function: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => HomePage()),
-                        );
-                      }),
+                    ),
+                  ),
                   SizedBox(height: 5.0),
-                  CustomListTile(
+                  GestureDetector(
+                    onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => AboutMcx())),
+                    child: CustomListTile(
                       text: 'Sobre o MCX Express',
                       icon: Icons.gpp_good_sharp,
-                      function: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => HomePage()),
-                        );
-                      }),
+                    ),
+                  ),
                 ],
               ),
             ),
