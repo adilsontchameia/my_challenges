@@ -11,7 +11,7 @@
 
 |[UCC APP](atm)|[Multicaixa Express Clone](https://user-images.githubusercontent.com/64656900/173613518-6ecd67b5-bd9c-425d-95ab-9e6d60073c8d.gif)
 |:-:|:-:|
-|![atm](atm/screen_shots/home.png)|![beats_ui](beats_ui/screen_shot/beats.gif)
+|![atm]([atm/screen_shots/home.png](https://user-images.githubusercontent.com/64656900/173613518-6ecd67b5-bd9c-425d-95ab-9e6d60073c8d.gif))|![beats_ui]([beats_ui/screen_shot/beats.gif](https://user-images.githubusercontent.com/64656900/173613518-6ecd67b5-bd9c-425d-95ab-9e6d60073c8d.gif))
 
 
 |[Novo3](bfa_turismo_clone)|[Novo4](auth_ui)|
