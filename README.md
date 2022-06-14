@@ -7,8 +7,9 @@
 
 
 
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/64656900/173613518-6ecd67b5-bd9c-425d-95ab-9e6d60073c8d.gif)
 
-|[UCC APP](atm)|[Multicaixa Express Clone](https://user-images.githubusercontent.com/64656900/173611901-f6b66765-8a81-4284-aa78-e1ec26303830.mp4)
+|[UCC APP](atm)|[Multicaixa Express Clone](https://user-images.githubusercontent.com/64656900/173613518-6ecd67b5-bd9c-425d-95ab-9e6d60073c8d.gif)
 |:-:|:-:|
 |![atm](atm/screen_shots/home.png)|![beats_ui](beats_ui/screen_shot/beats.gif)
 
