@@ -105,7 +105,16 @@ class _HomePageState extends State<HomePage> {
                       ListTileSliding(
                           context: context,
                           icon: Icons.info,
-                          title: 'Developed by: Adilson Tchameia'),
+                          title: 'Developer: Adilson Tchameia'),
+                      ListTileSliding(
+                          context: context,
+                          icon: Icons.landscape,
+                          title: 'Designed by: Adilson Tchameia'),
+                      ListTileSliding(
+                          context: context,
+                          icon: Icons.email,
+                          title:
+                              'Email: adilsonkchameia@gmail.com \nOr adilsonkchameia@outlook.com'),
                       ListTileSliding(
                         context: context,
                         icon: Icons.security_update,
