@@ -1,3 +1,4 @@
+import 'package:express_clone/screens/purchases/purchases.dart';
 import 'package:express_clone/screens/querys/query_all.dart';
 import 'package:express_clone/utils/consts.dart';
 import 'package:express_clone/widgets/app_bar.dart';
@@ -73,9 +74,15 @@ class HomePage extends StatelessWidget {
                                     text: 'CONSULTAS'),
                               ),
                               SizedBox(width: 25.0),
-                              RoundedButton(
-                                  icon: Icons.timelapse,
-                                  text: 'COMPRAS EM \n CURSO'),
+                              GestureDetector(
+                                onTap: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            PurchaseScreen())),
+                                child: RoundedButton(
+                                    icon: Icons.timelapse,
+                                    text: 'COMPRAS EM \n CURSO'),
+                              ),
                             ],
                           )
                         ],

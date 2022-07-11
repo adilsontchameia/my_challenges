@@ -34,6 +34,10 @@ class _PinCodeFieldState extends State<PinCodeField> {
         fieldHeight: 50,
         fieldWidth: 40,
       ),
+      validator: (value) {
+        return value!.isEmpty ? 'please provide a valid value' : null;
+      },
+      
       animationDuration: const Duration(milliseconds: 300),
       controller: widget.controller,
       onCompleted: (v) {

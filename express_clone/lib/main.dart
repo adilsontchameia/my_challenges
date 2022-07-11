@@ -1,8 +1,7 @@
+import 'package:express_clone/screens/splash/splash_screen.dart';
 import 'package:express_clone/utils/consts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'screens/home/home_screen.dart';
 
 void main() {
   // To Disable the LandsCapeMode
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: SplashScreen(),
       theme: ThemeData(
         checkboxTheme: CheckboxThemeData(
           fillColor: MaterialStateColor.resolveWith(
