@@ -1,14 +1,12 @@
 import 'package:compass_app/presentation/theme/theme.dart';
 import 'package:compass_app/presentation/widgets/sliding_panel/sliding_up_panel.dart';
 import 'package:compass_app/provider/theme_provider.dart';
-import 'package:compass_app/services/local_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await LocalStorage?.configurePrefs();
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     systemNavigationBarColor: Colors.grey[200],
     systemNavigationBarIconBrightness: Brightness.dark,
@@ -35,21 +33,19 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    final darkMode = LocalStorage.prefs.getInt("darkTheme");
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => ThemeChanger(darkMode ?? 1),
+          create: (_) => ThemeModel(),
         ),
       ],
-      child: Builder(builder: (context) {
-        var appTheme = context.watch<ThemeChanger>().currentTheme;
+      child: Consumer<ThemeModel>(builder: (_, themeModel, __) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           home: const HomePage(),
-          theme: lightTheme,
-          darkTheme: darkModeTheme,
-          themeMode: ThemeMode.system,
+          theme: themeModel.isDark ? darkModeTheme : lightTheme,
+          //darkTheme: darkModeTheme,
+          //themeMode: ThemeMode.system,
           // initialRoute: '/home',
           /*
           onGenerateRoute: (settings) {

@@ -44,69 +44,79 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _panel(ScrollController sc) {
-    return Consumer<ThemeChanger>(builder: (_, appTheme, __) {
-      return MediaQuery.removePadding(
-          context: context,
-          removeTop: true,
-          child: ListView(
-            controller: sc,
-            children: <Widget>[
-              const SizedBox(
-                height: 20.0,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    width: 30,
-                    height: 5,
-                    decoration: BoxDecoration(
-                        color: Theme.of(context).iconTheme.color,
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(12.0))),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const <Widget>[
-                  Text(
-                    'Information',
-                    style: TextStyle(
-                        fontWeight: FontWeight.normal, fontSize: 18.0),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 10.0,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 15.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    ListTileSliding(
-                        context: context,
-                        icon: Icons.mode_night,
-                        title: 'Light Mode'),
-                    ListTileSliding(
-                        context: context,
-                        icon: Icons.info,
-                        title: 'Developed by: Adilson Tchameia'),
-                    ListTileSliding(
-                      context: context,
-                      icon: Icons.security_update,
-                      title: 'Version: 1.0',
-                    )
-                  ],
+    return MediaQuery.removePadding(
+        context: context,
+        removeTop: true,
+        child: ListView(
+          controller: sc,
+          children: <Widget>[
+            const SizedBox(
+              height: 20.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  width: 30,
+                  height: 5,
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).iconTheme.color,
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(12.0))),
                 ),
-              ),
-            ],
-          ));
-    });
+              ],
+            ),
+            const SizedBox(
+              height: 20.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const <Widget>[
+                Text(
+                  'Information',
+                  style:
+                      TextStyle(fontWeight: FontWeight.normal, fontSize: 18.0),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 15.0,
+            ),
+            Consumer<ThemeModel>(
+              builder: (_, themeModel, __) {
+                return Padding(
+                  padding: const EdgeInsets.only(left: 15.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      InkWell(
+                        onTap: () {
+                          themeModel.isDark
+                              ? themeModel.isDark = false
+                              : themeModel.isDark = true;
+                        },
+                        child: ListTileSliding(
+                            context: context,
+                            icon: Icons.mode_night,
+                            title:
+                                themeModel.isDark ? 'Light Mode' : 'Dark Mode'),
+                      ),
+                      ListTileSliding(
+                          context: context,
+                          icon: Icons.info,
+                          title: 'Developed by: Adilson Tchameia'),
+                      ListTileSliding(
+                        context: context,
+                        icon: Icons.security_update,
+                        title: 'Version: 1.0',
+                      )
+                    ],
+                  ),
+                );
+              },
+            ),
+          ],
+        ));
   }
 }
