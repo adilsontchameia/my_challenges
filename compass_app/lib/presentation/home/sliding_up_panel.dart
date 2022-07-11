@@ -1,5 +1,4 @@
 import 'package:compass_app/presentation/home/home_screen.dart';
-import 'package:compass_app/presentation/theme/theme.dart';
 import 'package:compass_app/provider/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -34,9 +33,7 @@ class _HomePageState extends State<HomePage> {
         alignment: Alignment.topCenter,
         children: <Widget>[
           SlidingUpPanel(
-            color: appTheme.darkTheme
-                ? YourCompassColors.dark
-                : YourCompassColors.grey,
+            color: Theme.of(context).scaffoldBackgroundColor,
             maxHeight: _panelHeightOpen,
             minHeight: _panelHeightClosed,
             parallaxEnabled: true,
@@ -75,9 +72,7 @@ class _HomePageState extends State<HomePage> {
                     width: 30,
                     height: 5,
                     decoration: BoxDecoration(
-                        color: appTheme.darkTheme
-                            ? YourCompassColors.grey
-                            : YourCompassColors.dark,
+                        color: Theme.of(context).iconTheme.color,
                         borderRadius:
                             const BorderRadius.all(Radius.circular(12.0))),
                   ),
@@ -111,18 +106,17 @@ class _HomePageState extends State<HomePage> {
                         value: true,
                         title: const Text('Dark Mode'),
                         onChanged: (val) {}),
-                    const ListTile(
+                    ListTile(
                       leading: Icon(
                         Icons.info,
+                        color: Theme.of(context).iconTheme.color,
                       ),
-                      title: Text('Developed by: Adilson Tchameia'),
+                      title: const Text('Developed by: Adilson Tchameia'),
                     ),
                     ListTile(
                       leading: Icon(
                         Icons.security_update,
-                        color: appTheme.darkTheme
-                            ? YourCompassColors.grey
-                            : YourCompassColors.dark,
+                        color: Theme.of(context).iconTheme.color,
                       ),
                       title: const Text('Version: 1.0'),
                     ),
