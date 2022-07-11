@@ -1,8 +1,9 @@
 import 'dart:math';
 
+import 'package:compass_app/provider/fetch_location_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_compass/flutter_compass.dart';
-import 'package:location/location.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -11,10 +12,8 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-//first: let's set the compass for the app
+//First: let's set the compass for the app
 double? _heading = 0;
-LocationData? _currentPosition;
-Location location = Location();
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
@@ -25,7 +24,6 @@ class _HomeScreenState extends State<HomeScreen> {
         _heading = event.heading;
       });
     });
-    fetchLocation();
   }
 
   @override
@@ -60,50 +58,30 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
                 const SizedBox(height: 12.0),
-                Column(
-                  children: [
-                    if (_currentPosition != null)
-                      Text(
-                        "Latitude: ${_currentPosition!.latitude}",
-                        style: const TextStyle(
-                            fontSize: 22, fontWeight: FontWeight.w600),
-                      ),
-                    if (_currentPosition != null)
-                      Text(
-                        "Longitude: ${_currentPosition!.longitude}",
-                        style: const TextStyle(
-                            fontSize: 22, fontWeight: FontWeight.w600),
-                      ),
-                  ],
-                ),
+                Consumer<FetchLocationProvider>(
+                    builder: (_, fetchLocation, __) {
+                  return Column(
+                    children: [
+                      if (fetchLocation.fetchLocation() != null)
+                        Text(
+                          "Latitude: ${fetchLocation.currentPosition!.latitude}",
+                          style: const TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.w600),
+                        ),
+                      if (fetchLocation.fetchLocation() != null)
+                        Text(
+                          "Longitude: ${fetchLocation.currentPosition!.longitude}",
+                          style: const TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.w600),
+                        ),
+                    ],
+                  );
+                })
               ],
             ),
           )
         ],
       ),
     );
-  }
-
-  fetchLocation() async {
-    bool _serviceEnabled;
-    PermissionStatus _permissionGranted;
-
-    _serviceEnabled = await location.serviceEnabled();
-    if (!_serviceEnabled) {
-      _serviceEnabled = await location.requestService();
-      if (!_serviceEnabled) {
-        return;
-      }
-    }
-
-    _permissionGranted = await location.hasPermission();
-    if (_permissionGranted == PermissionStatus.denied) {
-      _permissionGranted = await location.requestPermission();
-      if (_permissionGranted != PermissionStatus.granted) {
-        return;
-      }
-    }
-    _currentPosition = await location.getLocation();
-    location.onLocationChanged.listen((LocationData currentLocation) {});
   }
 }

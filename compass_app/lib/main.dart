@@ -1,5 +1,6 @@
 import 'package:compass_app/presentation/theme/theme.dart';
 import 'package:compass_app/presentation/widgets/sliding_panel/sliding_up_panel.dart';
+import 'package:compass_app/provider/fetch_location_provider.dart';
 import 'package:compass_app/provider/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -38,6 +39,7 @@ class _MyAppState extends State<MyApp> {
         ChangeNotifierProvider(
           create: (_) => ThemeModel(),
         ),
+        ChangeNotifierProvider(create: (_) => FetchLocationProvider()),
       ],
       child: Consumer<ThemeModel>(builder: (_, themeModel, __) {
         return MaterialApp(
