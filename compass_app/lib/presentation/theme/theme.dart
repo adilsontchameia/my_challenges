@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' show Color, ThemeData;
+import 'package:flutter/material.dart' show Color, IconThemeData, ThemeData;
 import 'package:google_fonts/google_fonts.dart';
 
 class YourCompassColors {
@@ -11,13 +11,15 @@ class YourCompassColors {
 
 final lightTheme = ThemeData(
     scaffoldBackgroundColor: YourCompassColors.background,
+    iconTheme: const IconThemeData(color: YourCompassColors.dark),
     textTheme: GoogleFonts.poppinsTextTheme().apply(
       bodyColor: YourCompassColors.dark,
       displayColor: YourCompassColors.dark,
     ));
 
-final darkTheme = ThemeData(
+final darkModeTheme = ThemeData(
     scaffoldBackgroundColor: YourCompassColors.grey,
+    iconTheme: const IconThemeData(color: YourCompassColors.white),
     textTheme: GoogleFonts.poppinsTextTheme().apply(
       bodyColor: YourCompassColors.white,
       displayColor: YourCompassColors.white,

@@ -1,5 +1,5 @@
 name: compass_app
-description: A new Flutter project.
+description: Simple Compass App.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -41,24 +41,16 @@ dev_dependencies:
     sdk: flutter
 
   # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
+  # encourage good coding practices. 
   flutter_lints: ^1.0.0
   flutter_compass: ^0.7.0 
-  latlong: ^0.6.1
-  cached_network_image: ^3.2.0
-  flutter_map: ^1.1.1
+  shared_preferences: ^2.0.13 
   location: ^4.2.0
   geocode:
-  http: ^0.13.1 
   geolocator:
   sliding_up_panel: ^2.0.0+1
   google_fonts: any
-  provider:
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
+  provider: ^6.0.3
 
 # The following section is specific to Flutter.
 flutter:
@@ -68,15 +60,9 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
+  # To add assets on your app
   assets:
     - assets/
-
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/assets-and-images/#resolution-aware.
-
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/assets-and-images/#from-packages
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a

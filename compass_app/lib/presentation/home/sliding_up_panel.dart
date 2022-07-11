@@ -1,27 +1,9 @@
 import 'package:compass_app/presentation/home/home_screen.dart';
 import 'package:compass_app/presentation/theme/theme.dart';
+import 'package:compass_app/provider/theme_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-
-class SlidingUpPanelExample extends StatelessWidget {
-  const SlidingUpPanelExample({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      systemNavigationBarColor: Colors.grey[200],
-      systemNavigationBarIconBrightness: Brightness.dark,
-      systemNavigationBarDividerColor: Colors.black,
-    ));
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'SlidingUpPanel Example',
-      theme: darkTheme,
-      home: const HomePage(),
-    );
-  }
-}
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -46,17 +28,20 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     //Panel Height
     _panelHeightOpen = MediaQuery.of(context).size.height * .30;
-
+    final appTheme = context.watch<ThemeChanger>();
     return Material(
       child: Stack(
         alignment: Alignment.topCenter,
         children: <Widget>[
           SlidingUpPanel(
-            color: YourCompassColors.dark,
+            color: appTheme.darkTheme
+                ? YourCompassColors.dark
+                : YourCompassColors.grey,
             maxHeight: _panelHeightOpen,
             minHeight: _panelHeightClosed,
             parallaxEnabled: true,
-            parallaxOffset: .5,
+            parallaxOffset: .2,
+            //Main Screen
             body: const HomeScreen(),
             panelBuilder: (sc) => _panel(sc),
             borderRadius: const BorderRadius.only(
@@ -73,73 +58,79 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _panel(ScrollController sc) {
-    return MediaQuery.removePadding(
-        context: context,
-        removeTop: true,
-        child: ListView(
-          controller: sc,
-          children: <Widget>[
-            const SizedBox(
-              height: 20.0,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                  width: 30,
-                  height: 5,
-                  decoration: const BoxDecoration(
-                      color: YourCompassColors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(12.0))),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20.0,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
-                Text(
-                  'Settings',
-                  style: TextStyle(
-                    fontWeight: FontWeight.normal,
-                    fontSize: 18.0,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 10.0,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 15.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return Consumer<ThemeChanger>(builder: (_, appTheme, __) {
+      return MediaQuery.removePadding(
+          context: context,
+          removeTop: true,
+          child: ListView(
+            controller: sc,
+            children: <Widget>[
+              const SizedBox(
+                height: 20.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  SwitchListTile(
-                      value: true,
-                      title: const Text('Dark Mode'),
-                      onChanged: (val) {}),
-                  const ListTile(
-                    leading: Icon(
-                      Icons.info,
-                      color: YourCompassColors.white,
-                    ),
-                    title: Text('Developed by: Adilson Tchameia'),
-                  ),
-                  const ListTile(
-                    leading: Icon(
-                      Icons.security_update,
-                      color: YourCompassColors.white,
-                    ),
-                    title: Text('Version: 1.0'),
+                  Container(
+                    width: 30,
+                    height: 5,
+                    decoration: BoxDecoration(
+                        color: appTheme.darkTheme
+                            ? YourCompassColors.grey
+                            : YourCompassColors.dark,
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(12.0))),
                   ),
                 ],
               ),
-            ),
-          ],
-        ));
+              const SizedBox(
+                height: 20.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const <Widget>[
+                  Text(
+                    'Settings',
+                    style: TextStyle(
+                      fontWeight: FontWeight.normal,
+                      fontSize: 18.0,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 15.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    SwitchListTile(
+                        value: true,
+                        title: const Text('Dark Mode'),
+                        onChanged: (val) {}),
+                    const ListTile(
+                      leading: Icon(
+                        Icons.info,
+                      ),
+                      title: Text('Developed by: Adilson Tchameia'),
+                    ),
+                    ListTile(
+                      leading: Icon(
+                        Icons.security_update,
+                        color: appTheme.darkTheme
+                            ? YourCompassColors.grey
+                            : YourCompassColors.dark,
+                      ),
+                      title: const Text('Version: 1.0'),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ));
+    });
   }
 }
