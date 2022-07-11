@@ -1,4 +1,6 @@
-import 'package:compass_app/home_screen.dart';
+import 'package:compass_app/presentation/home/home_screen.dart';
+import 'package:compass_app/presentation/home/sliding_up_panel.dart';
+import 'package:compass_app/presentation/theme/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,10 +17,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: '/home',
+      theme: lightTheme,
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case '/home':
-            return MaterialPageRoute(builder: (_) => const HomeScreen());
+            return MaterialPageRoute(builder: (_) => SlidingUpPanelExample());
         }
 
         return MaterialPageRoute(builder: (_) => const HomeScreen());
