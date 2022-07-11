@@ -14,7 +14,6 @@ class HomeScreen extends StatefulWidget {
 //first: let's set the compass for the app
 double? _heading = 0;
 LocationData? _currentPosition;
-String? _address;
 Location location = Location();
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -46,13 +45,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontSize: 28.0,
                       fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(),
+                const SizedBox(height: 12.0),
                 Stack(
                   alignment: Alignment.center,
                   children: [
                     Transform.rotate(
                       angle: (_heading ?? 0) * (pi / 180) * -1,
-                      child: Image.asset('assets/cadrant.png'),
+                      child: Image.asset('assets/cadrant.png', scale: 1.1),
                     ),
                     Transform.rotate(
                       angle: (_heading ?? 0) * (pi / 180) * -1,
@@ -60,6 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
+                const SizedBox(height: 12.0),
                 Column(
                   children: [
                     if (_currentPosition != null)
@@ -73,13 +73,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         "Longitude: ${_currentPosition!.longitude}",
                         style: const TextStyle(
                             fontSize: 22, fontWeight: FontWeight.w600),
-                      ),
-                    if (_address != null)
-                      Text(
-                        "Address: $_address",
-                        style: const TextStyle(
-                          fontSize: 16,
-                        ),
                       ),
                   ],
                 ),

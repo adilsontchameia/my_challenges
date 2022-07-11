@@ -1,5 +1,5 @@
-import 'package:compass_app/presentation/home/sliding_up_panel.dart';
 import 'package:compass_app/presentation/theme/theme.dart';
+import 'package:compass_app/presentation/widgets/sliding_panel/sliding_up_panel.dart';
 import 'package:compass_app/provider/theme_provider.dart';
 import 'package:compass_app/services/local_storage.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +46,6 @@ class _MyAppState extends State<MyApp> {
         var appTheme = context.watch<ThemeChanger>().currentTheme;
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-
           home: const HomePage(),
           theme: lightTheme,
           darkTheme: darkModeTheme,

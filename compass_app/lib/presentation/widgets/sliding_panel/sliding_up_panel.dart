@@ -1,4 +1,5 @@
 import 'package:compass_app/presentation/home/home_screen.dart';
+import 'package:compass_app/presentation/widgets/sliding_panel/list_tile_sliding.dart';
 import 'package:compass_app/provider/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -12,22 +13,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final double _initFabHeight = 120.0;
-  double _fabHeight = 0;
   double _panelHeightOpen = 0;
   final double _panelHeightClosed = 95.0;
-
-  @override
-  void initState() {
-    super.initState();
-    _fabHeight = _initFabHeight;
-  }
 
   @override
   Widget build(BuildContext context) {
     //Panel Height
     _panelHeightOpen = MediaQuery.of(context).size.height * .30;
-    final appTheme = context.watch<ThemeChanger>();
+
     return Material(
       child: Stack(
         alignment: Alignment.topCenter,
@@ -44,10 +37,6 @@ class _HomePageState extends State<HomePage> {
             borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(18.0),
                 topRight: Radius.circular(18.0)),
-            onPanelSlide: (double pos) => setState(() {
-              _fabHeight = pos * (_panelHeightOpen - _panelHeightClosed) +
-                  _initFabHeight;
-            }),
           ),
         ],
       ),
@@ -85,11 +74,9 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const <Widget>[
                   Text(
-                    'Settings',
+                    'Information',
                     style: TextStyle(
-                      fontWeight: FontWeight.normal,
-                      fontSize: 18.0,
-                    ),
+                        fontWeight: FontWeight.normal, fontSize: 18.0),
                   ),
                 ],
               ),
@@ -102,24 +89,19 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    SwitchListTile(
-                        value: true,
-                        title: const Text('Dark Mode'),
-                        onChanged: (val) {}),
-                    ListTile(
-                      leading: Icon(
-                        Icons.info,
-                        color: Theme.of(context).iconTheme.color,
-                      ),
-                      title: const Text('Developed by: Adilson Tchameia'),
-                    ),
-                    ListTile(
-                      leading: Icon(
-                        Icons.security_update,
-                        color: Theme.of(context).iconTheme.color,
-                      ),
-                      title: const Text('Version: 1.0'),
-                    ),
+                    ListTileSliding(
+                        context: context,
+                        icon: Icons.mode_night,
+                        title: 'Light Mode'),
+                    ListTileSliding(
+                        context: context,
+                        icon: Icons.info,
+                        title: 'Developed by: Adilson Tchameia'),
+                    ListTileSliding(
+                      context: context,
+                      icon: Icons.security_update,
+                      title: 'Version: 1.0',
+                    )
                   ],
                 ),
               ),
