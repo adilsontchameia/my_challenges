@@ -10,13 +10,24 @@ class OnboardScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Image.asset('assets/onboard-image.jpg'),
-          const Padding(
-            padding: EdgeInsets.only(top: 75.0, left: 35.0),
+          Container(
+              decoration: const BoxDecoration(
+                boxShadow: [],
+              ),
+              child: Image.asset('assets/onboard-image.jpg')),
+          Padding(
+            padding: const EdgeInsets.only(top: 75.0, left: 35.0),
             child: Text(
               'Explore\nA Banda\nCom a Gente.',
               style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.blue.shade800,
+                  shadows: const [
+                    Shadow(
+                      offset: Offset(0, -5),
+                      blurRadius: 10.0,
+                      color: Colors.black38,
+                    ),
+                  ],
                   fontWeight: FontWeight.bold,
                   fontSize: 60.0),
             ),
@@ -49,39 +60,46 @@ class OnboardScreen extends StatelessWidget {
                     )
                   ]),
               //TODO: media query to take all width space
-              child: Column(
-                children: [
-                  Center(
-                    child: SizedBox(
-                      height: 95.0,
-                      width: 360.0,
-                      child: SlideAction(
-                        elevation: 0.0,
-                        text: 'Deslize para iniciar',
-                        sliderRotate: false,
-                        innerColor: Colors.blue.shade100,
-                        outerColor: Colors.white,
-                        sliderButtonIcon: Icon(
-                          Icons.adaptive.arrow_forward,
-                          color: Colors.black,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Center(
+                      child: SizedBox(
+                        height: 95.0,
+                        width: 360.0,
+                        child: SlideAction(
+                          sliderButtonIconPadding: 15.0,
+                          sliderButtonIconSize: 25.0,
+                          elevation: 0.0,
+                          text: 'Deslize para iniciar',
+                          sliderRotate: false,
+                          innerColor: Colors.transparent,
+                          outerColor: Colors.white,
+                          textStyle: const TextStyle(color: Colors.blue),
+                          sliderButtonIcon: Icon(
+                            Icons.adaptive.arrow_forward,
+                            color: Colors.blue,
+                          ),
+                          borderRadius: 10.0,
+                          animationDuration: const Duration(seconds: 1),
+                          onSubmit: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const HomeScreen()));
+                          },
                         ),
-                        borderRadius: 10.0,
-                        animationDuration: const Duration(seconds: 2),
-                        onSubmit: () {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const HomeScreen()));
-                        },
                       ),
                     ),
-                  ),
-                  const SizedBox(height: 5.0),
-                  const Text(
-                    'Privacy Police',
-                    style: TextStyle(fontWeight: FontWeight.w200),
-                  )
-                ],
+                    const SizedBox(height: 5.0),
+                    Text(
+                      'Privacy Police',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w200,
+                          color: Colors.grey.shade500),
+                    )
+                  ],
+                ),
               ),
             ),
           ),
