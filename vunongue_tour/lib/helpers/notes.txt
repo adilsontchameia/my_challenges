@@ -12,3 +12,9 @@ background color dark
 textColor 
 
 134 151 178
+
+pink
+235 100 115
+
+pink2
+188 139 172
