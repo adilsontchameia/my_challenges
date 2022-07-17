@@ -5,3 +5,10 @@ shadow 189 189 189
 background color
 242 244 245
 
+background color dark
+
+33 40 54
+
+textColor 
+
+134 151 178
