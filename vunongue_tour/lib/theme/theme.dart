@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 //Const for Colors
 class VunongueColors {
-  static const purple = Color.fromARGB(255, 166, 0, 255);
+  static const blue = Colors.blue;
   static const green = Color.fromARGB(255, 0, 255, 47);
   static const dark = Color.fromARGB(255, 0, 0, 0);
   static const grey = Color.fromARGB(255, 126, 126, 126);
@@ -52,8 +52,8 @@ final lightModeTheme = ThemeData(
   ),
   bottomAppBarColor: VunongueColors.veryLightGrey,
   textTheme: GoogleFonts.poppinsTextTheme().apply(
-    bodyColor: VunongueColors.purple,
-    displayColor: VunongueColors.purple,
+    bodyColor: VunongueColors.blue,
+    displayColor: VunongueColors.blue,
   ),
   inputDecorationTheme: InputDecorationTheme(
     border: _borderLight,
@@ -61,22 +61,22 @@ final lightModeTheme = ThemeData(
     enabledBorder: _borderLight,
     focusedBorder: _borderLight,
     labelStyle: const TextStyle(
-      color: VunongueColors.purple,
+      color: VunongueColors.blue,
     ),
     hintStyle: GoogleFonts.poppins(
       color: VunongueColors.lightGrey,
       fontSize: 10.0,
     ),
   ),
-  iconTheme: const IconThemeData(color: VunongueColors.purple),
+  iconTheme: const IconThemeData(color: VunongueColors.blue),
   colorScheme: ColorScheme.fromSwatch()
-      .copyWith(secondary: VunongueColors.purple)
-      .copyWith(secondary: VunongueColors.purple),
+      .copyWith(secondary: VunongueColors.blue)
+      .copyWith(secondary: VunongueColors.blue),
 );
 
 final darkModeTheme = ThemeData(
   appBarTheme: AppBarTheme(
-    color: VunongueColors.purple,
+    color: VunongueColors.blue,
     //  toolbarTextStyle: GoogleFonts.poppins().copyWith(),
     titleTextStyle: GoogleFonts.poppins().copyWith(
       fontSize: 20.0,
