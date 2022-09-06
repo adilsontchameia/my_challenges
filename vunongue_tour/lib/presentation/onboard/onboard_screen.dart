@@ -45,7 +45,7 @@ class OnboardScreen extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 130.0,
+              height: 150.0,
               width: 450.0,
               decoration: const BoxDecoration(
                   color: Colors.white,

@@ -14,12 +14,13 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.grey.shade50,
       body: SafeArea(
         child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
           child: Padding(
-            padding: const EdgeInsets.all(15.0),
+            padding: const EdgeInsets.all(10.0),
             child: Column(
               children: [
                 const CustomAppBar(),
-                const SizedBox(height: 50.0),
+                const SizedBox(height: 35.0),
                 Wrap(
                   spacing: 15.0,
                   runSpacing: 10.0,
@@ -52,16 +53,22 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 20.0),
                 const Padding(
-                  padding: EdgeInsets.only(left: 15.0, bottom: 5.0),
+                  padding: EdgeInsets.symmetric(horizontal: 10.0),
                   child: Align(
                       alignment: Alignment.topLeft,
                       child: Text('Explore',
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 20.0))),
                 ),
+                Column(
+                  children: const [
+                    PlaceCardMulti(),
+                    SizedBox(width: 5.0),
+                  ],
+                ),
                 const PlaceCardMulti(),
                 const Padding(
-                  padding: EdgeInsets.only(left: 15.0, bottom: 5.0),
+                  padding: EdgeInsets.symmetric(horizontal: 10.0),
                   child: Align(
                     alignment: Alignment.topLeft,
                     child: Text(
@@ -71,9 +78,18 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SingleChildScrollView(
+                const SizedBox(height: 5.0),
+                SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
-                  child: SimplePlaceCard(),
+                  child: Column(
+                    children: const [
+                      SimplePlaceCard(),
+                      SizedBox(height: 20.0),
+                      SimplePlaceCard(),
+                      SizedBox(height: 20.0),
+                      SimplePlaceCard(),
+                    ],
+                  ),
                 ),
               ],
             ),

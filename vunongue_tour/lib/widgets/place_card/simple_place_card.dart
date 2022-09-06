@@ -10,14 +10,14 @@ class SimplePlaceCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(6.0),
       height: 92.0,
-      width: 320.0,
+      width: 380.0,
       decoration: const BoxDecoration(
         boxShadow: [
           BoxShadow(
             color: Colors.black12,
             offset: Offset(0, 0),
-            blurRadius: 3.0,
-            spreadRadius: 5.0,
+            blurRadius: 2.0,
+            spreadRadius: 4.0,
           )
         ],
         color: Colors.white,
@@ -40,19 +40,27 @@ class SimplePlaceCard extends StatelessWidget {
                         height: 80.0,
                         image: AssetImage('assets/image-1.jpg')))),
             const SizedBox(width: 10.0),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                SizedBox(height: 5.0),
-                Text('Museu Nacional',
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  SizedBox(height: 5.0),
+                  Text('Museu Nacional Cuito',
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 16.0)),
+                  SizedBox(height: 2.0),
+                  Text(
+                    '🛰️ Museu Historico',
                     overflow: TextOverflow.ellipsis,
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0)),
-                SizedBox(height: 2.0),
-                Text('🛰️ Museu Historico'),
-                SizedBox(height: 2.0),
-                Text('⭐ 4.0 (Classificacao)'),
-              ],
+                  ),
+                  SizedBox(height: 2.0),
+                  Text(
+                    '⭐ 4.0 (Classificacao)',
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
             ),
           ],
         ),
