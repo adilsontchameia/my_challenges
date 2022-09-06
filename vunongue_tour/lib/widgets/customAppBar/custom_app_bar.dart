@@ -15,12 +15,20 @@ class CustomAppBar extends StatelessWidget {
             icon: const Icon(
               Icons.menu,
             )),
-        const Text(
-          'Localizacao \nCuito Cuanavale',
-          textAlign: TextAlign.center,
+        Column(
+          children: const [
+            Text('Localizacao',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontWeight: FontWeight.bold)),
+            Text(
+              'Cuito Cuanavale',
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
         const CircleAvatar(
           radius: 22.0,
+          backgroundImage: AssetImage('assets/onboard-image.jpg'),
           backgroundColor: Colors.red,
         ),
       ],
