@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:slide_to_act/slide_to_act.dart';
-import 'package:vunongue_tour/widgets/customAppBar/custom_app_bar.dart';
+import 'package:vunongue_tour/presentation/home/home_screen.dart';
 
 class OnboardScreen extends StatelessWidget {
   const OnboardScreen({Key? key}) : super(key: key);
@@ -88,7 +88,7 @@ class OnboardScreen extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          const CustomAppBar()));
+                                          const HomeScreen()));
                             },
                           ),
                         ),
