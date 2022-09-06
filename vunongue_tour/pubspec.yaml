@@ -37,6 +37,8 @@ dependencies:
   google_fonts: ^3.0.1
   slide_to_act: any
   collapsible_sidebar: ^2.0.1+2
+  flutter_custom_carousel_slider: ^1.2.0
+  carousel_slider: ^4.1.1
 
 dev_dependencies:
   flutter_test:

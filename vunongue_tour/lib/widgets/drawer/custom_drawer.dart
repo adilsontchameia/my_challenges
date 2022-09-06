@@ -11,21 +11,19 @@ class CustomDrawer extends StatelessWidget {
           children: [
             Container(
                 height: 300,
-                color: Colors.red,
+                color: Colors.white,
                 child: AspectRatio(
                     aspectRatio: 1.5,
-                    child: Image.asset(
-                      'assets/onboard-image.jpg',
-                      fit: BoxFit.fitWidth,
-                    ))),
+                    child: Image.asset('assets/onboard-image.jpg',
+                        fit: BoxFit.fitWidth))),
             const SizedBox(height: 10.0),
             DrawerTile(icon: Icons.home, text: 'Inicio'),
             const SizedBox(height: 15.0),
             DrawerTile(icon: Icons.favorite, text: 'Favoritos'),
             const SizedBox(height: 15.0),
-            DrawerTile(icon: Icons.local_activity, text: 'Atividades'),
+            DrawerTile(icon: Icons.place, text: 'Categorias'),
             const SizedBox(height: 50.0),
-            DrawerTile(icon: Icons.home, text: 'Inicio'),
+            DrawerTile(icon: Icons.water_sharp, text: 'Dark Mode'),
             const SizedBox(height: 15.0),
             DrawerTile(icon: Icons.person, text: 'Log-In'),
             const SizedBox(height: 120.0),
@@ -57,7 +55,8 @@ class DrawerTile extends StatelessWidget {
         ),
         Text(
           text,
-          style: const TextStyle(fontSize: 16, color: Colors.grey),
+          style: const TextStyle(
+              fontSize: 16, color: Colors.grey, fontWeight: FontWeight.bold),
         )
       ],
     );
