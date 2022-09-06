@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:vunongue_tour/widgets/drawer/custom_drawer.dart';
 
 import '../../widgets/categories_button/categories_button.dart';
-import '../../widgets/customAppBar/custom_app_bar.dart';
 import '../../widgets/place_card/simple_place_card.dart';
 import '../../widgets/place_card_multi_images/place_card.dart';
 
@@ -11,6 +11,35 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Column(
+          children: const [
+            Text(
+              'Localizacao',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0),
+            ),
+            Text(
+              'Cuito Cuanavale',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0),
+            ),
+          ],
+        ),
+        actions: [
+          InkWell(
+            onTap: () {
+              print('Tapped');
+            },
+            child: const Padding(
+              padding: EdgeInsets.all(6.0),
+              child: CircleAvatar(
+                radius: 25.0,
+                backgroundImage: AssetImage('assets/onboard-image.jpg'),
+              ),
+            ),
+          )
+        ],
+      ),
+      drawer: const CustomDrawer(),
       backgroundColor: Colors.grey.shade50,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -19,8 +48,7 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.all(10.0),
             child: Column(
               children: [
-                const CustomAppBar(),
-                const SizedBox(height: 35.0),
+                const SizedBox(height: 15.0),
                 Wrap(
                   spacing: 15.0,
                   runSpacing: 10.0,

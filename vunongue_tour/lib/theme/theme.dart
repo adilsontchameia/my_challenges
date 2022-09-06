@@ -42,11 +42,16 @@ final _borderDark = OutlineInputBorder(
 final lightModeTheme = ThemeData(
   canvasColor: VunongueColors.white,
   appBarTheme: AppBarTheme(
-    color: VunongueColors.white,
+    elevation: 0.0,
+    color: Colors.grey.shade50,
+
+    iconTheme: IconThemeData(color: Colors.blue.shade400),
+
+    // centerTitle: true,
     //  toolbarTextStyle: GoogleFonts.poppins().copyWith(),
     titleTextStyle: GoogleFonts.poppins().copyWith(
       fontSize: 20.0,
-      color: VunongueColors.white,
+      color: VunongueColors.blue,
       fontWeight: FontWeight.bold,
     ),
   ),
