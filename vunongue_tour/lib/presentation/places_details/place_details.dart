@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:readmore/readmore.dart';
+
 class PlacesDetailsScreen extends StatelessWidget {
   const PlacesDetailsScreen({Key? key}) : super(key: key);
 
@@ -54,7 +55,16 @@ class PlacesDetailsScreen extends StatelessWidget {
                           style: TextStyle(
                               fontSize: 20.0, fontWeight: FontWeight.bold),
                         ),
-                        
+                        const ReadMoreText(
+                          'Flutter is Google’s mobile UI open source framework to build high-quality native (super fast) interfaces for iOS and Android apps with the unified codebase.',
+                          trimLines: 2,
+                          colorClickableText: Colors.pink,
+                          trimMode: TrimMode.Line,
+                          trimCollapsedText: 'Show more',
+                          trimExpandedText: 'Show less',
+                          moreStyle: TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.bold),
+                        )
                       ],
                     ),
                   ),
