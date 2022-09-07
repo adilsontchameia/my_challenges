@@ -12,55 +12,101 @@ class PlacesDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Stack(children: [
-      const Image(
-          height: double.infinity,
-          fit: BoxFit.fill,
-          image: AssetImage('assets/onboard-image.jpg')),
-      Align(
-        alignment: Alignment.bottomCenter,
-        child: Container(
-            height: 280.0,
-            width: double.infinity,
-            decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(50.0),
-                    topRight: Radius.circular(50.0))),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: ListTile(
-                      visualDensity:
-                          VisualDensity(horizontal: -4.0, vertical: -4.0),
-                      dense: true,
-                      title: MainTitleReadMore(),
-                      leading: FaIcon(FontAwesomeIcons.locationPin,
-                          color: Colors.blue),
+      body: Stack(
+        children: [
+          const Image(
+              height: double.infinity,
+              fit: BoxFit.fill,
+              image: AssetImage('assets/onboard-image.jpg')),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              height: 280.0,
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(50.0),
+                      topRight: Radius.circular(50.0))),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: ListTile(
+                        visualDensity:
+                            VisualDensity(horizontal: -4.0, vertical: -4.0),
+                        dense: true,
+                        title: MainTitleReadMore(),
+                        leading: FaIcon(FontAwesomeIcons.locationPin,
+                            color: Colors.blue),
+                      ),
                     ),
-                  ),
-                  CustomListTile(
-                      faIcon: FontAwesomeIcons.mapLocation,
-                      text: 'Cuando Cubango - Cuito Cuanavale'),
-                  CustomListTile(
-                      faIcon: FontAwesomeIcons.image,
-                      text: 'Imagem: CSK Studio'),
-                  CustomListTile(
-                      faIcon: FontAwesomeIcons.book,
-                      text: 'Contacto: +244 922 222 222 | +244 933 333 333'),
-                  Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: CustomReadMore(
-                        text:
-                            'Flutter is Google’s mobile UI open source framework to build high-quality native (super fast) interfaces for iOS and Android apps with the unified codebase. A interfaces for iOS and Android apps with the unified codebase. interfaces for iOS and Android apps with the unified codebase.',
-                      )),
-                  const SeeOnMap(),
-                ],
+                    CustomListTile(
+                        faIcon: FontAwesomeIcons.mapLocation,
+                        text: 'Cuando Cubango - Cuito Cuanavale'),
+                    CustomListTile(
+                        faIcon: FontAwesomeIcons.image,
+                        text: 'Imagem: CSK Studio'),
+                    CustomListTile(
+                        faIcon: FontAwesomeIcons.book,
+                        text: 'Contacto: +244 922 222 222 | +244 933 333 333'),
+                    Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: CustomReadMore(
+                          text:
+                              'Flutter is Google’s mobile UI open source framework to build high-quality native (super fast) interfaces for iOS and Android apps with the unified codebase. A interfaces for iOS and Android apps with the unified codebase. interfaces for iOS and Android apps with the unified codebase.',
+                        )),
+                    const SeeOnMap(),
+                  ],
+                ),
               ),
-            )),
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              BackAndFavButtons(
+                  icon: FontAwesomeIcons.arrowLeft,
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  }),
+              BackAndFavButtons(
+                  icon: FontAwesomeIcons.heartCirclePlus,
+                  onTap: () {
+                    print('Favoritos');
+                  })
+            ],
+          )
+        ],
       ),
-    ]));
+    );
+  }
+}
+
+class BackAndFavButtons extends StatelessWidget {
+  BackAndFavButtons({Key? key, required this.icon, required this.onTap})
+      : super(key: key);
+  VoidCallback onTap;
+  IconData icon;
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: InkWell(
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Container(
+            height: 40.0,
+            width: 40.0,
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(20.0)),
+              color: Colors.white,
+            ),
+            child: Center(child: FaIcon(icon)),
+          ),
+        ),
+      ),
+    );
   }
 }
