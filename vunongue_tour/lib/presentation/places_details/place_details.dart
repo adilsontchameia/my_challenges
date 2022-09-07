@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:readmore/readmore.dart';
+
+import 'widgets/custom_list_tile.dart';
+import 'widgets/custom_read_more.dart';
+import 'widgets/main_title_read_more.dart';
+import 'widgets/see_on_map.dart';
 
 class PlacesDetailsScreen extends StatelessWidget {
   const PlacesDetailsScreen({Key? key}) : super(key: key);
@@ -26,98 +30,33 @@ class PlacesDetailsScreen extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: ListTile(
+                      visualDensity:
+                          VisualDensity(horizontal: -4.0, vertical: -4.0),
                       dense: true,
-                      title: Text(
-                        'Miradouro da Leba',
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.grey.shade700,
-                        ),
-                      ),
-                      leading: const FaIcon(FontAwesomeIcons.locationPin),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ListTile(
-                      dense: true,
-                      title: Text('Cuando Cubango - Cuito Cuanavale',
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                              fontSize: 13.0,
-                              color: Colors.grey.shade500,
-                              fontWeight: FontWeight.bold)),
-                      leading: const FaIcon(FontAwesomeIcons.mapLocation),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ListTile(
-                      dense: true,
-                      title: Text('Cuando Cubango - Cuito Cuanavale',
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                              fontSize: 13.0,
-                              color: Colors.grey.shade500,
-                              fontWeight: FontWeight.bold)),
-                      leading: const FaIcon(FontAwesomeIcons.map),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: ReadMoreText(
-                      'Flutter is Google’s mobile UI open source framework to build high-quality native (super fast) interfaces for iOS and Android apps with the unified codebase. A interfaces for iOS and Android apps with the unified codebase. interfaces for iOS and Android apps with the unified codebase.',
-                      trimLines: 2,
-                      colorClickableText: Colors.pink,
-                      trimMode: TrimMode.Length,
-                      trimCollapsedText: 'Show More',
-                      trimExpandedText: '\nShow Less',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey.shade500,
-                      ),
-                      moreStyle: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue),
-                      lessStyle: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
+                      title: MainTitleReadMore(),
+                      leading: FaIcon(FontAwesomeIcons.locationPin,
                           color: Colors.blue),
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: Material(
-                      child: Container(
-                        height: 50.0,
-                        width: 200.0,
-                        decoration: BoxDecoration(
-                            color: Colors.grey.shade500,
-                            borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(30.0))),
-                        child: const ListTile(
-                          dense: true,
-                          title: Text('Ver No Mapa',
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                  fontSize: 15.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold)),
-                          leading: FaIcon(
-                            FontAwesomeIcons.mapPin,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  CustomListTile(
+                      faIcon: FontAwesomeIcons.mapLocation,
+                      text: 'Cuando Cubango - Cuito Cuanavale'),
+                  CustomListTile(
+                      faIcon: FontAwesomeIcons.image,
+                      text: 'Imagem: CSK Studio'),
+                  CustomListTile(
+                      faIcon: FontAwesomeIcons.book,
+                      text: 'Contacto: +244 922 222 222 | +244 933 333 333'),
+                  Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: CustomReadMore(
+                        text:
+                            'Flutter is Google’s mobile UI open source framework to build high-quality native (super fast) interfaces for iOS and Android apps with the unified codebase. A interfaces for iOS and Android apps with the unified codebase. interfaces for iOS and Android apps with the unified codebase.',
+                      )),
+                  const SeeOnMap(),
                 ],
               ),
             )),
