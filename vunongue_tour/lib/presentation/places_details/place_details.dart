@@ -15,10 +15,18 @@ class PlacesDetailsScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          const Image(
+          PageView(children: const [
+            Image(
               height: double.infinity,
               fit: BoxFit.fill,
-              image: AssetImage('assets/onboard-image.jpg')),
+              image: AssetImage('assets/cuito-1.jpg'),
+            ),
+            Image(
+              height: double.infinity,
+              fit: BoxFit.fill,
+              image: AssetImage('assets/cuito-2.jpg'),
+            ),
+          ]),
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(

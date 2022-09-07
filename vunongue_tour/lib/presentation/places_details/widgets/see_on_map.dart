@@ -20,6 +20,7 @@ class SeeOnMap extends StatelessWidget {
                   const BorderRadius.only(topLeft: Radius.circular(30.0))),
           child: const ListTile(
             dense: true,
+            visualDensity: VisualDensity(horizontal: -4, vertical: 0),
             title: Text('Ver No Mapa',
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(

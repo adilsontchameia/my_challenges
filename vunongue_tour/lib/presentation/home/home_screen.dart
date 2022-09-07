@@ -86,7 +86,7 @@ class HomeScreen extends StatelessWidget {
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 20.0))),
                 ),
-                Column(
+                Column( 
                   children: const [
                     PlaceCardMulti(),
                     SizedBox(width: 5.0),

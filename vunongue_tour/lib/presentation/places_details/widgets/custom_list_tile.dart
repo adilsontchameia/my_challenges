@@ -11,7 +11,7 @@ class CustomListTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: ListTile(
-        //  contentPadding: EdgeInsets.zero,
+       
         visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
         dense: true,
         title: Text(text,
