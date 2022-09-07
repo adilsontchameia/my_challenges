@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:vunongue_tour/presentation/home/widgets/readMore/custom_read_more_home.dart';
 
 import '../../widgets/categories_button/categories_button.dart';
 import 'widgets/customAppBar/custom_app_bar.dart';
@@ -72,15 +74,9 @@ class HomeScreen extends StatelessWidget {
               CustomCarouselSlider(image: image),
               const SizedBox(height: 10.0),
               HomeScreenTags(text: 'Explore Mais'),
-              SingleChildScrollView(
-                child: Column(
-                  children: const [
-                    PlaceCardMulti(),
-                    SizedBox(width: 5.0),
-                    PlaceCardMulti(),
-                  ],
-                ),
-              ),
+              const PlaceCardMulti(),
+              const SizedBox(width: 5.0),
+              const PlaceCardMulti(),
               HomeScreenTags(text: 'Explore Mais'),
               const SizedBox(height: 5.0),
               Column(
@@ -136,48 +132,42 @@ class CustomCarouselSlider extends StatelessWidget {
                         color: const Color.fromARGB(124, 0, 0, 0),
                         borderRadius: BorderRadius.circular(20.0),
                       ),
-                      child: Column(
-                        children: [
-                          const Padding(
-                            padding: EdgeInsets.only(
-                                top: 50.0, left: 20.0, right: 20.0),
-                            child: Text(
-                              'CSK Studio Camping',
-                              textAlign: TextAlign.center,
-                              overflow: TextOverflow.clip,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18.0,
-                                  fontWeight: FontWeight.w700),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            const Padding(
+                              padding: EdgeInsets.only(
+                                  top: 50.0, left: 20.0, right: 20.0),
+                              child: Text(
+                                'CSK Studio Camping',
+                                textAlign: TextAlign.center,
+                                overflow: TextOverflow.clip,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w700),
+                              ),
                             ),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.only(top: 20.0),
-                            child: Text(
-                              'Venha conhecer os lugares mais fixes da banda com essa nossa jornada aos redores de Menongue.',
-                              textAlign: TextAlign.center,
-                              textHeightBehavior: TextHeightBehavior(),
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 13.0,
-                                  fontWeight: FontWeight.bold),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 20.0),
+                              child: CustomReadMoreHome(
+                                  text:
+                                      'Venha conhecer os lugares mais fixes da banda com essa nossa jornada aos redores de Menongue.'),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 3.0),
-                            child: Text(
-                              'Local: Missombo',
-                              textAlign: TextAlign.center,
-                              textHeightBehavior: const TextHeightBehavior(),
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                  color: Colors.white.withOpacity(0.7),
-                                  fontSize: 13.0,
-                                  fontWeight: FontWeight.bold),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 3.0),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: const [
+                                  FaIcon(FontAwesomeIcons.mapLocation),
+                                  SizedBox(width: 20.0),
+                                  Text('Missombo')
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ],
