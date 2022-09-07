@@ -42,18 +42,19 @@ class OnboardScreen extends StatelessWidget {
             width: double.infinity,
             color: Colors.black.withOpacity(0.2),
           ),
-          Padding(
-            padding: const EdgeInsets.all(50.0),
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: GetStartedButton(
-                onTap: () {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                      builder: (BuildContext context) => HomeScreen(),
-                    ),
-                  );
-                },
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (BuildContext context) => HomeScreen(),
+                ),
+              );
+            },
+            child: const Padding(
+              padding: EdgeInsets.all(50.0),
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: GetStartedButton(),
               ),
             ),
           ),
@@ -111,8 +112,9 @@ class LogoContainer extends StatelessWidget {
 }
 
 class GetStartedButton extends StatelessWidget {
-  GetStartedButton({Key? key, required this.onTap}) : super(key: key);
-  VoidCallback onTap;
+  const GetStartedButton({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -121,14 +123,10 @@ class GetStartedButton extends StatelessWidget {
         width: 200.0,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30.0), color: Colors.blue),
-        child: Center(
-          child: GestureDetector(
-            onTap: onTap,
-            child: const Text(
-              'Iniciar',
-              style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-            ),
+        child: const Center(
+          child: Text(
+            'Iniciar',
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ));
   }

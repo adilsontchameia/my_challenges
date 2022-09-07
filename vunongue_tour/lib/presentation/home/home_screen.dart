@@ -20,11 +20,8 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(60),
-        child: Padding(
-          padding: EdgeInsets.only(top: 30, left: 10.0, right: 10.0),
-          child: CustomAppBar(),
-        ),
+        preferredSize: Size.fromHeight(50.0),
+        child: CustomAppBar(),
       ),
       drawer: const CustomDrawer(),
       backgroundColor: Colors.grey.shade50,
