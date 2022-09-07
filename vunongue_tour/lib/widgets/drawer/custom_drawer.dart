@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:vunongue_tour/widgets/drawer/custom_header.dart';
+
+import 'custom_list_tile.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({Key? key}) : super(key: key);
@@ -9,23 +12,17 @@ class CustomDrawer extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-                height: 300,
-                color: Colors.white,
-                child: AspectRatio(
-                    aspectRatio: 1.5,
-                    child: Image.asset('assets/onboard-image.jpg',
-                        fit: BoxFit.fitWidth))),
+            const CustomDrawerHeader(),
             const SizedBox(height: 10.0),
-            DrawerTile(icon: Icons.home, text: 'Inicio'),
+            CustomDrawerListTile(icon: Icons.home, text: 'Inicio'),
             const SizedBox(height: 15.0),
-            DrawerTile(icon: Icons.favorite, text: 'Favoritos'),
+            CustomDrawerListTile(icon: Icons.favorite, text: 'Favoritos'),
             const SizedBox(height: 15.0),
-            DrawerTile(icon: Icons.place, text: 'Categorias'),
+            CustomDrawerListTile(icon: Icons.place, text: 'Categorias'),
             const SizedBox(height: 50.0),
-            DrawerTile(icon: Icons.water_sharp, text: 'Dark Mode'),
+            CustomDrawerListTile(icon: Icons.water_sharp, text: 'Dark Mode'),
             const SizedBox(height: 15.0),
-            DrawerTile(icon: Icons.person, text: 'Log-In'),
+            CustomDrawerListTile(icon: Icons.person, text: 'Log-In'),
             const SizedBox(height: 120.0),
             const Text(
               'developed by: Adilson Tchameia',
@@ -36,29 +33,6 @@ class CustomDrawer extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class DrawerTile extends StatelessWidget {
-  DrawerTile({Key? key, required this.icon, required this.text})
-      : super(key: key);
-  IconData icon;
-  String text;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32),
-          child: Icon(icon, size: 32, color: Colors.grey),
-        ),
-        Text(
-          text,
-          style: const TextStyle(
-              fontSize: 16, color: Colors.grey, fontWeight: FontWeight.bold),
-        )
-      ],
     );
   }
 }

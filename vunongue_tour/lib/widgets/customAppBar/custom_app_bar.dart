@@ -22,6 +22,7 @@ class CustomAppBar extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold)),
             Text(
               'Cuito Cuanavale',
+              style: TextStyle(wordSpacing: 2, letterSpacing: 1.5),
               textAlign: TextAlign.center,
             ),
           ],

@@ -1,18 +1,28 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:vunongue_tour/widgets/drawer/custom_drawer.dart';
 
 import '../../widgets/categories_button/categories_button.dart';
+import '../../widgets/customAppBar/custom_app_bar.dart';
 import '../../widgets/place_card/simple_place_card.dart';
 import '../../widgets/place_card_multi_images/place_card.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
+  HomeScreen({Key? key}) : super(key: key);
+  List<String> image = [
+    'assets/image-1.jpg',
+    'assets/onboard-image.jpg',
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(50), child: CustomAppBar()),
+        preferredSize: Size.fromHeight(68),
+        child: Padding(
+          padding: EdgeInsets.only(top: 30, left: 10.0, right: 10.0),
+          child: CustomAppBar(),
+        ),
+      ),
       drawer: const CustomDrawer(),
       backgroundColor: Colors.grey.shade50,
       body: SafeArea(
@@ -56,12 +66,23 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 20.0),
+                const SizedBox(height: 10.0),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10.0),
                   child: Align(
                       alignment: Alignment.topLeft,
-                      child: Text('Explore',
+                      child: Text('Eventos',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20.0))),
+                ),
+                const SizedBox(height: 10.0),
+                CustomCarouselSlider(image: image),
+                const SizedBox(height: 10.0),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.0),
+                  child: Align(
+                      alignment: Alignment.topLeft,
+                      child: Text('Explore Mais',
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 20.0))),
                 ),
@@ -77,7 +98,7 @@ class HomeScreen extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      'More Places',
+                      'Mais Lugares',
                       style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 20.0),
                     ),
@@ -105,40 +126,77 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({
+class CustomCarouselSlider extends StatelessWidget {
+  const CustomCarouselSlider({
     Key? key,
+    required this.image,
   }) : super(key: key);
+
+  final List<String> image;
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      title: Column(
-        children: const [
-          Text(
-            'Localizacao',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0),
-          ),
-          Text(
-            'Cuito Cuanavale',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0),
-          ),
-        ],
-      ),
-      actions: [
-        InkWell(
-          onTap: () {
-            print('Tapped');
+    return CarouselSlider(
+      options: CarouselOptions(
+          autoPlay: true,
+          height: 150.0,
+          autoPlayInterval: const Duration(seconds: 10)),
+      items: image.map((images) {
+        return Builder(
+          builder: (BuildContext context) {
+            return Container(
+                width: MediaQuery.of(context).size.width,
+                margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20.0),
+                      child: Image.asset(
+                        images,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(124, 0, 0, 0),
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      child: Column(
+                        children: const [
+                          Padding(
+                            padding: EdgeInsets.only(
+                                top: 50.0, left: 20.0, right: 20.0),
+                            child: Text(
+                              'Beleza Natural',
+                              textAlign: TextAlign.center,
+                              overflow: TextOverflow.clip,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top: 20.0),
+                            child: Text(
+                              'Exemplo de como exmplo pode ser util uma app com com intuito',
+                              textAlign: TextAlign.center,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 13.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ));
           },
-          child: const Padding(
-            padding: EdgeInsets.all(6.0),
-            child: CircleAvatar(
-              radius: 25.0,
-              backgroundImage: AssetImage('assets/onboard-image.jpg'),
-            ),
-          ),
-        )
-      ],
+        );
+      }).toList(),
     );
   }
 }
