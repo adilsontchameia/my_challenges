@@ -15,12 +15,12 @@ class CustomBottomViewer extends StatelessWidget {
       child: Container(
         height: 150.0,
         width: 450.0,
-        decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
+        decoration: BoxDecoration(
+            color: Colors.blue.shade100,
+            borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(40.0),
                 topRight: Radius.circular(40.0)),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 color: Colors.black,
                 offset: Offset(0, -2),
@@ -41,7 +41,7 @@ class CustomBottomViewer extends StatelessWidget {
                     text: 'Deslize para iniciar',
                     sliderRotate: false,
                     innerColor: Colors.transparent,
-                    outerColor: Colors.white,
+                    outerColor: Colors.blue.shade100,
                     textStyle: const TextStyle(color: Colors.blue),
                     sliderButtonIcon: Icon(
                       Icons.adaptive.arrow_forward,
@@ -63,7 +63,7 @@ class CustomBottomViewer extends StatelessWidget {
                 'Privacy Police',
                 style: TextStyle(
                     fontWeight: FontWeight.w200,
-                    color: Colors.grey.shade500),
+                    color: Colors.grey.withOpacity(0.5)),
               )
             ],
           ),

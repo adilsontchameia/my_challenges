@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:vunongue_tour/presentation/home/home_screen.dart';
 
-import 'widgets/bottom_viewer.dart';
+import 'widgets/custom_onboard_read_more.dart';
 
 class OnboardScreen extends StatelessWidget {
   const OnboardScreen({Key? key}) : super(key: key);
@@ -8,11 +9,31 @@ class OnboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Stack(
-          children: [
-            Expanded(child: Image.asset('assets/onboard-image.jpg')),
-            Column(children: [
+      body: Stack(
+        children: [
+          const Image(
+            height: double.infinity,
+            fit: BoxFit.fill,
+            image: AssetImage('assets/cuito-1.jpg'),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                height: 80.0,
+                width: 80.0,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30.0),
+                    color: Colors.blue),
+                child: TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'LOGO',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    )),
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(
                     horizontal: 15.0, vertical: 50.0),
@@ -33,21 +54,40 @@ class OnboardScreen extends StatelessWidget {
                 ),
               ),
               // const SizedBox(height: 50.0),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15.0),
-                child: Text(
-                  'Nós ajudamos-te a viajar no conforte da sua casa, viaje com nossa APP \ne desfrute o melhor que a BANDA tem a oferecer.',
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w300,
-                      fontSize: 15.0),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                child: CustomOnboardReadMore(
+                    text:
+                        'Nós ajudamos-te a viajar no conforte da sua casa, viaje com nossa APP \ne desfrute o melhor que a BANDA tem a oferecer.'),
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  height: 50.0,
+                  width: 200.0,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30.0),
+                      color: Colors.blue),
+                  child: TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: ((context) => HomeScreen())));
+                      },
+                      child: const Text(
+                        'Iniciar',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      )),
                 ),
               ),
-            ]),
-            const CustomBottomViewer(),
-          ],
-        ),
+            ],
+          ),
+          Container(
+            height: double.infinity,
+            width: double.infinity,
+            color: Colors.black.withOpacity(0.2),
+          ),
+        ],
       ),
     );
   }
