@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SimplePlaceCard extends StatelessWidget {
   const SimplePlaceCard({
@@ -40,28 +41,50 @@ class SimplePlaceCard extends StatelessWidget {
           const SizedBox(width: 10.0),
           Expanded(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                SizedBox(height: 5.0),
-                Text('Museu Nacional Cuito',
-                    overflow: TextOverflow.ellipsis,
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0)),
-                SizedBox(height: 2.0),
-                Text(
-                  '🛰️ Museu Historico',
-                  overflow: TextOverflow.ellipsis,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Center(
+                  child: Text('Paisagem Exemplo',
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 16.0)),
                 ),
-                SizedBox(height: 2.0),
-                Text(
-                  '⭐ 4.0 (Classificacao)',
-                  overflow: TextOverflow.ellipsis,
+                ListTile(
+                    text: 'Miradouro Da Leba',
+                    icon: FontAwesomeIcons.mapLocation),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListTile(
+                      text: 'Classificacao: ', icon: FontAwesomeIcons.star),
                 ),
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class ListTile extends StatelessWidget {
+  ListTile({
+    Key? key,
+    required this.text,
+    required this.icon,
+  }) : super(key: key);
+  String text;
+  IconData icon;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        FaIcon(
+          icon,
+          size: 18.0,
+        ),
+        Text(text),
+      ],
     );
   }
 }

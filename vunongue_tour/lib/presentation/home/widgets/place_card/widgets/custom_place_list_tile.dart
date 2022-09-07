@@ -1,10 +1,8 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class CustomListTile extends StatelessWidget {
-  CustomListTile({Key? key, required this.faIcon, required this.text})
+class CustomPlaceListTile extends StatelessWidget {
+  CustomPlaceListTile({Key? key, required this.faIcon, required this.text})
       : super(key: key);
   IconData faIcon;
   String text;
@@ -13,7 +11,6 @@ class CustomListTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: ListTile(
-       
         visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
         dense: true,
         title: Text(text,
@@ -22,7 +19,7 @@ class CustomListTile extends StatelessWidget {
                 fontSize: 15.0,
                 color: Colors.grey.shade500,
                 fontWeight: FontWeight.bold)),
-        leading: FaIcon(faIcon, color: Colors.blue),
+        leading: FaIcon(faIcon, color: Colors.blue, size: 18.0),
       ),
     );
   }
