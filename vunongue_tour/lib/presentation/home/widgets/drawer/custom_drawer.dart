@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vunongue_tour/widgets/drawer/custom_header.dart';
 
+import 'custom_header.dart';
 import 'custom_list_tile.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -22,7 +22,8 @@ class CustomDrawer extends StatelessWidget {
             const SizedBox(height: 50.0),
             CustomDrawerListTile(icon: Icons.water_sharp, text: 'Dark Mode'),
             const SizedBox(height: 15.0),
-            CustomDrawerListTile(icon: Icons.person, text: 'Log-In'),
+            CustomDrawerListTile(
+                icon: Icons.fingerprint, text: 'FingerPrint Auth'),
             const SizedBox(height: 120.0),
             const Text(
               'developed by: Adilson Tchameia',

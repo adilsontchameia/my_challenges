@@ -1,11 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:vunongue_tour/widgets/drawer/custom_drawer.dart';
 
 import '../../widgets/categories_button/categories_button.dart';
-import '../../widgets/customAppBar/custom_app_bar.dart';
-import '../../widgets/place_card/simple_place_card.dart';
-import '../../widgets/place_card_multi_images/place_card.dart';
+import 'widgets/customAppBar/custom_app_bar.dart';
+import 'widgets/drawer/custom_drawer.dart';
+import 'widgets/place_card/simple_place_card.dart';
+import 'widgets/place_card_multi_images/place_card.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(68),
+        preferredSize: Size.fromHeight(60),
         child: Padding(
           padding: EdgeInsets.only(top: 30, left: 10.0, right: 10.0),
           child: CustomAppBar(),
@@ -163,12 +163,12 @@ class CustomCarouselSlider extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       child: Column(
-                        children: const [
-                          Padding(
+                        children: [
+                          const Padding(
                             padding: EdgeInsets.only(
                                 top: 50.0, left: 20.0, right: 20.0),
                             child: Text(
-                              'Beleza Natural',
+                              'CSK Studio Camping',
                               textAlign: TextAlign.center,
                               overflow: TextOverflow.clip,
                               style: TextStyle(
@@ -177,14 +177,28 @@ class CustomCarouselSlider extends StatelessWidget {
                                   fontWeight: FontWeight.w700),
                             ),
                           ),
-                          Padding(
+                          const Padding(
                             padding: EdgeInsets.only(top: 20.0),
                             child: Text(
-                              'Exemplo de como exmplo pode ser util uma app com com intuito',
+                              'Venha conhecer os lugares mais fixes da banda com essa nossa jornada aos redores de Menongue.',
                               textAlign: TextAlign.center,
+                              textHeightBehavior: TextHeightBehavior(),
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                   color: Colors.white,
+                                  fontSize: 13.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 3.0),
+                            child: Text(
+                              'Local: Missombo',
+                              textAlign: TextAlign.center,
+                              textHeightBehavior: const TextHeightBehavior(),
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  color: Colors.white.withOpacity(0.7),
                                   fontSize: 13.0,
                                   fontWeight: FontWeight.bold),
                             ),
