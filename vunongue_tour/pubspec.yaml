@@ -39,6 +39,8 @@ dependencies:
   collapsible_sidebar: ^2.0.1+2
   flutter_custom_carousel_slider: ^1.2.0
   carousel_slider: ^4.1.1
+  font_awesome_flutter: ^10.1.0
+  readmore: ^2.2.0
 
 dev_dependencies:
   flutter_test:

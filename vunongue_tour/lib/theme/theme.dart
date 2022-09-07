@@ -44,9 +44,7 @@ final lightModeTheme = ThemeData(
   appBarTheme: AppBarTheme(
     elevation: 0.0,
     color: Colors.grey.shade50,
-
     iconTheme: IconThemeData(color: Colors.blue.shade400),
-
     // centerTitle: true,
     //  toolbarTextStyle: GoogleFonts.poppins().copyWith(),
     titleTextStyle: GoogleFonts.poppins().copyWith(
