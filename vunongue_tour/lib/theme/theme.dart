@@ -116,3 +116,14 @@ final darkModeTheme = ThemeData(
     secondary: VunongueColors.white,
   ),
 );
+
+/*
+darkBackground
+R 35 G 35 B 35
+buttonColor
+147 196 222
+detailButton
+247 247 247
+textColor
+251 254 254
+*/
