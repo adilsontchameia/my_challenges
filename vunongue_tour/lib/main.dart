@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
               theme: themeModel.isDark ? darkModeTheme : lightModeTheme,
-              home:  CreatePlaceScreen(),
+              home: const CreatePlaceScreen(),
             );
           },
         ));

@@ -111,23 +111,4 @@ class LogoContainer extends StatelessWidget {
   }
 }
 
-class GetStartedButton extends StatelessWidget {
-  const GetStartedButton({
-    Key? key,
-  }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        height: 50.0,
-        width: 200.0,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30.0), color: Colors.blue),
-        child: const Center(
-          child: Text(
-            'Iniciar',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-          ),
-        ));
-  }
-}

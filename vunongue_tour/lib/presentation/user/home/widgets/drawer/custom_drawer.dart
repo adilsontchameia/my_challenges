@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../../commoms/copyright_sign.dart';
 import '../../../../../providers/theme_provider.dart';
 import 'custom_drawer_list_tile.dart';
 import 'custom_header.dart';
@@ -74,12 +75,7 @@ class CustomDrawer extends StatelessWidget {
                     text: 'Conta ADM',
                     onTap: () {}),
                 const SizedBox(height: 10.0),
-                const Text(
-                  'creation and concept: Adilson Tchameia',
-                  style: TextStyle(fontSize: 10.0, color: Colors.grey),
-                ),
-                const Text('stocks officially provided by: CSK Studio',
-                    style: TextStyle(fontSize: 10.0, color: Colors.grey)),
+                const CopyrightSign()
               ],
             );
           },
@@ -87,6 +83,5 @@ class CustomDrawer extends StatelessWidget {
       ),
     );
   }
+}
 
-  
-  }
