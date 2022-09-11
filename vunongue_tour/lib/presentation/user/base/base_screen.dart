@@ -19,11 +19,17 @@ class BaseScreen extends StatelessWidget {
         controller: _pageController,
         physics: const NeverScrollableScrollPhysics(),
         children: const [
+          //[0]
           HomeScreen(),
+          //[1]
           FavoritesScreen(),
+          //[2]
           MambosDaBandaScreen(),
+          //[3]
           CreatePlaceScreen(),
+          //[4]
           LoginScreen(),
+          //[5]
           SignUpScreen()
         ],
       ),

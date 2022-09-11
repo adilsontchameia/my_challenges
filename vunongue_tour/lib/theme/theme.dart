@@ -37,6 +37,7 @@ final _borderDark = OutlineInputBorder(
 
 final lightModeTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,
+    canvasColor: Colors.white,
     drawerTheme: const DrawerThemeData(
       backgroundColor: VunongueColors.white,
     ),

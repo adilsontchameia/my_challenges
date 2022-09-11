@@ -6,7 +6,7 @@ import '../../../../../providers/theme_provider.dart';
 
 class HomeScreenTags extends StatelessWidget {
   const HomeScreenTags({Key? key, required this.text}) : super(key: key);
- final String text;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Consumer<ThemeModel>(builder: (_, themeModel, __) {
