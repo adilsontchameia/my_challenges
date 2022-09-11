@@ -1,9 +1,7 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:vunongue_tour/presentation/home/widgets/readMore/custom_read_more_home.dart';
 
-import '../../widgets/categories_button/categories_button.dart';
+import '../../commoms/categories_button/categories_button.dart';
+import 'widgets/carousel_slider.dart';
 import 'widgets/customAppBar/custom_app_bar.dart';
 import 'widgets/drawer/custom_drawer.dart';
 import 'widgets/place_card/simple_place_card.dart';
@@ -11,11 +9,8 @@ import 'widgets/place_card_multi_images/place_card.dart';
 import 'widgets/tags/home_screen_tags.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({Key? key}) : super(key: key);
-  List<String> image = [
-    'assets/image-1.jpg',
-    'assets/onboard-image.jpg',
-  ];
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,7 +66,7 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 10.0),
               HomeScreenTags(text: 'Eventos'),
               const SizedBox(height: 10.0),
-              CustomCarouselSlider(image: image),
+              CustomCarouselSlider(),
               const SizedBox(height: 10.0),
               HomeScreenTags(text: 'Explore Mais'),
               const PlaceCardMulti(),
@@ -92,93 +87,6 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class CustomCarouselSlider extends StatelessWidget {
-  const CustomCarouselSlider({
-    Key? key,
-    required this.image,
-  }) : super(key: key);
-
-  final List<String> image;
-
-  @override
-  Widget build(BuildContext context) {
-    return CarouselSlider(
-      options: CarouselOptions(
-          autoPlay: true,
-          height: 150.0,
-          autoPlayInterval: const Duration(seconds: 10)),
-      items: image.map((images) {
-        return Builder(
-          builder: (BuildContext context) {
-            return Container(
-                width: MediaQuery.of(context).size.width,
-                margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(20.0),
-                      child: Image.asset(
-                        images,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(124, 0, 0, 0),
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            const Padding(
-                              padding: EdgeInsets.only(
-                                  top: 50.0, left: 20.0, right: 20.0),
-                              child: Text(
-                                'CSK Studio Camping',
-                                textAlign: TextAlign.center,
-                                overflow: TextOverflow.clip,
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.w700),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 20.0),
-                              child: CustomReadMoreHome(
-                                  text:
-                                      'Venha conhecer os lugares mais fixes da banda com essa nossa jornada aos redores de Menongue.'),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 3.0),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: const [
-                                  FaIcon(FontAwesomeIcons.mapLocation),
-                                  SizedBox(width: 20.0),
-                                  Text(
-                                    'Missombo',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ));
-          },
-        );
-      }).toList(),
     );
   }
 }

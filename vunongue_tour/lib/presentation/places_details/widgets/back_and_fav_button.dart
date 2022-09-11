@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
+import 'package:vunongue_tour/provider/theme_provider.dart';
 import 'package:vunongue_tour/theme/theme.dart';
 
 class BackAndFavButtons extends StatelessWidget {
@@ -14,15 +16,19 @@ class BackAndFavButtons extends StatelessWidget {
         onTap: onTap,
         child: Padding(
           padding: const EdgeInsets.all(15.0),
-          child: Container(
-            height: 40.0,
-            width: 40.0,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(20.0)),
-              color: VunongueColors.blue,
-            ),
-            child: Center(child: FaIcon(icon)),
-          ),
+          child: Consumer<ThemeModel>(builder: (_, themeModel, __) {
+            return Container(
+              height: 40.0,
+              width: 40.0,
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(20.0)),
+                color: themeModel.isDark
+                    ? VunongueColors.blue
+                    : VunongueColors.white,
+              ),
+              child: Center(child: FaIcon(icon)),
+            );
+          }),
         ),
       ),
     );

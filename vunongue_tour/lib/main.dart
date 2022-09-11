@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:vunongue_tour/presentation/home/home_screen.dart';
+import 'package:vunongue_tour/presentation/places_details/place_details_screen.dart';
 import 'package:vunongue_tour/provider/theme_provider.dart';
 import 'package:vunongue_tour/theme/theme.dart';
 
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
               theme: themeModel.isDark ? darkModeTheme : lightModeTheme,
-              home: HomeScreen(),
+              home: PlacesDetailsScreen(),
             );
           },
         ));

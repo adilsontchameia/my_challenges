@@ -32,44 +32,44 @@ final _borderDark = OutlineInputBorder(
     style: BorderStyle.solid,
   ),
 );
+
 //Theme Modes
+
 final lightModeTheme = ThemeData(
-  canvasColor: VunongueColors.white,
-  appBarTheme: AppBarTheme(
-    elevation: 0.0,
-    color: Colors.grey.shade50,
-    iconTheme: IconThemeData(color: Colors.blue.shade400),
-    // centerTitle: true,
-    //  toolbarTextStyle: GoogleFonts.poppins().copyWith(),
-    titleTextStyle: GoogleFonts.poppins().copyWith(
-      fontSize: 20.0,
-      color: VunongueColors.blue,
-      fontWeight: FontWeight.bold,
+    scaffoldBackgroundColor: Colors.white,
+    drawerTheme: const DrawerThemeData(
+      backgroundColor: VunongueColors.white,
     ),
-  ),
-  bottomAppBarColor: VunongueColors.veryLightGrey,
-  textTheme: GoogleFonts.poppinsTextTheme().apply(
-    bodyColor: VunongueColors.blue,
-    displayColor: VunongueColors.blue,
-  ),
-  inputDecorationTheme: InputDecorationTheme(
-    border: _borderLight,
-    contentPadding: EdgeInsets.zero,
-    enabledBorder: _borderLight,
-    focusedBorder: _borderLight,
-    labelStyle: const TextStyle(
-      color: VunongueColors.blue,
+    appBarTheme: AppBarTheme(
+      elevation: 0.0,
+      color: const Color.fromARGB(255, 239, 239, 239),
+      iconTheme: const IconThemeData(color: VunongueColors.darkColor),
+      toolbarTextStyle: const TextStyle(color: VunongueColors.white),
+      // centerTitle: true,
+      //  toolbarTextStyle: GoogleFonts.poppins().copyWith(),
+      titleTextStyle: GoogleFonts.poppins().copyWith(
+        fontSize: 20.0,
+        color: VunongueColors.darkColor,
+        fontWeight: FontWeight.bold,
+      ),
     ),
-    hintStyle: GoogleFonts.poppins(
-      color: VunongueColors.lightGrey,
-      fontSize: 10.0,
+    inputDecorationTheme: InputDecorationTheme(
+      border: _borderLight,
+      contentPadding: EdgeInsets.zero,
+      enabledBorder: _borderLight,
+      focusedBorder: _borderLight,
+      labelStyle: const TextStyle(
+        color: VunongueColors.darkColor,
+      ),
+      hintStyle: GoogleFonts.poppins(
+        color: Colors.white,
+        fontSize: 10.0,
+      ),
     ),
-  ),
-  iconTheme: const IconThemeData(color: VunongueColors.blue),
-  colorScheme: ColorScheme.fromSwatch()
-      .copyWith(secondary: VunongueColors.blue)
-      .copyWith(secondary: VunongueColors.blue),
-);
+    iconTheme: const IconThemeData(color: VunongueColors.buttonColor),
+    colorScheme: ColorScheme.fromSwatch()
+        .copyWith(secondary: VunongueColors.white)
+        .copyWith(secondary: VunongueColors.buttonColor));
 
 final darkModeTheme = ThemeData(
     scaffoldBackgroundColor: VunongueColors.darkColor,
@@ -87,11 +87,6 @@ final darkModeTheme = ThemeData(
         // color: Colors.white,
         fontWeight: FontWeight.bold,
       ),
-    ),
-    bottomAppBarColor: VunongueColors.darkColor,
-    textTheme: GoogleFonts.poppinsTextTheme().apply(
-      bodyColor: Colors.white,
-      displayColor: Colors.white,
     ),
     inputDecorationTheme: InputDecorationTheme(
       border: _borderLight,
