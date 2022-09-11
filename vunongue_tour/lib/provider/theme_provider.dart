@@ -1,8 +1,9 @@
 
 import 'package:flutter/material.dart';
+import '../theme/theme_preferences.dart';
 
 class ThemeModel extends ChangeNotifier {
-  bool? _isDark;
+  bool? _isDark; //TRUE
   ThemePreferences? _preferences;
   bool get isDark => _isDark!;
 
