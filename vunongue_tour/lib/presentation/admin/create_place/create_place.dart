@@ -50,26 +50,77 @@ class CreatePlaceScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: const [
                       SizedBox(height: 25.0),
-                      Text(
-                        '1.1 Nome do Local',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                          color: VunongueColors.blue,
-                        ),
-                      ),
-                      SizedBox(height: 15.0),
+                      CustomLabelText(text: '1.1 Nome do Local'),
+                      SizedBox(height: 5.0),
                       CustomTextFormField(
                         initialValue: 'Missombo',
                         hintText: 'Insere um nome',
                         validatorText: 'Por favor insira um nome valido.',
                         icon: FontAwesomeIcons.locationPin,
-                      )
+                      ),
+                      SizedBox(height: 5.0),
+                      CustomLabelText(text: '1.2 Municipio'),
+                      SizedBox(height: 5.0),
+                      CustomTextFormField(
+                        initialValue: 'Menongue',
+                        hintText: 'Insere um nome',
+                        validatorText: 'Por favor insira um nome valido.',
+                        icon: FontAwesomeIcons.mapLocation,
+                      ),
+                      SizedBox(height: 5.0),
+                      CustomLabelText(text: '1.3 Imagem'),
+                      SizedBox(height: 5.0),
+                      CustomTextFormField(
+                        initialValue: 'CSK Studio',
+                        hintText: 'Insere um nome',
+                        validatorText: 'Por favor insira um nome valido.',
+                        icon: FontAwesomeIcons.image,
+                      ),
+                      CustomLabelText(text: '1.4 Contacto'),
+                      SizedBox(height: 5.0),
+                      CustomTextFormField(
+                        initialValue: '922 222 222',
+                        hintText: 'Insere um nome',
+                        validatorText: 'Por favor insira um nome valido.',
+                        icon: FontAwesomeIcons.book,
+                      ),
+                      CustomLabelText(text: '1.4 Descricao'),
+                      SizedBox(height: 5.0),
+                      CustomTextFormField(
+                        initialValue:
+                            'Exemplo de uma descricao que pode ser escrita aqui, contudo.',
+                        hintText: 'Insere um nome',
+                        validatorText: 'Por favor insira um nome valido.',
+                        icon: FontAwesomeIcons.textHeight,
+                      ),
+                      SizedBox(height: 10.0),
+                      CustomLabelText(text: '1.5 Categorias'),
+                      SizedBox(height: 10.0),
+                      CustomLabelText(text: '1.5 Evento ou Local ?'),
                     ],
                   )),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class CustomLabelText extends StatelessWidget {
+  const CustomLabelText({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: const TextStyle(
+        fontSize: 18.0,
+        fontWeight: FontWeight.bold,
+        color: VunongueColors.blue,
       ),
     );
   }
