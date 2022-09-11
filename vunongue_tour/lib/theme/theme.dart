@@ -3,9 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 //Const for Colors
 class VunongueColors {
-  static const blue = Colors.blue;
-  static const green = Color.fromARGB(255, 0, 255, 47);
-  static const dark = Color.fromARGB(255, 0, 0, 0);
+  static const blue = Color.fromRGBO(36, 49, 77, 1);
+  static const buttonColor = Color.fromRGBO(147, 196, 222, 1);
+  static const darkColor = Color.fromRGBO(23, 26, 53, 1);
+  static const darkColor2 = Color.fromARGB(255, 0, 32, 51);
   static const grey = Color.fromARGB(255, 126, 126, 126);
   static const lightGrey = Color.fromARGB(255, 176, 186, 185);
   static const veryLightGrey = Color.fromARGB(255, 215, 236, 235);
@@ -13,13 +14,6 @@ class VunongueColors {
   static const pink = Color.fromARGB(255, 255, 0, 179);
 }
 
-/*
-//Color for gradient
-final deliverGradient = [
-  VunongueColors.green,
-  VunongueColors.purple,
-];
-*/
 //Border Modes
 final _borderLight = OutlineInputBorder(
   borderRadius: BorderRadius.circular(10),
@@ -78,52 +72,41 @@ final lightModeTheme = ThemeData(
 );
 
 final darkModeTheme = ThemeData(
-  appBarTheme: AppBarTheme(
-    color: VunongueColors.blue,
-    //  toolbarTextStyle: GoogleFonts.poppins().copyWith(),
-    titleTextStyle: GoogleFonts.poppins().copyWith(
-      fontSize: 20.0,
-      color: VunongueColors.white,
-      fontWeight: FontWeight.bold,
+    scaffoldBackgroundColor: VunongueColors.darkColor,
+    drawerTheme: const DrawerThemeData(
+      backgroundColor: VunongueColors.blue,
     ),
-  ),
-  canvasColor: VunongueColors.grey,
-  bottomAppBarColor: Colors.transparent,
-  scaffoldBackgroundColor: VunongueColors.dark,
-  textTheme: GoogleFonts.poppinsTextTheme().apply(
-    bodyColor: VunongueColors.green,
-    displayColor: VunongueColors.green,
-  ),
-  inputDecorationTheme: InputDecorationTheme(
-    border: _borderLight,
-    contentPadding: EdgeInsets.zero,
-    enabledBorder: _borderDark,
-    focusedBorder: _borderDark,
-    labelStyle: const TextStyle(
-      color: VunongueColors.white,
+    appBarTheme: AppBarTheme(
+      elevation: 0.0,
+      color: VunongueColors.blue,
+      iconTheme: const IconThemeData(color: Colors.white),
+      // centerTitle: true,
+      //  toolbarTextStyle: GoogleFonts.poppins().copyWith(),
+      titleTextStyle: GoogleFonts.poppins().copyWith(
+        fontSize: 20.0,
+        // color: Colors.white,
+        fontWeight: FontWeight.bold,
+      ),
     ),
-    fillColor: VunongueColors.grey,
-    filled: true,
-    hintStyle: GoogleFonts.poppins(
-      color: VunongueColors.white,
-      fontSize: 10.0,
+    bottomAppBarColor: VunongueColors.darkColor,
+    textTheme: GoogleFonts.poppinsTextTheme().apply(
+      bodyColor: Colors.white,
+      displayColor: Colors.white,
     ),
-  ),
-  iconTheme: const IconThemeData(
-    color: VunongueColors.white,
-  ),
-  colorScheme: ColorScheme.fromSwatch().copyWith(
-    secondary: VunongueColors.white,
-  ),
-);
-
-/*
-darkBackground
-R 35 G 35 B 35
-buttonColor
-147 196 222
-detailButton
-247 247 247
-textColor
-251 254 254
-*/
+    inputDecorationTheme: InputDecorationTheme(
+      border: _borderLight,
+      contentPadding: EdgeInsets.zero,
+      enabledBorder: _borderLight,
+      focusedBorder: _borderLight,
+      labelStyle: const TextStyle(
+        color: VunongueColors.buttonColor,
+      ),
+      hintStyle: GoogleFonts.poppins(
+        color: VunongueColors.lightGrey,
+        fontSize: 10.0,
+      ),
+    ),
+    iconTheme: const IconThemeData(color: VunongueColors.buttonColor),
+    colorScheme: ColorScheme.fromSwatch()
+        .copyWith(secondary: VunongueColors.buttonColor)
+        .copyWith(secondary: VunongueColors.buttonColor));

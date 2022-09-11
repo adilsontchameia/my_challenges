@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 
+import '../../../theme/theme.dart';
+
 class CustomReadMore extends StatelessWidget {
   CustomReadMore({Key? key, required this.text}) : super(key: key);
   String text;
@@ -19,9 +21,13 @@ class CustomReadMore extends StatelessWidget {
         color: Colors.grey.shade500,
       ),
       moreStyle: const TextStyle(
-          fontSize: 14, fontWeight: FontWeight.bold, color: Colors.blue),
+          fontSize: 14,
+          fontWeight: FontWeight.bold,
+          color: VunongueColors.buttonColor),
       lessStyle: const TextStyle(
-          fontSize: 14, fontWeight: FontWeight.bold, color: Colors.blue),
+          fontSize: 14,
+          fontWeight: FontWeight.bold,
+          color: VunongueColors.buttonColor),
     );
   }
 }

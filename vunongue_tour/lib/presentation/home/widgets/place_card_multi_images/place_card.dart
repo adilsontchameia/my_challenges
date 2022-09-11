@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vunongue_tour/theme/theme.dart';
 
 class PlaceCardMulti extends StatelessWidget {
   const PlaceCardMulti({
@@ -10,8 +11,8 @@ class PlaceCardMulti extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        decoration: BoxDecoration(
-          boxShadow: const [
+        decoration: const BoxDecoration(
+          boxShadow: [
             BoxShadow(
               color: Colors.black12,
               offset: Offset(0, 0),
@@ -19,8 +20,8 @@ class PlaceCardMulti extends StatelessWidget {
               spreadRadius: 3.0,
             )
           ],
-          color: Colors.white.withOpacity(0.9),
-          borderRadius: const BorderRadius.all(
+          color: VunongueColors.blue,
+          borderRadius: BorderRadius.all(
             Radius.circular(10.0),
           ),
         ),
@@ -45,9 +46,9 @@ class PlaceCardMulti extends StatelessWidget {
                     child: Container(
                       width: 250.0,
                       height: 55.0,
-                      decoration: const BoxDecoration(
-                          color: Color.fromARGB(124, 0, 0, 0),
-                          borderRadius: BorderRadius.only(
+                      decoration: BoxDecoration(
+                          color: VunongueColors.blue.withOpacity(0.3),
+                          borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(8.0),
                             bottomRight: Radius.circular(8.0),
                           )),
@@ -58,17 +59,20 @@ class PlaceCardMulti extends StatelessWidget {
                             padding:
                                 const EdgeInsets.symmetric(horizontal: 10.0),
                             child: Column(
-                              children: const [
+                              children: [
                                 Text('Luanda',
                                     textAlign: TextAlign.start,
                                     overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
-                                        fontSize: 16.0, color: Colors.white)),
-                                Text('Kilamba Kiaxi',
+                                        fontSize: 16.0,
+                                        color: Colors.grey.shade200)),
+                                const Text('Kilamba Kiaxi',
                                     textAlign: TextAlign.center,
                                     overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
-                                        fontSize: 16.0, color: Colors.white))
+                                        fontSize: 16.0,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold))
                               ],
                             ),
                           ),

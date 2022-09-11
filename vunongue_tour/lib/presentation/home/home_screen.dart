@@ -24,13 +24,16 @@ class HomeScreen extends StatelessWidget {
         child: CustomAppBar(),
       ),
       drawer: const CustomDrawer(),
-      backgroundColor: Colors.grey.shade50,
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
+              const Text(
+                'CUITO CUANAVALE',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0),
+              ),
               const SizedBox(height: 15.0),
               Wrap(
                 direction: Axis.horizontal,
@@ -159,7 +162,11 @@ class CustomCarouselSlider extends StatelessWidget {
                                 children: const [
                                   FaIcon(FontAwesomeIcons.mapLocation),
                                   SizedBox(width: 20.0),
-                                  Text('Missombo')
+                                  Text(
+                                    'Missombo',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  )
                                 ],
                               ),
                             ),

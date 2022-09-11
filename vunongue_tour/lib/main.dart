@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vunongue_tour/presentation/onboard/onboard_screen.dart';
+import 'package:vunongue_tour/presentation/home/home_screen.dart';
 import 'package:vunongue_tour/theme/theme.dart';
 
 void main() {
@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: lightModeTheme,
-      home: const OnboardScreen(),
+      theme: darkModeTheme,
+      home: HomeScreen(),
     );
   }
 }

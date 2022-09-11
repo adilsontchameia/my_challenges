@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:vunongue_tour/theme/theme.dart';
 
 class BackAndFavButtons extends StatelessWidget {
   BackAndFavButtons({Key? key, required this.icon, required this.onTap})
@@ -18,7 +19,7 @@ class BackAndFavButtons extends StatelessWidget {
             width: 40.0,
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(20.0)),
-              color: Colors.white,
+              color: VunongueColors.blue,
             ),
             child: Center(child: FaIcon(icon)),
           ),

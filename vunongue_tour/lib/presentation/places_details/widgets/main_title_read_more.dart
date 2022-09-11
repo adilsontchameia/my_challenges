@@ -17,7 +17,7 @@ class MainTitleReadMore extends StatelessWidget {
       style: TextStyle(
         fontSize: 20,
         fontWeight: FontWeight.bold,
-        color: Colors.grey.shade700,
+        color: Colors.grey.shade200,
       ),
       moreStyle: const TextStyle(
           fontSize: 14, fontWeight: FontWeight.bold, color: Colors.blue),

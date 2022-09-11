@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:vunongue_tour/theme/theme.dart';
 
 class SimplePlaceCard extends StatelessWidget {
   const SimplePlaceCard({
@@ -17,11 +18,11 @@ class SimplePlaceCard extends StatelessWidget {
           BoxShadow(
             color: Colors.black12,
             offset: Offset(0, 0),
-            blurRadius: 2.0,
-            spreadRadius: 4.0,
+            blurRadius: 4.0,
+            spreadRadius: 8.0,
           )
         ],
-        color: Colors.white,
+        color: VunongueColors.blue,
         borderRadius: BorderRadius.all(
           Radius.circular(10.0),
         ),
@@ -39,24 +40,22 @@ class SimplePlaceCard extends StatelessWidget {
                   child: const Image(
                       height: 80.0, image: AssetImage('assets/image-1.jpg')))),
           const SizedBox(width: 10.0),
-          Expanded(
+          SingleChildScrollView(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Center(
-                  child: Text('Paisagem Exemplo',
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 16.0)),
-                ),
+                const Text('Paisagem Exemplo',
+                    overflow: TextOverflow.ellipsis,
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0)),
+                const SizedBox(height: 6.0),
                 ListTile(
                     text: 'Miradouro Da Leba',
                     icon: FontAwesomeIcons.mapLocation),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ListTile(
-                      text: 'Classificacao: ', icon: FontAwesomeIcons.star),
-                ),
+                const SizedBox(height: 6.0),
+                ListTile(
+                    text: 'Classificacao (Opnioes): 4.5 ',
+                    icon: FontAwesomeIcons.star),
               ],
             ),
           ),
@@ -77,13 +76,13 @@ class ListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        FaIcon(
-          icon,
-          size: 18.0,
+        FaIcon(icon, size: 18.0),
+        const SizedBox(width: 5.0),
+        Text(
+          text,
+          style: const TextStyle(fontSize: 12.0),
         ),
-        Text(text),
       ],
     );
   }

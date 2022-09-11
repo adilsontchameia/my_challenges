@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../theme/theme.dart';
 import 'widgets/back_and_fav_button.dart';
 import 'widgets/custom_list_tile.dart';
 import 'widgets/custom_read_more.dart';
@@ -30,10 +31,10 @@ class PlacesDetailsScreen extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 280.0,
+              height: 290.0,
               width: double.infinity,
               decoration: const BoxDecoration(
-                  color: Colors.white,
+                  color: VunongueColors.blue,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(50.0),
                       topRight: Radius.circular(50.0))),
@@ -48,7 +49,7 @@ class PlacesDetailsScreen extends StatelessWidget {
                         dense: true,
                         title: MainTitleReadMore(),
                         leading: FaIcon(FontAwesomeIcons.locationPin,
-                            color: Colors.blue),
+                            color: VunongueColors.buttonColor),
                       ),
                     ),
                     CustomListTile(

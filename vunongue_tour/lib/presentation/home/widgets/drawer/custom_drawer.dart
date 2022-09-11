@@ -15,16 +15,19 @@ class CustomDrawer extends StatelessWidget {
           children: [
             const CustomDrawerHeader(),
             const SizedBox(height: 50.0),
-            CustomDrawerListTile(icon: FontAwesomeIcons.house, text: 'Home'),
+            CustomDrawerListTile(
+                icon: FontAwesomeIcons.house, text: 'Home', onTap: () {}),
             const SizedBox(height: 35.0),
             CustomDrawerListTile(
-                icon: FontAwesomeIcons.heart, text: 'Favourite'),
+                icon: FontAwesomeIcons.heart, text: 'Favourites', onTap: () {}),
             const SizedBox(height: 35.0),
             CustomDrawerListTile(
-                icon: FontAwesomeIcons.moon, text: 'Dark-Mode'),
+                icon: FontAwesomeIcons.moon, text: 'Dark-Mode', onTap: () {}),
             const SizedBox(height: 35.0),
             CustomDrawerListTile(
-                icon: FontAwesomeIcons.streetView, text: 'Mambos da Banda'),
+                icon: FontAwesomeIcons.streetView,
+                text: 'Mambos da Banda',
+                onTap: () {}),
             const SizedBox(height: 120.0),
             const Text(
               'developed by: Adilson Tchameia',

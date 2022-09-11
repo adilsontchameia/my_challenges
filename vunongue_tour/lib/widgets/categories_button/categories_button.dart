@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../theme/theme.dart';
+
 // ignore: must_be_immutable
 class CategoriesButton extends StatelessWidget {
   CategoriesButton({
@@ -13,7 +15,7 @@ class CategoriesButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color: VunongueColors.blue,
         borderRadius: BorderRadius.all(Radius.circular(10.0)),
         boxShadow: [
           BoxShadow(
@@ -29,14 +31,14 @@ class CategoriesButton extends StatelessWidget {
         padding: const EdgeInsets.all(15.0),
         child: Row(
           children: [
-            Icon(icon, color: Colors.blue),
+            Icon(icon, color: Colors.white),
             const SizedBox(width: 10.0),
             Text(
               text,
               style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20.0,
-                  color: Colors.blue),
+                  color: Colors.white),
             )
           ],
         ),
