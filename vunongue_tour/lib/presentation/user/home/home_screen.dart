@@ -64,15 +64,15 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10.0),
-              HomeScreenTags(text: 'Eventos'),
+              const HomeScreenTags(text: 'Eventos'),
               const SizedBox(height: 10.0),
               CustomCarouselSlider(),
               const SizedBox(height: 10.0),
-              HomeScreenTags(text: 'Explore Mais'),
+              const HomeScreenTags(text: 'Explore Mais'),
               const PlaceCardMulti(),
               const SizedBox(width: 5.0),
               const PlaceCardMulti(),
-              HomeScreenTags(text: 'Explore Mais'),
+              const HomeScreenTags(text: 'Explore Mais'),
               const SizedBox(height: 5.0),
               Column(
                 children: const [

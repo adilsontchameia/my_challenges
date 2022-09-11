@@ -2,8 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:vunongue_tour/provider/theme_provider.dart';
 
+import '../../../../../providers/theme_provider.dart';
 import '../readMore/custom_read_more_home.dart';
 
 class CustomCarouselSlider extends StatelessWidget {
@@ -11,7 +11,7 @@ class CustomCarouselSlider extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  List<String> image = [
+  final List<String> image = [
     'assets/image-1.jpg',
     'assets/onboard-image.jpg',
   ];
@@ -61,8 +61,8 @@ class CustomCarouselSlider extends StatelessWidget {
                                       fontWeight: FontWeight.w700),
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 20.0),
+                              const Padding(
+                                padding: EdgeInsets.only(top: 20.0),
                                 child: CustomReadMoreHome(
                                     text:
                                         'Venha conhecer os lugares mais fixes da banda com essa nossa jornada aos redores de Menongue.'),

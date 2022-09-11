@@ -4,8 +4,8 @@ import 'package:readmore/readmore.dart';
 import '../../../../../theme/theme.dart';
 
 class CustomReadMoreHome extends StatelessWidget {
-  CustomReadMoreHome({Key? key, required this.text}) : super(key: key);
-  String text;
+  const CustomReadMoreHome({Key? key, required this.text}) : super(key: key);
+ final  String text;
   @override
   Widget build(BuildContext context) {
     return ReadMoreText(

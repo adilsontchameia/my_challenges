@@ -1,8 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../../provider/theme_provider.dart';
+import '../../../../../providers/theme_provider.dart';
 import 'custom_drawer_list_tile.dart';
 import 'custom_header.dart';
 
@@ -46,7 +47,21 @@ class CustomDrawer extends StatelessWidget {
                 CustomDrawerListTile(
                   icon: FontAwesomeIcons.info,
                   text: '    Sobre o App',
-                  onTap: () {},
+                  onTap: () {
+                    CupertinoActionSheet(
+                        title: const Text('Selecionar foto para o item'),
+                        message: const Text('Escolha a origem da foto'),
+                        cancelButton: CupertinoActionSheetAction(
+                          onPressed: () => Navigator.pop(context),
+                          child: const Text('Cancelar'),
+                        ),
+                        actions: [
+                          CupertinoActionSheetAction(
+                              isDefaultAction: true,
+                              onPressed: () {},
+                              child: const Text('Camera')),
+                        ]);
+                  },
                 ),
                 const SizedBox(height: 35.0),
                 CustomDrawerListTile(
@@ -72,4 +87,6 @@ class CustomDrawer extends StatelessWidget {
       ),
     );
   }
-}
+
+  
+  }

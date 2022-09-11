@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 
 class CustomOnboardReadMore extends StatelessWidget {
-  CustomOnboardReadMore({Key? key, required this.text}) : super(key: key);
-  String text;
+  const CustomOnboardReadMore({Key? key, required this.text}) : super(key: key);
+  final String text;
   @override
   Widget build(BuildContext context) {
     return ReadMoreText(

@@ -19,18 +19,18 @@ class OnboardScreen extends StatelessWidget {
           Column(
             //  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Padding(
+            children: const [
+              Padding(
                 padding: EdgeInsets.only(top: 30.0),
                 child: LogoContainer(),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 50.0),
                 child: MainTitle(),
               ),
               // const SizedBox(height: 50.0),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                padding: EdgeInsets.symmetric(horizontal: 15.0),
                 child: CustomOnboardReadMore(
                     text:
                         'Nós ajudamos-te a viajar no conforte da sua casa, viaje com nossa APP \ne desfrute o melhor que a BANDA tem a oferecer.'),

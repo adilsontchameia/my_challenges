@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:vunongue_tour/provider/theme_provider.dart';
 import 'package:vunongue_tour/theme/theme.dart';
 
+import '../../../../../providers/theme_provider.dart';
+
 class CustomDrawerListTile extends StatelessWidget {
-  CustomDrawerListTile(
-      {Key? key, required this.icon, required this.text, required this.onTap})
+  const CustomDrawerListTile(
+      {Key? key, required this.icon, required this.text, this.onTap})
       : super(key: key);
-  IconData icon;
-  String text;
-  VoidCallback onTap;
+  final IconData icon;
+  final String text;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {

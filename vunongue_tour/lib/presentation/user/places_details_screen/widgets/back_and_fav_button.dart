@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:vunongue_tour/provider/theme_provider.dart';
 import 'package:vunongue_tour/theme/theme.dart';
 
+import '../../../../providers/theme_provider.dart';
+
 class BackAndFavButtons extends StatelessWidget {
-  BackAndFavButtons({Key? key, required this.icon, required this.onTap})
+  const BackAndFavButtons({Key? key, required this.icon, required this.onTap})
       : super(key: key);
-  VoidCallback onTap;
-  IconData icon;
+  final VoidCallback onTap;
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return SafeArea(

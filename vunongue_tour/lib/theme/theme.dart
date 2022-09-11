@@ -96,10 +96,10 @@ final darkModeTheme = ThemeData(
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
-      border: _borderLight,
+      border: _borderDark,
       contentPadding: EdgeInsets.zero,
-      enabledBorder: _borderLight,
-      focusedBorder: _borderLight,
+      enabledBorder: _borderDark,
+      focusedBorder: _borderDark,
       labelStyle: const TextStyle(
         color: Colors.white,
       ),

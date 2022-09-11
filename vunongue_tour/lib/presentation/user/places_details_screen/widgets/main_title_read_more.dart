@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:readmore/readmore.dart';
-import 'package:vunongue_tour/provider/theme_provider.dart';
 import 'package:vunongue_tour/theme/theme.dart';
+
+import '../../../../providers/theme_provider.dart';
 
 class MainTitleReadMore extends StatelessWidget {
   const MainTitleReadMore({

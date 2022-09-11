@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
-import '../../../providers/theme_provider.dart';
-import '../../../theme/theme.dart';
-import 'widgets/back_and_fav_button.dart';
-import 'widgets/custom_list_tile.dart';
-import 'widgets/custom_read_more.dart';
-import 'widgets/main_title_read_more.dart';
-import 'widgets/see_on_map.dart';
+import '../../providers/theme_provider.dart';
+import '../../theme/theme.dart';
+import '../user/places_details_screen/widgets/back_and_fav_button.dart';
+import '../user/places_details_screen/widgets/custom_list_tile.dart';
+import '../user/places_details_screen/widgets/custom_read_more.dart';
+import '../user/places_details_screen/widgets/main_title_read_more.dart';
+import '../user/places_details_screen/widgets/see_on_map.dart';
 
 class PlacesDetailsScreen extends StatelessWidget {
   const PlacesDetailsScreen({Key? key}) : super(key: key);
@@ -90,6 +90,7 @@ class PlacesDetailsScreen extends StatelessWidget {
                 BackAndFavButtons(
                     icon: FontAwesomeIcons.heartCirclePlus,
                     onTap: () {
+                   
                       debugPrint('Favoritos');
                     })
               ],

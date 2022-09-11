@@ -45,16 +45,16 @@ class SimplePlaceCard extends StatelessWidget {
           SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text('Paisagem Exemplo',
+              children: const [
+                Text('Paisagem Exemplo',
                     overflow: TextOverflow.ellipsis,
                     style:
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0)),
-                const SizedBox(height: 6.0),
+                SizedBox(height: 6.0),
                 CustomCardListTile(
                     text: 'Miradouro Da Leba',
                     icon: FontAwesomeIcons.mapLocation),
-                const SizedBox(height: 6.0),
+                SizedBox(height: 6.0),
                 CustomCardListTile(
                     text: 'Classificacao (Opnioes): 4.5 ',
                     icon: FontAwesomeIcons.star),
