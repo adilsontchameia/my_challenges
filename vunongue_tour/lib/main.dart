@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:vunongue_tour/provider/theme_provider.dart';
 import 'package:vunongue_tour/theme/theme.dart';
 
 import 'presentation/user/onboard_screen/onboard_screen.dart';
+import 'providers/theme_provider.dart';
 
 void main() {
   //Binding Flutter Widgets
