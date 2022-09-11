@@ -13,7 +13,7 @@ class CustomDrawerListTile extends StatelessWidget {
   final IconData icon;
   final String text;
   final int? page;
-  
+
   @override
   Widget build(BuildContext context) {
     //Observar as mudancas da pagina do drawer
@@ -23,9 +23,11 @@ class CustomDrawerListTile extends StatelessWidget {
     }, child: Consumer<ThemeModel>(builder: (_, themeModel, __) {
       return Container(
         height: 40,
-        color: currentPage == page && !themeModel.isDark
-            ? Colors.blue.withOpacity(0.09)
-            : Colors.white,
+        color: (currentPage == page
+            ? themeModel.isDark
+                ? Colors.blue.withOpacity(0.09)
+                : Colors.blue.withOpacity(0.09)
+            : Colors.transparent),
         child: Row(
           children: [
             Padding(
