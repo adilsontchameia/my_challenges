@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:vunongue_tour/presentation/home/widgets/drawer/custom_drawer_list_tile.dart';
 
-import '../../../../provider/theme_provider.dart';
+import '../../../../../provider/theme_provider.dart';
+import 'custom_drawer_list_tile.dart';
 import 'custom_header.dart';
 
 class CustomDrawer extends StatelessWidget {

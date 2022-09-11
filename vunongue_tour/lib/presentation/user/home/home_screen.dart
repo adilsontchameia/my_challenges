@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../commoms/categories_button/categories_button.dart';
+import '../../../commoms/categories_button/categories_button.dart';
 import 'widgets/carousel_slider/carousel_slider.dart';
 import 'widgets/customAppBar/custom_app_bar.dart';
 import 'widgets/drawer/custom_drawer.dart';

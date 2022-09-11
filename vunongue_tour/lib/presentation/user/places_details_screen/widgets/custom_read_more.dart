@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 
-import '../../../theme/theme.dart';
+import '../../../../theme/theme.dart';
 
 class CustomReadMore extends StatelessWidget {
   CustomReadMore({Key? key, required this.text}) : super(key: key);

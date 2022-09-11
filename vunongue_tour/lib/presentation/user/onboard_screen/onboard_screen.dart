@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vunongue_tour/presentation/home/home_screen.dart';
 
+import '../home/home_screen.dart';
 import 'widgets/custom_onboard_read_more.dart';
 
 class OnboardScreen extends StatelessWidget {
@@ -46,7 +46,7 @@ class OnboardScreen extends StatelessWidget {
             onTap: () {
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
-                  builder: (BuildContext context) => HomeScreen(),
+                  builder: (BuildContext context) => const HomeScreen(),
                 ),
               );
             },
@@ -72,10 +72,10 @@ class MainTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      'Explore A Banda Com A Gente.',
+      'Aqui, Voce Conhece A Nossa Banda.',
       overflow: TextOverflow.clip,
       style: TextStyle(
-          color: Colors.blue.shade800,
+          color: Colors.blue.shade500,
           shadows: const [
             Shadow(
               offset: Offset(0, -5),

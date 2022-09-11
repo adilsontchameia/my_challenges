@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:vunongue_tour/provider/theme_provider.dart';
 
-import '../../theme/theme.dart';
+import '../../../theme/theme.dart';
 import 'widgets/back_and_fav_button.dart';
 import 'widgets/custom_list_tile.dart';
 import 'widgets/custom_read_more.dart';

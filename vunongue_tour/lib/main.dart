@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:vunongue_tour/presentation/home/home_screen.dart';
 import 'package:vunongue_tour/provider/theme_provider.dart';
 import 'package:vunongue_tour/theme/theme.dart';
+
+import 'presentation/user/onboard_screen/onboard_screen.dart';
 
 void main() {
   //Binding Flutter Widgets
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
               theme: themeModel.isDark ? darkModeTheme : lightModeTheme,
-              home: const HomeScreen(),
+              home: const OnboardScreen(),
             );
           },
         ));
