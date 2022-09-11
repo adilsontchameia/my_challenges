@@ -18,7 +18,7 @@ class CustomDrawer extends StatelessWidget {
             return Column(
               children: [
                 const CustomDrawerHeader(),
-                const SizedBox(height: 50.0),
+                const SizedBox(height: 18.0),
                 CustomDrawerListTile(
                     icon: FontAwesomeIcons.house, text: 'Home', onTap: () {}),
                 const SizedBox(height: 35.0),
@@ -39,15 +39,31 @@ class CustomDrawer extends StatelessWidget {
                     }),
                 const SizedBox(height: 35.0),
                 CustomDrawerListTile(
-                    icon: FontAwesomeIcons.streetView,
+                    icon: FontAwesomeIcons.medal,
                     text: 'Mambos da Banda',
                     onTap: () {}),
-                const SizedBox(height: 120.0),
+                const SizedBox(height: 35.0),
+                CustomDrawerListTile(
+                  icon: FontAwesomeIcons.info,
+                  text: '    Sobre o App',
+                  onTap: () {},
+                ),
+                const SizedBox(height: 35.0),
+                CustomDrawerListTile(
+                    icon: FontAwesomeIcons.lockOpen,
+                    text: 'Log-In',
+                    onTap: () {}),
+                const SizedBox(height: 35.0),
+                CustomDrawerListTile(
+                    icon: FontAwesomeIcons.database,
+                    text: 'Conta ADM',
+                    onTap: () {}),
+                const SizedBox(height: 10.0),
                 const Text(
-                  'developed by: Adilson Tchameia',
+                  'creation and concept: Adilson Tchameia',
                   style: TextStyle(fontSize: 10.0, color: Colors.grey),
                 ),
-                const Text('stocks provided by: CSK Studio',
+                const Text('stocks officially provided by: CSK Studio',
                     style: TextStyle(fontSize: 10.0, color: Colors.grey)),
               ],
             );

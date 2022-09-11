@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:vunongue_tour/provider/theme_provider.dart';
 
-import 'readMore/custom_read_more_home.dart';
+import '../readMore/custom_read_more_home.dart';
 
 class CustomCarouselSlider extends StatelessWidget {
   CustomCarouselSlider({
@@ -23,7 +23,7 @@ class CustomCarouselSlider extends StatelessWidget {
         options: CarouselOptions(
             autoPlay: true,
             height: 150.0,
-            autoPlayInterval: const Duration(seconds: 10)),
+            autoPlayInterval: const Duration(seconds: 5)),
         items: image.map((images) {
           return Builder(
             builder: (BuildContext context) {

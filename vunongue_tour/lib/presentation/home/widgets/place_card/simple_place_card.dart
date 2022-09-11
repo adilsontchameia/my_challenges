@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vunongue_tour/theme/theme.dart';
 
+import 'custom_card_list_tile.dart';
+
 class SimplePlaceCard extends StatelessWidget {
   const SimplePlaceCard({
     Key? key,
@@ -49,11 +51,11 @@ class SimplePlaceCard extends StatelessWidget {
                     style:
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0)),
                 const SizedBox(height: 6.0),
-                ListTile(
+                CustomCardListTile(
                     text: 'Miradouro Da Leba',
                     icon: FontAwesomeIcons.mapLocation),
                 const SizedBox(height: 6.0),
-                ListTile(
+                CustomCardListTile(
                     text: 'Classificacao (Opnioes): 4.5 ',
                     icon: FontAwesomeIcons.star),
               ],
@@ -61,29 +63,6 @@ class SimplePlaceCard extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class ListTile extends StatelessWidget {
-  ListTile({
-    Key? key,
-    required this.text,
-    required this.icon,
-  }) : super(key: key);
-  String text;
-  IconData icon;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        FaIcon(icon, size: 18.0),
-        const SizedBox(width: 5.0),
-        Text(
-          text,
-          style: const TextStyle(fontSize: 12.0),
-        ),
-      ],
     );
   }
 }

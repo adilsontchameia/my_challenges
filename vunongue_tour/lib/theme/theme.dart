@@ -40,6 +40,10 @@ final lightModeTheme = ThemeData(
     drawerTheme: const DrawerThemeData(
       backgroundColor: VunongueColors.white,
     ),
+    textTheme: const TextTheme(
+      bodyText1: TextStyle(),
+      bodyText2: TextStyle(),
+    ).apply(bodyColor: Colors.white, displayColor: Colors.white),
     appBarTheme: AppBarTheme(
       elevation: 0.0,
       color: const Color.fromARGB(255, 239, 239, 239),
@@ -76,15 +80,18 @@ final darkModeTheme = ThemeData(
     drawerTheme: const DrawerThemeData(
       backgroundColor: VunongueColors.blue,
     ),
+    textTheme: const TextTheme(
+      bodyText1: TextStyle(),
+      bodyText2: TextStyle(),
+    ).apply(bodyColor: Colors.white, displayColor: Colors.white),
     appBarTheme: AppBarTheme(
       elevation: 0.0,
       color: VunongueColors.blue,
       iconTheme: const IconThemeData(color: Colors.white),
-      // centerTitle: true,
-      //  toolbarTextStyle: GoogleFonts.poppins().copyWith(),
+      centerTitle: true,
       titleTextStyle: GoogleFonts.poppins().copyWith(
         fontSize: 20.0,
-        // color: Colors.white,
+        color: Colors.white,
         fontWeight: FontWeight.bold,
       ),
     ),
@@ -94,14 +101,14 @@ final darkModeTheme = ThemeData(
       enabledBorder: _borderLight,
       focusedBorder: _borderLight,
       labelStyle: const TextStyle(
-        color: VunongueColors.buttonColor,
+        color: Colors.white,
       ),
       hintStyle: GoogleFonts.poppins(
-        color: VunongueColors.lightGrey,
+        color: Colors.white,
         fontSize: 10.0,
       ),
     ),
-    iconTheme: const IconThemeData(color: VunongueColors.buttonColor),
+    iconTheme: const IconThemeData(color: Colors.white),
     colorScheme: ColorScheme.fromSwatch()
-        .copyWith(secondary: VunongueColors.buttonColor)
-        .copyWith(secondary: VunongueColors.buttonColor));
+        .copyWith(secondary: Colors.white)
+        .copyWith(secondary: Colors.white));
