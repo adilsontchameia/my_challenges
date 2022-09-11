@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
@@ -20,15 +19,13 @@ class CustomDrawer extends StatelessWidget {
             return Column(
               children: [
                 const CustomDrawerHeader(),
-                const SizedBox(height: 18.0),
-                CustomDrawerListTile(
-                    icon: FontAwesomeIcons.house, text: 'Home', onTap: () {}),
-                const SizedBox(height: 35.0),
-                CustomDrawerListTile(
-                    icon: FontAwesomeIcons.heart,
-                    text: 'Favourites',
-                    onTap: () {}),
-                const SizedBox(height: 35.0),
+                const SizedBox(height: 10.0),
+                const CustomDrawerListTile(
+                    icon: FontAwesomeIcons.house, text: 'Home', page: 0),
+                const SizedBox(height: 10.0),
+                const CustomDrawerListTile(
+                    icon: FontAwesomeIcons.heart, text: 'Favourites', page: 1),
+                const SizedBox(height: 10.0),
                 CustomDrawerListTile(
                     icon: themeModel.isDark
                         ? FontAwesomeIcons.sun
@@ -39,42 +36,33 @@ class CustomDrawer extends StatelessWidget {
                           ? themeModel.isDark = false
                           : themeModel.isDark = true;
                     }),
-                const SizedBox(height: 35.0),
-                CustomDrawerListTile(
+                const SizedBox(height: 10.0),
+                const CustomDrawerListTile(
                     icon: FontAwesomeIcons.medal,
                     text: 'Mambos da Banda',
-                    onTap: () {}),
-                const SizedBox(height: 35.0),
-                CustomDrawerListTile(
+                    page: 2),
+                const SizedBox(height: 10.0),
+                const CustomDrawerListTile(
                   icon: FontAwesomeIcons.info,
                   text: '    Sobre o App',
-                  onTap: () {
-                    CupertinoActionSheet(
-                        title: const Text('Selecionar foto para o item'),
-                        message: const Text('Escolha a origem da foto'),
-                        cancelButton: CupertinoActionSheetAction(
-                          onPressed: () => Navigator.pop(context),
-                          child: const Text('Cancelar'),
-                        ),
-                        actions: [
-                          CupertinoActionSheetAction(
-                              isDefaultAction: true,
-                              onPressed: () {},
-                              child: const Text('Camera')),
-                        ]);
-                  },
                 ),
-                const SizedBox(height: 35.0),
-                CustomDrawerListTile(
-                    icon: FontAwesomeIcons.lockOpen,
-                    text: 'Log-In',
-                    onTap: () {}),
-                const SizedBox(height: 35.0),
-                CustomDrawerListTile(
+                const SizedBox(height: 10.0),
+                const CustomDrawerListTile(
+                    icon: FontAwesomeIcons.images,
+                    text: 'Adicionar Lugar ou Evento',
+                    page: 3),
+                const SizedBox(height: 10.0),
+                const CustomDrawerListTile(
+                    icon: FontAwesomeIcons.userLock,
+                    //icon: FontAwesomeIcons.lockOpen,
+                    text: 'Log-Out',
+                    page: 4),
+                const SizedBox(height: 10.0),
+                const CustomDrawerListTile(
                     icon: FontAwesomeIcons.database,
                     text: 'Conta ADM',
-                    onTap: () {}),
-                const SizedBox(height: 10.0),
+                    page: 5),
+                const SizedBox(height: 5.0),
                 const CopyrightSign()
               ],
             );
@@ -84,4 +72,3 @@ class CustomDrawer extends StatelessWidget {
     );
   }
 }
-

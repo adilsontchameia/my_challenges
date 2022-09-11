@@ -22,7 +22,8 @@ class CreatePlaceScreen extends StatefulWidget {
 class _CreatePlaceScreenState extends State<CreatePlaceScreen> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  var switchValue = true;
+  var isPlace = true;
+  var isSpotlight = true;
   int _selectedIndex = 0;
   List<String> colors = const <String>[
     'Red',
@@ -172,25 +173,40 @@ class _CreatePlaceScreenState extends State<CreatePlaceScreen> {
                             },
                           ),
                         ]),
-                    const SizedBox(height: 10.0),
+                    const SizedBox(height: 5.0),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CustomLabelText(
-                            text: switchValue
+                            text: isPlace
                                 ? '1.6 Adicionar Um Local'
                                 : '1.6 Adicionar Um Evento'),
                         CupertinoSwitch(
-                            value: switchValue,
+                            value: isPlace,
                             onChanged: (changedValue) {
                               setState(() {
-                                switchValue = changedValue;
+                                isPlace = changedValue;
+                              });
+                            })
+                      ],
+                    ),
+                    const SizedBox(height: 5.0),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const CustomLabelText(text: '1.7 Lugar de Destaque'),
+                        CupertinoSwitch(
+                            value: isSpotlight,
+                            onChanged: (changedValue) {
+                              setState(() {
+                                isSpotlight = changedValue;
                               });
                             })
                       ],
                     ),
                     const SizedBox(height: 5.0),
                     SaveButton(onTap: () => debugPrint('Salvo')),
+                    const SizedBox(height: 3.0),
                     const CopyrightSign(),
                   ],
                 ),

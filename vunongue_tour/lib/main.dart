@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:vunongue_tour/presentation/admin/create_place/create_place.dart';
+import 'package:vunongue_tour/presentation/user/base/base_screen.dart';
+import 'package:vunongue_tour/presentation/user/home/home_screen.dart';
 import 'package:vunongue_tour/theme/theme.dart';
 
 import 'providers/theme_provider.dart';
@@ -21,19 +23,32 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => ThemeModel()),
-        ],
-        child: Consumer<ThemeModel>(
-          builder: (_, themeModel, __) {
-            //darkTheme: darkModeTheme,
-            //themeMode: ThemeMode.system,
-            return MaterialApp(
-              debugShowCheckedModeBanner: false,
-              theme: themeModel.isDark ? darkModeTheme : lightModeTheme,
-              home: const CreatePlaceScreen(),
-            );
-          },
-        ));
+      providers: [
+        ChangeNotifierProvider(create: (_) => ThemeModel()),
+      ],
+      child: Consumer<ThemeModel>(
+        builder: (_, themeModel, __) {
+          //darkTheme: darkModeTheme,
+          //themeMode: ThemeMode.system,
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: themeModel.isDark ? darkModeTheme : lightModeTheme,
+            home: const HomeScreen(),
+            initialRoute: '/base',
+            onGenerateRoute: (settings) {
+              switch (settings.name) {
+                case '/add_event_screen':
+                  return MaterialPageRoute(
+                      builder: (_) => const CreatePlaceScreen());
+
+                case '/base':
+                default:
+                  return MaterialPageRoute(builder: (_) => BaseScreen());
+              }
+            },
+          );
+        },
+      ),
+    );
   }
 }

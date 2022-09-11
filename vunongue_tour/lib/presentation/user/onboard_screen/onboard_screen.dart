@@ -54,7 +54,7 @@ class OnboardScreen extends StatelessWidget {
               padding: EdgeInsets.all(50.0),
               child: Align(
                 alignment: Alignment.bottomCenter,
-                child: GetStartedButton(),
+                //    child: GetStartedButton(),
               ),
             ),
           ),
@@ -110,5 +110,3 @@ class LogoContainer extends StatelessWidget {
     );
   }
 }
-
-

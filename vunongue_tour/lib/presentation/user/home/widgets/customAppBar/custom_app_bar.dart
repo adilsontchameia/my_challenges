@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:vunongue_tour/theme/theme.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({Key? key, this.text}) : super(key: key);
-  final String? text;
+  const CustomAppBar({Key? key, required this.text}) : super(key: key);
+  final String text;
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(text!,
+      title: Text(text,
           textAlign: TextAlign.center,
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0)),
       actions: const [
