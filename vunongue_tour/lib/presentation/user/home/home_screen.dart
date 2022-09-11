@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(50.0),
-        child: CustomAppBar(),
+        child: CustomAppBar(text: 'Choose a Place'),
       ),
       drawer: const CustomDrawer(),
       body: SingleChildScrollView(

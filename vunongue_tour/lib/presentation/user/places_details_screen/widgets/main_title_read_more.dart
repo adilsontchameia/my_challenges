@@ -22,7 +22,9 @@ class MainTitleReadMore extends StatelessWidget {
         style: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.bold,
-          color: themeModel.isDark ? VunongueColors.blue : VunongueColors.blue,
+          color: themeModel.isDark
+              ? VunongueColors.blue
+              : VunongueColors.white.withOpacity(0.8),
         ),
         moreStyle: const TextStyle(
             fontSize: 14, fontWeight: FontWeight.bold, color: Colors.blue),

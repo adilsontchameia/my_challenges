@@ -38,8 +38,8 @@ class PlacesDetailsScreen extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                     color: themeMode.isDark
-                        ? VunongueColors.blue
-                        : VunongueColors.white,
+                        ? VunongueColors.white
+                        : VunongueColors.blue,
                     borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(50.0),
                         topRight: Radius.circular(50.0))),

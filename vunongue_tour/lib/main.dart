@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:vunongue_tour/presentation/admin/create_place/create_place.dart';
 import 'package:vunongue_tour/theme/theme.dart';
 
-import 'presentation/user/onboard_screen/onboard_screen.dart';
 import 'providers/theme_provider.dart';
 
 void main() {
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
               theme: themeModel.isDark ? darkModeTheme : lightModeTheme,
-              home: const OnboardScreen(),
+              home:  CreatePlaceScreen(),
             );
           },
         ));
