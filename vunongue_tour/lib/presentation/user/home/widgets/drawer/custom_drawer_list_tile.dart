@@ -7,21 +7,25 @@ import '../../../../../providers/theme_provider.dart';
 import '../../../../../theme/theme.dart';
 
 class CustomDrawerListTile extends StatelessWidget {
-  const CustomDrawerListTile(
-      {Key? key, required this.icon, required this.text, this.page})
-      : super(key: key);
+  const CustomDrawerListTile({
+    Key? key,
+    required this.icon,
+    required this.text,
+    required this.page,
+  }) : super(key: key);
   final IconData icon;
   final String text;
-  final int? page;
+  final int page;
 
   @override
   Widget build(BuildContext context) {
     //Observar as mudancas da pagina do drawer
     //Quando usar o context dentro do build para modificar o estado conforme o valor interno, usar o watch.
     final int currentPage = context.watch<PageManager>().page;
+
     return InkWell(onTap: () {
       //Sempre que usar o context e buscar o objecto pelo provider dentro de uma funcao, devo usar o read.
-      context.read<PageManager>().setPage(page!);
+      context.read<PageManager>().setPage(page);
     }, child: Consumer<ThemeModel>(builder: (_, themeModel, __) {
       return Container(
         height: 40,

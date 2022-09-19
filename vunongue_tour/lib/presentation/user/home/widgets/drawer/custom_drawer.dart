@@ -31,10 +31,12 @@ class CustomDrawer extends StatelessWidget {
                     text: 'Mambos da Banda',
                     page: 2),
                 SizedBox(height: 10.0),
+                /*
                 CustomDrawerListTile(
                   icon: FontAwesomeIcons.info,
                   text: '    Sobre o App',
                 ),
+                */
                 SizedBox(height: 10.0),
                 CustomDrawerListTile(
                     icon: FontAwesomeIcons.images,
