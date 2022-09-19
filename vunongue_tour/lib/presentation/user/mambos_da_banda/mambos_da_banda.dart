@@ -10,7 +10,7 @@ class MambosDaBandaScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: PreferredSize(
-        child: CustomAppBar(text: 'Favorites Places'),
+        child: CustomAppBar(text: 'Mambos Da Banda'),
         preferredSize: Size.fromHeight(50.0),
       ),
       drawer: CustomDrawer(),

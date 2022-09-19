@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:vunongue_tour/presentation/admin/create_place/create_place.dart';
-import 'package:vunongue_tour/presentation/user/base/base_screen.dart';
+import 'package:vunongue_tour/presentation/user/favorites_screen/favorites_screen.dart';
 import 'package:vunongue_tour/presentation/user/home/home_screen.dart';
 import 'package:vunongue_tour/theme/theme.dart';
 
@@ -24,7 +24,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => ThemeModel()),
+        ChangeNotifierProvider(
+          create: (_) => ThemeModel(),
+          lazy: false,
+        ),
       ],
       child: Consumer<ThemeModel>(
         builder: (_, themeModel, __) {
@@ -43,7 +46,8 @@ class MyApp extends StatelessWidget {
 
                 case '/base':
                 default:
-                  return MaterialPageRoute(builder: (_) => BaseScreen());
+                  return MaterialPageRoute(
+                      builder: (_) => const FavoritesScreen());
               }
             },
           );

@@ -17,8 +17,10 @@ class CustomDrawerListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //Observar as mudancas da pagina do drawer
+    //Quando usar o context dentro do build para modificar o estado conforme o valor interno, usar o watch.
     final int currentPage = context.watch<PageManager>().page;
     return InkWell(onTap: () {
+      //Sempre que usar o context e buscar o objecto pelo provider dentro de uma funcao, devo usar o read.
       context.read<PageManager>().setPage(page!);
     }, child: Consumer<ThemeModel>(builder: (_, themeModel, __) {
       return Container(
