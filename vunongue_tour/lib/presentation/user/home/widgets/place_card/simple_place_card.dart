@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:vunongue_tour/models/fake_place_data.dart';
 import 'package:vunongue_tour/theme/theme.dart';
 
 import 'custom_card_list_tile.dart';
@@ -9,6 +10,27 @@ class SimplePlaceCard extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      scrollDirection: Axis.vertical,
+      shrinkWrap: true,
+      itemCount: PlacesData.places.length,
+      itemBuilder: (context, index) {
+        return PlacesDesign(
+          placesData: PlacesData.places[index],
+        );
+      },
+    );
+  }
+}
+
+class PlacesDesign extends StatelessWidget {
+  const PlacesDesign({
+    Key? key,
+    required this.placesData,
+  }) : super(key: key);
+  final PlacesData placesData;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -39,24 +61,24 @@ class SimplePlaceCard extends StatelessWidget {
               ),
               child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
-                  child: const Image(
-                      height: 80.0, image: AssetImage('assets/image-1.jpg')))),
+                  child: Image(
+                      height: 80.0, image: AssetImage(placesData.image)))),
           const SizedBox(width: 10.0),
           SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text('Paisagem Exemplo',
+              children: [
+                Text(placesData.placeTitle,
                     overflow: TextOverflow.ellipsis,
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0)),
-                SizedBox(height: 6.0),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 16.0)),
+                const SizedBox(height: 6.0),
                 CustomCardListTile(
-                    text: 'Miradouro Da Leba',
+                    text: placesData.location,
                     icon: FontAwesomeIcons.mapLocation),
-                SizedBox(height: 6.0),
+                const SizedBox(height: 6.0),
                 CustomCardListTile(
-                    text: 'Classificacao (Opnioes): 4.5 ',
+                    text: 'Classificacao (Opnioes):  ${placesData.rate}',
                     icon: FontAwesomeIcons.star),
               ],
             ),

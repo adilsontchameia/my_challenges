@@ -53,7 +53,7 @@ class CustomDrawer extends StatelessWidget {
                     icon: FontAwesomeIcons.database,
                     text: 'Conta ADM',
                     page: 5),
-                SizedBox(height: 5.0),
+                SizedBox(height: 90.0),
                 CopyrightSign()
               ],
             );

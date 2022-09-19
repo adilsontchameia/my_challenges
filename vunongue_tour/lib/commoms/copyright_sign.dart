@@ -10,10 +10,10 @@ class CopyrightSign extends StatelessWidget {
     return Column(
       children: const [
         Text(
-          'creation and concept: Adilson Tchameia',
+          'Developed by: Adilson Tchameia',
           style: TextStyle(fontSize: 10.0, color: Colors.grey),
         ),
-        Text('stocks officially provided by: CSK Studio',
+        Text('All stocks are officially provided by: CSK Studio',
             style: TextStyle(fontSize: 10.0, color: Colors.grey)),
       ],
     );

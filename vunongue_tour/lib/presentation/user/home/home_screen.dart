@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:vunongue_tour/theme/theme.dart';
 
 import '../../../commoms/categories_button/categories_button.dart';
 import 'widgets/carousel_slider/carousel_slider.dart';
@@ -25,9 +27,20 @@ class HomeScreen extends StatelessWidget {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
-              const Text(
-                'CUITO CUANAVALE',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Text(
+                    'CUITO CUANAVALE',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                        color: VunongueColors.buttonColor),
+                  ),
+                  SizedBox(width: 5.0),
+                  FaIcon(FontAwesomeIcons.arrowDown,
+                      size: 15.0, color: VunongueColors.buttonColor),
+                ],
               ),
               const SizedBox(height: 15.0),
               Wrap(
@@ -76,10 +89,6 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 5.0),
               Column(
                 children: const [
-                  SimplePlaceCard(),
-                  SizedBox(height: 20.0),
-                  SimplePlaceCard(),
-                  SizedBox(height: 20.0),
                   SimplePlaceCard(),
                 ],
               ),
