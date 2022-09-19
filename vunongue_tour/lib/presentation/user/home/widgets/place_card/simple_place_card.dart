@@ -40,7 +40,7 @@ class PlacesDesign extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.only(bottom: 10.0),
         padding: const EdgeInsets.all(6.0),
-        height: size.height * 0.15,
+        //  height: size.height * 0.15,
         //width: 20,
         decoration: const BoxDecoration(
           boxShadow: [
@@ -73,24 +73,27 @@ class PlacesDesign extends StatelessWidget {
                       image: AssetImage(placesData.image),
                     ))),
             const SizedBox(width: 10.0),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Text(
-                  placesData.placeTitle,
-                  style: const TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 16.0),
-                ),
-                const SizedBox(height: 6.0),
-                CustomCardListTile(
-                    text: placesData.location,
-                    icon: FontAwesomeIcons.mapLocation),
-                const SizedBox(height: 6.0),
-                CustomCardListTile(
-                    text: 'Classificacao (Opnioes):  ${placesData.rate}',
-                    icon: FontAwesomeIcons.star),
-              ],
+            Flexible(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    placesData.placeTitle,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 16.0),
+                  ),
+                  const SizedBox(height: 6.0),
+                  CustomCardListTile(
+                      text: placesData.location,
+                      icon: FontAwesomeIcons.mapLocation),
+                  const SizedBox(height: 6.0),
+                  CustomCardListTile(
+                      text: 'Classificacao (Opnioes):  ${placesData.rate}',
+                      icon: FontAwesomeIcons.star),
+                ],
+              ),
             ),
           ],
         ),

@@ -87,11 +87,7 @@ class HomeScreen extends StatelessWidget {
               const PlaceCardMulti(),
               const HomeScreenTags(text: 'Explore Mais'),
               const SizedBox(height: 5.0),
-              Column(
-                children: const [
-                  SimplePlaceCard(),
-                ],
-              ),
+              const SimplePlaceCard(),
             ],
           ),
         ),
