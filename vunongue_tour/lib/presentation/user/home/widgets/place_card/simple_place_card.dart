@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:readmore/readmore.dart';
-import 'package:vunongue_tour/models/fake_place_data.dart';
+import 'package:vunongue_tour/models/fake_places_data.dart';
 import 'package:vunongue_tour/theme/theme.dart';
 
 import 'custom_card_list_tile.dart';

@@ -1,1 +1,1 @@
-export 'fake_place_data.dart';
+export 'fake_places_data.dart';
