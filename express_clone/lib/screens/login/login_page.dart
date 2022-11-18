@@ -2,7 +2,6 @@ import 'package:express_clone/screens/home/home_screen.dart';
 import 'package:express_clone/utils/consts.dart';
 import 'package:express_clone/utils/finger_print.dart';
 import 'package:express_clone/widgets/login_app_bar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/custom_num_pad.dart';

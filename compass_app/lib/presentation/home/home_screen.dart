@@ -63,15 +63,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   return Column(
                     children: [
                       if (fetchLocation.fetchLocation() != null)
-                        Text(
-                          "Latitude: ${fetchLocation.currentPosition!.latitude}",
-                          style: const TextStyle(
+                        const Text(
+                          // "Latitude: ${fetchLocation.currentPosition!.latitude}",
+                          "Latitude: ",
+                          style: TextStyle(
                               fontSize: 22, fontWeight: FontWeight.w600),
                         ),
                       if (fetchLocation.fetchLocation() != null)
-                        Text(
-                          "Longitude: ${fetchLocation.currentPosition!.longitude}",
-                          style: const TextStyle(
+                        const Text(
+                          //  "Longitude: ${fetchLocation.currentPosition!.longitude}",
+                          "Longitude: ",
+                          style: TextStyle(
                               fontSize: 22, fontWeight: FontWeight.w600),
                         ),
                     ],

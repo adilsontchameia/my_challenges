@@ -404,14 +404,10 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
     assert(_pinTheme.fieldHeight > 0);
     assert(_pinTheme.fieldWidth > 0);
     assert(_pinTheme.borderWidth >= 0);
-    assert(_dialogConfig.affirmativeText != null &&
-        _dialogConfig.affirmativeText.isNotEmpty);
-    assert(_dialogConfig.negativeText != null &&
-        _dialogConfig.negativeText.isNotEmpty);
-    assert(_dialogConfig.dialogTitle != null &&
-        _dialogConfig.dialogTitle.isNotEmpty);
-    assert(_dialogConfig.dialogContent != null &&
-        _dialogConfig.dialogContent.isNotEmpty);
+    assert(_dialogConfig.affirmativeText.isNotEmpty);
+    assert(_dialogConfig.negativeText.isNotEmpty);
+    assert(_dialogConfig.dialogTitle.isNotEmpty);
+    assert(_dialogConfig.dialogContent.isNotEmpty);
   }
 
   runHapticFeedback() {
@@ -531,8 +527,6 @@ class _PinCodeTextFieldAdState extends State<PinCodeTextFieldAd>
   Widget _renderPinField({
     required int index,
   }) {
-    assert(index != null);
-
     bool showObscured = !widget.blinkWhenObscuring ||
         (widget.blinkWhenObscuring && _hasBlinked) ||
         index != _inputList!.where((x) => x.isNotEmpty).length - 1;
