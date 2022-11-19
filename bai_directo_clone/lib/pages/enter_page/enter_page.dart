@@ -1,3 +1,4 @@
+import 'package:bai_directo_clone/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/bottom_buttons.dart';
@@ -49,7 +50,7 @@ class EnterPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 10.0),
                   DefaultButton(
-                      onTap: () {},
+                      onTap: () => Navigator.pushNamed(context, signUpPage),
                       text: 'ADERIR',
                       color: Colors.white,
                       textColor: const Color.fromRGBO(0, 163, 224, 1)),

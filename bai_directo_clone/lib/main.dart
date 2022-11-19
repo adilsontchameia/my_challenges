@@ -1,4 +1,5 @@
-import 'package:bai_directo_clone/pages/sign_up_page/sign_up.dart';
+import 'package:bai_directo_clone/utils/constants.dart';
+import 'package:bai_directo_clone/utils/router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,6 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      onGenerateRoute: PageRouter.generateRoute,
+      initialRoute: homeRoute,
       theme: ThemeData(
         inputDecorationTheme: const InputDecorationTheme(
           enabledBorder: UnderlineInputBorder(
@@ -24,7 +27,6 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const SignUpPage(),
     );
   }
 }
