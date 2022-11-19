@@ -11,7 +11,7 @@ class CustomCard extends StatelessWidget {
     return Center(
       child: Container(
         height: size.height * 0.13,
-        width: size.width * 0.9,
+        width: size.width * 0.9 + 25,
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [

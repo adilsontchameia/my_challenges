@@ -43,7 +43,45 @@ class SignUpPage extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: size.height * 0.02),
-                    const CustomCard(),
+                    Stack(children: [
+                      const CustomCard(),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 20.0, horizontal: 20.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            const Icon(
+                                size: 55.0,
+                                color: Color.fromRGBO(0, 163, 224, 1),
+                                Icons.account_balance_outlined),
+                            const SizedBox(width: 10.0),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Text(
+                                  'Abrir Conta Bancária',
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(0, 163, 224, 1),
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 16.0,
+                                  ),
+                                ),
+                                SizedBox(height: 10.0),
+                                Text(
+                                  'O seu banco no telemóvel ou no computador.',
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 190, 190, 190),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14.0,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ]),
                   ],
                 ),
               ),
