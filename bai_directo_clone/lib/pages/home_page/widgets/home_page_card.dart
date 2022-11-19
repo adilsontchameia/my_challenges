@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomCard extends StatelessWidget {
-  const CustomCard({
+class HomePageCard extends StatelessWidget {
+  const HomePageCard({
     Key? key,
   }) : super(key: key);
 

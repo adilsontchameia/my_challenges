@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/custom_card.dart';
+import 'widgets/sign_up_card.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
@@ -44,7 +44,7 @@ class SignUpPage extends StatelessWidget {
                     ),
                     SizedBox(height: size.height * 0.02),
                     Stack(children: [
-                      const CustomCard(),
+                      const SignUpCard(),
                       Padding(
                         padding: const EdgeInsets.symmetric(
                             vertical: 20.0, horizontal: 20.0),

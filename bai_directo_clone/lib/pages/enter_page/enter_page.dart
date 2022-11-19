@@ -45,7 +45,7 @@ class EnterPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 20.0),
                   ButtonWithIcon(
-                    onTap: () {},
+                    onTap: () => Navigator.pushNamed(context, homePage),
                     text: 'ENTRAR',
                   ),
                   const SizedBox(height: 10.0),
