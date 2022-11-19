@@ -23,7 +23,10 @@ class ButtonWithIcon extends StatelessWidget {
             children: [
               Text(
                 text,
-                style: const TextStyle(color: Colors.white, fontSize: 13.0),
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 13.0,
+                    fontWeight: FontWeight.bold),
               ),
               const SizedBox(width: 2.5),
               const Icon(

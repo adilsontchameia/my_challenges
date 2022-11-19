@@ -12,62 +12,114 @@ class EnterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          const Image(
-              fit: BoxFit.cover,
-              height: double.infinity,
-              width: double.infinity,
-              image: AssetImage('assets/bai-background.jpg')),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Image.asset(
-                height: 95.0,
-                'assets/bai-logo.png',
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20.0,
-                ),
-                child: Column(
-                  children: [
-                    const CustomTextField(
-                      labelText: 'Nº / NOME DA ADESÃO',
-                    ),
-                    const SizedBox(height: 10),
-                    const CustomTextField(
-                      labelText: 'PALAVRA-CHAVE',
-                    ),
-                    const SizedBox(height: 15),
-                    ButtonWithIcon(
-                      onTap: () {},
-                      text: 'ENTRAR',
-                    ),
-                    const SizedBox(height: 10),
-                    DefaultButton(
-                      onTap: () {},
-                      text: 'ADERIR',
-                      color: Colors.white,
-                      textColor: const Color.fromRGBO(0, 163, 224, 1),
-                    ),
-                    const SizedBox(height: 20),
-                    const RecoverPassWidget(),
-                  ],
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: const [
-                  BottomButtons(icon: Icons.location_on_outlined),
-                  BottomButtons(icon: Icons.phone),
-                  BottomButtons(icon: Icons.monetization_on),
+        body: Stack(
+      children: [
+        const Image(
+            fit: BoxFit.cover,
+            height: double.infinity,
+            width: double.infinity,
+            image: AssetImage('assets/bai-background.jpg')),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          //crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Column(
+                children: [
+                  Image.asset(
+                    height: 100.0,
+                    'assets/bai-logo.png',
+                  ),
+                  const CustomTextField(
+                    labelText: 'Nº / NOME DA ADESÃO',
+                  ),
+                  const SizedBox(height: 10),
+                  const CustomTextField(
+                    labelText: 'PALAVRA-CHAVE',
+                  ),
+                  const SizedBox(height: 15),
+                  ButtonWithIcon(
+                    onTap: () {},
+                    text: 'ENTRAR',
+                  ),
+                  const SizedBox(height: 10),
+                  DefaultButton(
+                    onTap: () {},
+                    text: 'ADERIR',
+                    color: Colors.white,
+                    textColor: const Color.fromRGBO(0, 163, 224, 1),
+                  ),
+                  const SizedBox(height: 25),
+                  const RecoverPassWidget(),
                 ],
-              )
-            ],
-          ),
-        ],
-      ),
-    );
+              ),
+            ),
+            const SizedBox(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: const [
+                BottomButtons(icon: Icons.location_on_outlined),
+                BottomButtons(icon: Icons.phone),
+                BottomButtons(icon: Icons.monetization_on),
+              ],
+            )
+          ],
+        ),
+      ],
+    ));
   }
 }
+
+/*
+
+          Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Column(
+              children: [
+                Positioned(
+                  left: 100,
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        height: 95.0,
+                        'assets/bai-logo.png',
+                      ),
+                      const CustomTextField(
+                        labelText: 'Nº / NOME DA ADESÃO',
+                      ),
+                      const SizedBox(height: 10),
+                      const CustomTextField(
+                        labelText: 'PALAVRA-CHAVE',
+                      ),
+                      const SizedBox(height: 15),
+                      ButtonWithIcon(
+                        onTap: () {},
+                        text: 'ENTRAR',
+                      ),
+                      const SizedBox(height: 10),
+                      DefaultButton(
+                        onTap: () {},
+                        text: 'ADERIR',
+                        color: Colors.white,
+                        textColor: const Color.fromRGBO(0, 163, 224, 1),
+                      ),
+                      const SizedBox(height: 25),
+                      const RecoverPassWidget(),
+                    ],
+                  ),
+                )
+              ],
+            )
+          ]),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: const [
+              BottomButtons(icon: Icons.location_on_outlined),
+              BottomButtons(icon: Icons.phone),
+              BottomButtons(icon: Icons.monetization_on),
+            ],
+          )
+        ],
+      ),
+*/
