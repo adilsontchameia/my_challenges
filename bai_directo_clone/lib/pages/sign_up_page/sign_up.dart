@@ -17,29 +17,34 @@ class SignUpPage extends StatelessWidget {
                 color: const Color.fromRGBO(0, 163, 224, 1),
               ),
               SafeArea(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                child: Column(
                   children: [
-                    IconButton(
-                      iconSize: 25.0,
-                      color: Colors.white,
-                      onPressed: () {},
-                      icon: const Icon(Icons.close),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        IconButton(
+                          iconSize: 25.0,
+                          color: Colors.white,
+                          onPressed: () {},
+                          icon: const Icon(Icons.close),
+                        ),
+                        const Text(
+                          'ADERIR',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        const SizedBox()
+                      ],
                     ),
-                    const Text(
-                      'ADERIR',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    const SizedBox()
+                    SizedBox(height: size.height * 0.02),
+                    const CustomCard(),
                   ],
                 ),
               ),
-              const CustomCard()
             ],
-          )
+          ),
         ],
       ),
     );
@@ -54,20 +59,22 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Container(
-      height: size.height * 0.1,
-      width: size.width * 0.9,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 3,
-            spreadRadius: 5,
-            color: Colors.black.withOpacity(0.1),
-          )
-        ],
-        borderRadius: const BorderRadius.all(
-          Radius.circular(10.0),
+    return Center(
+      child: Container(
+        height: size.height * 0.13,
+        width: size.width * 0.9,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 3,
+              spreadRadius: 5,
+              color: Colors.black.withOpacity(0.1),
+            )
+          ],
+          borderRadius: const BorderRadius.all(
+            Radius.circular(10.0),
+          ),
         ),
       ),
     );
