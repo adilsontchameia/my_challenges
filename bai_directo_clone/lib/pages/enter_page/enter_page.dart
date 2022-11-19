@@ -61,10 +61,20 @@ class EnterPage extends StatelessWidget {
             const SizedBox(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: const [
-                BottomButtons(icon: Icons.location_on_outlined),
-                BottomButtons(icon: Icons.phone),
-                BottomButtons(icon: Icons.monetization_on),
+              children: [
+                BottomButtons(
+                  icon: Icons.location_on_outlined,
+                  text: 'AGÊNCIAS',
+                  onTap: (() => debugPrint('AGENCIES')),
+                ),
+                BottomButtons(
+                    icon: Icons.phone,
+                    text: 'CONTACTOS',
+                    onTap: (() => debugPrint('CONTACTS'))),
+                BottomButtons(
+                    icon: Icons.monetization_on,
+                    text: 'CÂMBIOS',
+                    onTap: (() => debugPrint('EXCHANGE RATE'))),
               ],
             )
           ],
@@ -73,55 +83,3 @@ class EnterPage extends StatelessWidget {
     ));
   }
 }
-
-/*
-
-          Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            Column(
-              children: [
-                Positioned(
-                  left: 100,
-                  child: Column(
-                    children: [
-                      Image.asset(
-                        height: 95.0,
-                        'assets/bai-logo.png',
-                      ),
-                      const CustomTextField(
-                        labelText: 'Nº / NOME DA ADESÃO',
-                      ),
-                      const SizedBox(height: 10),
-                      const CustomTextField(
-                        labelText: 'PALAVRA-CHAVE',
-                      ),
-                      const SizedBox(height: 15),
-                      ButtonWithIcon(
-                        onTap: () {},
-                        text: 'ENTRAR',
-                      ),
-                      const SizedBox(height: 10),
-                      DefaultButton(
-                        onTap: () {},
-                        text: 'ADERIR',
-                        color: Colors.white,
-                        textColor: const Color.fromRGBO(0, 163, 224, 1),
-                      ),
-                      const SizedBox(height: 25),
-                      const RecoverPassWidget(),
-                    ],
-                  ),
-                )
-              ],
-            )
-          ]),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
-              BottomButtons(icon: Icons.location_on_outlined),
-              BottomButtons(icon: Icons.phone),
-              BottomButtons(icon: Icons.monetization_on),
-            ],
-          )
-        ],
-      ),
-*/

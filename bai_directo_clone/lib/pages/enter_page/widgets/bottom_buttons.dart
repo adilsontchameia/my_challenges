@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class BottomButtons extends StatelessWidget {
-  const BottomButtons({
-    Key? key,
-    required this.icon,
-  }) : super(key: key);
+  const BottomButtons(
+      {Key? key, required this.icon, required this.text, required this.onTap})
+      : super(key: key);
   final IconData icon;
+  final String text;
+  final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -13,12 +14,12 @@ class BottomButtons extends StatelessWidget {
         IconButton(
           iconSize: 30.0,
           color: Colors.white,
-          onPressed: () {},
+          onPressed: () => onTap,
           icon: Icon(icon),
         ),
-        const Text(
-          'AGENCIAS',
-          style: TextStyle(
+        Text(
+          text,
+          style: const TextStyle(
             fontSize: 11.0,
             color: Colors.white,
             fontWeight: FontWeight.bold,
