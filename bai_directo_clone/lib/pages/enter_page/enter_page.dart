@@ -9,20 +9,16 @@ class EnterPage extends StatelessWidget {
       body: Stack(
         children: [
           const Image(
+              fit: BoxFit.cover,
               height: double.infinity,
-              fit: BoxFit.fitHeight,
-              image: AssetImage('assets/quedas.jpg')),
-          Container(
-            color: const Color.fromARGB(232, 0, 43, 107).withOpacity(0.5),
-            height: double.infinity,
-          ),
+              width: double.infinity,
+              image: AssetImage('assets/bai-background.jpg')),
           Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
-                height: 90,
-                width: 90,
-                color: Colors.white,
+              Image.asset(
+                height: 95.0,
+                'assets/bai-logo.png',
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(
@@ -34,9 +30,17 @@ class EnterPage extends StatelessWidget {
                     const SizedBox(height: 10),
                     const CustomTextField(text: 'PALAVRA-CHAVE'),
                     const SizedBox(height: 15),
-                    Container(height: 50.0, color: Colors.blue),
+                    LoginButtonWithIcon(
+                      onTap: () {},
+                      text: 'ENTRAR',
+                    ),
                     const SizedBox(height: 10),
-                    Container(height: 50.0, color: Colors.white),
+                    DefaultButton(
+                      onTap: () {},
+                      text: 'ADERIR',
+                      color: Colors.white,
+                      textColor: const Color.fromRGBO(0, 163, 224, 1),
+                    ),
                     const SizedBox(height: 20),
                     InkWell(
                       onTap: (() => print('Clicado')),
@@ -50,13 +54,18 @@ class EnterPage extends StatelessWidget {
                   ],
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: const [
-                  BottonButtons(icon: Icons.location_on_outlined),
-                  BottonButtons(icon: Icons.phone),
-                  BottonButtons(icon: Icons.monetization_on),
-                ],
+              Center(
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: const [
+                      BottonButtons(icon: Icons.location_on_outlined),
+                      BottonButtons(icon: Icons.phone),
+                      BottonButtons(icon: Icons.monetization_on),
+                    ],
+                  ),
+                ),
               )
             ],
           ),
@@ -72,24 +81,13 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      //autocorrect: true,
       textCapitalization: TextCapitalization.words,
       decoration: InputDecoration(
-        contentPadding: const EdgeInsets.all(20.0),
-        hintText: text,
-      ),
+          hintStyle: const TextStyle(color: Colors.white),
+          contentPadding: const EdgeInsets.all(20.0),
+          hintText: text),
       style: const TextStyle(
-        fontSize: 14.0,
-        color: Colors.white,
-        fontWeight: FontWeight.bold,
-      ),
-      validator: (placeName) {
-        if (placeName!.length < 3) {
-          return placeName;
-        } else {
-          return null;
-        }
-      },
+          fontSize: 14.0, color: Colors.white, fontWeight: FontWeight.bold),
     );
   }
 }
@@ -119,6 +117,84 @@ class BottonButtons extends StatelessWidget {
           ),
         )
       ],
+    );
+  }
+}
+
+class LoginButtonWithIcon extends StatelessWidget {
+  const LoginButtonWithIcon({
+    Key? key,
+    required this.onTap,
+    required this.text,
+  }) : super(key: key);
+  final VoidCallback onTap;
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+          height: 45.0,
+          //  width: 200.0,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.0),
+              color: const Color.fromRGBO(0, 163, 224, 1)),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                text,
+                style: const TextStyle(color: Colors.white, fontSize: 13.0),
+              ),
+              const SizedBox(width: 2.5),
+              const Icon(
+                Icons.arrow_forward,
+                color: Colors.white,
+              ),
+            ],
+          )),
+    );
+  }
+}
+
+class DefaultButton extends StatelessWidget {
+  const DefaultButton({
+    Key? key,
+    required this.onTap,
+    required this.text,
+    required this.color,
+    required this.textColor,
+  }) : super(key: key);
+  final VoidCallback onTap;
+  final String text;
+  final Color color, textColor;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+          height: 45.0,
+          //  width: 200.0,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.0), color: color),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                text,
+                style: TextStyle(
+                    color: textColor,
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(width: 2.5),
+              const Icon(
+                Icons.arrow_forward,
+                color: Colors.white,
+              ),
+            ],
+          )),
     );
   }
 }
