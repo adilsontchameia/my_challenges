@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../../presentation/pages/home_page/home_page.dart';
 import '../../models/home_card_model.dart';
 import 'widgets/home_center_card.dart';
+import 'widgets/home_custom_app_bar.dart';
+import 'widgets/home_main_banner.dart';
+import 'widgets/top_carousel_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key, this.homeCardModel});
@@ -16,11 +18,11 @@ class HomePage extends StatelessWidget {
           children: [
             Stack(
               children: [
-                MainBanner(size: size),
+                HomeMainBanner(size: size),
                 SafeArea(
                   child: Column(
                     children: [
-                      const CustomAppBar(),
+                      const HomeAppBar(),
                       SizedBox(height: size.height * 0.23),
                       Stack(children: [
                         TopCardsCarousel(size: size),

@@ -8,7 +8,8 @@ class RecoverPassWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (() => print('Clicado')),
+      // ignore: avoid_print
+      onTap: (() => print('Clicked')),
       child: const Text('RECUPERAR CREDENCIAIS',
           style: TextStyle(
             color: Colors.white,

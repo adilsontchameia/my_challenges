@@ -19,14 +19,13 @@ class MainBanner extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(
                   height: 35.0,
                 ),
                 const Icon(Icons.home, color: Colors.white, size: 50.0),
                 const Text(
-                  'Pag Entidade Recargas Directas Unitel',
+                  'Pag Entidade Recargas Directas Unitel.',
                   softWrap: true,
                   textAlign: TextAlign.center,
                   style: TextStyle(

@@ -1,5 +1,6 @@
 import 'package:bai_directo_clone/utils/constants.dart';
 import 'package:bai_directo_clone/utils/page_routes.dart';
+import 'package:bai_directo_clone/utils/theme_config.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,17 +17,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: PageRouter.generateRoute,
-      initialRoute: transationInfo,
-      theme: ThemeData(
-        inputDecorationTheme: const InputDecorationTheme(
-          enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.white),
-          ),
-          focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.white),
-          ),
-        ),
-      ),
+      initialRoute: transactionInfo,
+      theme: customDefaultTheme,
     );
   }
 }

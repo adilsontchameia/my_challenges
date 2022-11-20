@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/transaction_app_bar.dart';
-import 'widgets/transaction_banne.dart';
 import 'widgets/small_transaction_info_card.dart';
 import 'widgets/top_circular_icon.dart';
+import 'widgets/transaction_app_bar.dart';
+import 'widgets/transaction_banner.dart';
 import 'widgets/transaction_info_card.dart';
 
-class TransationInfoPage extends StatelessWidget {
-  const TransationInfoPage({
+class TransactionInfoPage extends StatelessWidget {
+  const TransactionInfoPage({
     super.key,
   });
 
@@ -23,7 +23,6 @@ class TransationInfoPage extends StatelessWidget {
               const MainBanner(),
               SafeArea(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const CustomAppBar(),
                     SizedBox(height: size.height * 0.22),
@@ -34,11 +33,14 @@ class TransationInfoPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: const [
                             CustomCircularIcon(
-                                icon: Icons.mail_outline_outlined),
-                            CustomCircularIcon(icon: Icons.file_download),
+                              icon: Icons.mail_outline_outlined,
+                            ),
+                            CustomCircularIcon(
+                              icon: Icons.file_download,
+                            ),
                           ],
                         ),
-                      )
+                      ),
                     ]),
                   ],
                 ),
