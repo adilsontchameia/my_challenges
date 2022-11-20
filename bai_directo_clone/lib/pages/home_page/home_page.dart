@@ -11,63 +11,27 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Column(
-        children: [
-          Stack(
-            children: [
-              Container(
-                height: size.height * 0.4,
-                width: double.infinity,
-                color: const Color.fromRGBO(0, 163, 224, 1),
-              ),
-              SafeArea(
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconButton(
-                          iconSize: 25.0,
-                          color: Colors.white,
-                          onPressed: () {
-                            debugPrint('Clicked');
-                          },
-                          icon: const Icon(Icons.star_border_outlined),
-                        ),
-                        const Text(
-                          'O QUE PROCURA?',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                        const SizedBox()
-                      ],
-                    ),
-                    SizedBox(height: size.height * 0.23),
-                    Stack(children: [
-                      Container(
-                        height: size.height * 0.14,
-                        width: double.infinity,
-                        color: Colors.transparent,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          shrinkWrap: true,
-                          itemCount: HomeCardModel.homeCardModel.length,
-                          itemBuilder: (context, index) {
-                            return const HomePageTopCard(
-                                text1: 'aa', text2: 'text5');
-                          },
-                        ),
-                      ),
-                    ]),
-                  ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Stack(
+              children: [
+                MainBanner(size: size),
+                SafeArea(
+                  child: Column(
+                    children: [
+                      const CustomAppBar(),
+                      SizedBox(height: size.height * 0.23),
+                      Stack(children: [
+                        TopCardsCarousel(size: size),
+                      ]),
+                    ],
+                  ),
                 ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 20.0),
-          SingleChildScrollView(
-            child: Column(
+              ],
+            ),
+            const SizedBox(height: 20.0),
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
@@ -103,93 +67,86 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 10.0),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Center(
-                      child:
-                          HomePageCenterCard(text1: 'text1', text2: 'text2')),
-                )
+                const HomePageCenterCard(text1: 'text1', text2: 'text2'),
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 }
 
+class MainBanner extends StatelessWidget {
+  const MainBanner({
+    Key? key,
+    required this.size,
+  }) : super(key: key);
 
-/*
-class HomePage extends StatelessWidget {
-  const HomePage({super.key, this.homeCardModel});
-  final List<HomeCardModel>? homeCardModel;
+  final Size size;
+
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: Column(
-        children: [
-          SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Stack(
-              children: [
-                Container(
-                  height: size.height * 0.4,
-                  width: double.infinity,
-                  color: const Color.fromRGBO(0, 163, 224, 1),
-                ),
-                CircleAvatar(
-                  radius: 120.0,
-                  child: Image.asset(
-                    height: 120.0,
-                    'assets/profile-pic.jpg',
-                  ),
-                ),
-                Container(
-                  height: size.height * 0.12,
-                  width: double.infinity,
-                  color: Colors.red,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    itemCount: HomeCardModel.homeCardModel.length,
-                    itemBuilder: (context, index) {
-                      return const HomePageCard(text1: 'aa', text2: 'text5');
-                    },
-                  ),
-                ),
-                SafeArea(
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          IconButton(
-                            iconSize: 25.0,
-                            color: Colors.white,
-                            onPressed: () {
-                              debugPrint('Tapped');
-                            },
-                            icon: const Icon(Icons.close),
-                          ),
-                          const Text(
-                            'O QUE PROCURA?',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                          const SizedBox()
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+    return Container(
+      height: size.height * 0.4,
+      width: double.infinity,
+      color: const Color.fromRGBO(0, 163, 224, 1),
+    );
+  }
+}
+
+class CustomAppBar extends StatelessWidget {
+  const CustomAppBar({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        IconButton(
+          iconSize: 25.0,
+          color: Colors.white,
+          onPressed: () {
+            debugPrint('Clicked');
+          },
+          icon: const Icon(Icons.star_border_outlined),
+        ),
+        const Text(
+          'O QUE PROCURA?',
+          style: TextStyle(
+            color: Colors.white,
           ),
-        ],
+        ),
+        const SizedBox()
+      ],
+    );
+  }
+}
+
+class TopCardsCarousel extends StatelessWidget {
+  const TopCardsCarousel({
+    Key? key,
+    required this.size,
+  }) : super(key: key);
+
+  final Size size;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: size.height * 0.14,
+      width: double.infinity,
+      color: Colors.transparent,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        shrinkWrap: true,
+        itemCount: HomeCardModel.homeCardModel.length,
+        itemBuilder: (context, index) {
+          return const HomePageTopCard(text1: 'aa', text2: 'text5');
+        },
       ),
     );
   }
 }
-*/
