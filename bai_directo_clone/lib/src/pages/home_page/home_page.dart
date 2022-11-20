@@ -7,26 +7,33 @@ import 'widgets/home_custom_app_bar.dart';
 import 'widgets/home_main_banner.dart';
 import 'widgets/top_carousel_card.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key, this.homeCardModel});
   final List<HomeCardModel>? homeCardModel;
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: BaiColors.scaffoldColor,
+      //bottomNavigationBar: const HomeBottomNav(),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Stack(
               children: [
-                HomeMainBanner(size: size),
+                const HomeMainBanner(),
                 SafeArea(
                   child: Column(
                     children: [
                       const HomeAppBar(),
                       SizedBox(height: size.height * 0.23),
-                      Stack(children: [
+                      Stack(children: const [
                         TopCardsCarousel(),
                       ]),
                     ],
