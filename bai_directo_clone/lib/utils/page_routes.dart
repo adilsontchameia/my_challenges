@@ -13,7 +13,7 @@ class PageRouter {
       case signUpPage:
         return MaterialPageRoute(builder: (_) => const SignUpPage());
       case homePage:
-        return MaterialPageRoute(builder: (_) => const HomePage());
+        return MaterialPageRoute(builder: (_) => HomePage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(

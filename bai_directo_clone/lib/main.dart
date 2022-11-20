@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: PageRouter.generateRoute,
-      initialRoute: enterRoute,
+      initialRoute: homePage,
       theme: ThemeData(
         inputDecorationTheme: const InputDecorationTheme(
           enabledBorder: UnderlineInputBorder(
