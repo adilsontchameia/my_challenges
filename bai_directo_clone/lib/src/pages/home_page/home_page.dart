@@ -1,8 +1,8 @@
-import 'package:bai_directo_clone/pages/home_page/widgets/home_center_card.dart';
-import 'package:bai_directo_clone/pages/home_page/widgets/home_top_card.dart';
 import 'package:flutter/material.dart';
 
+import '../../../presentation/pages/home_page/home_page.dart';
 import '../../models/home_card_model.dart';
+import 'widgets/home_center_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key, this.homeCardModel});
@@ -89,80 +89,6 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class MainBanner extends StatelessWidget {
-  const MainBanner({
-    Key? key,
-    required this.size,
-  }) : super(key: key);
-
-  final Size size;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: size.height * 0.4,
-      width: double.infinity,
-      color: const Color.fromRGBO(0, 163, 224, 1),
-    );
-  }
-}
-
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        IconButton(
-          iconSize: 25.0,
-          color: Colors.white,
-          onPressed: () {
-            debugPrint('Clicked');
-          },
-          icon: const Icon(Icons.star_border_outlined),
-        ),
-        const Text(
-          'O QUE PROCURA?',
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-        const SizedBox()
-      ],
-    );
-  }
-}
-
-class TopCardsCarousel extends StatelessWidget {
-  const TopCardsCarousel({
-    Key? key,
-    required this.size,
-  }) : super(key: key);
-
-  final Size size;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: size.height * 0.14,
-      width: double.infinity,
-      color: Colors.transparent,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        shrinkWrap: true,
-        itemCount: HomeCardModel.homeCardModel.length,
-        itemBuilder: (context, index) {
-          return const HomePageTopCard(text1: 'aa', text2: 'text5');
-        },
       ),
     );
   }

@@ -1,10 +1,10 @@
-import 'package:bai_directo_clone/pages/enter_page/enter_page.dart';
-import 'package:bai_directo_clone/pages/sign_up_page/sign_up_page.dart';
-import 'package:bai_directo_clone/pages/transation_info_page/transation_info_page.dart';
 import 'package:bai_directo_clone/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-import '../pages/home_page/home_page.dart';
+import '../presentation/pages/home_page/home_page.dart';
+import '../src/pages/enter_page/enter_page.dart';
+import '../src/pages/sign_up_page/sign_up_page.dart';
+import '../src/pages/transation_info_page/transation_info_page.dart';
 
 class PageRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
