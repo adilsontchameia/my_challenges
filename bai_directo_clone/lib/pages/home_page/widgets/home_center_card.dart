@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class HomePageCenterCard extends StatelessWidget {
-  const HomePageCenterCard({Key? key, required this.text1, required this.text2})
-      : super(key: key);
-  final String text1, text2;
+  const HomePageCenterCard({
+    Key? key,
+    required this.isExpensive,
+  }) : super(key: key);
+  final bool isExpensive;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -46,7 +48,7 @@ class HomePageCenterCard extends StatelessWidget {
                     height: 50.0,
                     width: 50.0,
                     decoration: BoxDecoration(
-                      color: Colors.orange,
+                      color: isExpensive ? Colors.orange : Colors.purple,
                       borderRadius: BorderRadius.circular(10.0),
                       boxShadow: [
                         BoxShadow(
@@ -57,8 +59,12 @@ class HomePageCenterCard extends StatelessWidget {
                         )
                       ],
                     ),
-                    child:
-                        const Icon(size: 25.0, color: Colors.white, Icons.home),
+                    child: Icon(
+                        size: 25.0,
+                        color: Colors.white,
+                        isExpensive
+                            ? Icons.home
+                            : Icons.compare_arrows_outlined),
                   ),
                   const SizedBox(width: 10.0),
                   Column(
@@ -71,18 +77,34 @@ class HomePageCenterCard extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
+                      const SizedBox(height: 10.0),
                       Row(
-                        children: const [
-                          Icon(
-                            Icons.arrow_downward_sharp,
-                            color: Colors.red,
-                          ),
-                          Text(
-                            'Kz 1.000,00',
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 112, 138, 159),
-                              fontWeight: FontWeight.w600,
-                            ),
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Row(
+                            children: [
+                              const Icon(
+                                size: 16.0,
+                                Icons.arrow_downward_rounded,
+                                color: Colors.red,
+                              ),
+                              const Text(
+                                'Kz 1.000,00',
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 112, 138, 159),
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              SizedBox(width: size.width * 0.4),
+                              const Padding(
+                                padding: EdgeInsets.only(left: 16),
+                                child: Icon(
+                                  size: 18.0,
+                                  Icons.arrow_forward_ios,
+                                  color: Colors.red,
+                                ),
+                              )
+                            ],
                           ),
                         ],
                       )
