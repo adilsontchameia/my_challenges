@@ -1,3 +1,4 @@
+import 'package:bai_directo_clone/utils/theme_config.dart';
 import 'package:flutter/material.dart';
 
 import '../../models/home_card_model.dart';
@@ -13,6 +14,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: BaiColors.scaffoldColor,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -25,7 +27,7 @@ class HomePage extends StatelessWidget {
                       const HomeAppBar(),
                       SizedBox(height: size.height * 0.23),
                       Stack(children: [
-                        TopCardsCarousel(size: size),
+                        TopCardsCarousel(),
                       ]),
                     ],
                   ),
@@ -44,24 +46,26 @@ class HomePage extends StatelessWidget {
                       Text(
                         'MOVIMENTOS',
                         style: TextStyle(
-                          color: Colors.black.withOpacity(0.6),
+                          color: Colors.black.withOpacity(0.5),
                           fontSize: 25.0,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
                       const SizedBox(height: 3.0),
                       Row(
-                        children: const [
+                        children: [
                           Icon(
+                            size: 15.0,
                             Icons.account_balance,
-                            color: Colors.grey,
+                            color: BaiColors.baiBlueColor.withOpacity(0.5),
                           ),
-                          Text(
+                          const SizedBox(width: 2.0),
+                          const Text(
                             'CONTA 1548651245 17 895',
                             style: TextStyle(
-                              color: Color.fromARGB(255, 112, 138, 159),
-                              fontWeight: FontWeight.w600,
-                            ),
+                                color: BaiColors.baiBlueColor,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 13.0),
                           ),
                         ],
                       )
@@ -79,7 +83,7 @@ class HomePage extends StatelessWidget {
                   child: Text(
                     'CONTAS',
                     style: TextStyle(
-                      color: Colors.black.withOpacity(0.6),
+                      color: Colors.black.withOpacity(0.5),
                       fontSize: 25.0,
                       fontWeight: FontWeight.w500,
                     ),

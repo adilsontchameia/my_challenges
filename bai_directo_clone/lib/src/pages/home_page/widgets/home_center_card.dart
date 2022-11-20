@@ -1,3 +1,4 @@
+import 'package:bai_directo_clone/utils/theme_config.dart';
 import 'package:flutter/material.dart';
 
 class HomePageCenterCard extends StatelessWidget {
@@ -36,7 +37,7 @@ class HomePageCenterCard extends StatelessWidget {
               const Text(
                 'HOJE, 20 NOVEMBRO 2022',
                 style: TextStyle(
-                  color: Color.fromARGB(255, 112, 138, 159),
+                  color: BaiColors.baiBlueColor,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -48,7 +49,9 @@ class HomePageCenterCard extends StatelessWidget {
                     height: 50.0,
                     width: 50.0,
                     decoration: BoxDecoration(
-                      color: isExpensive ? Colors.orange : Colors.purple,
+                      color: isExpensive
+                          ? BaiColors.paymentColor
+                          : BaiColors.naHoraColor,
                       borderRadius: BorderRadius.circular(10.0),
                       boxShadow: [
                         BoxShadow(
@@ -73,7 +76,7 @@ class HomePageCenterCard extends StatelessWidget {
                       const Text(
                         'Pag Entidade Recargas Directas Unitel',
                         style: TextStyle(
-                          color: Color.fromARGB(255, 112, 138, 159),
+                          color: BaiColors.baiBlueColor,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -91,8 +94,8 @@ class HomePageCenterCard extends StatelessWidget {
                               const Text(
                                 'Kz 1.000,00',
                                 style: TextStyle(
-                                  color: Color.fromARGB(255, 112, 138, 159),
-                                  fontWeight: FontWeight.w600,
+                                  color: BaiColors.baiBlueColor,
+                                  fontWeight: FontWeight.w400,
                                 ),
                               ),
                               SizedBox(width: size.width * 0.4),

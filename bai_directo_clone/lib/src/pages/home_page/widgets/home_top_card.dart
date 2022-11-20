@@ -1,3 +1,4 @@
+import 'package:bai_directo_clone/utils/theme_config.dart';
 import 'package:flutter/material.dart';
 
 class HomePageTopCard extends StatelessWidget {
@@ -10,7 +11,6 @@ class HomePageTopCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        //  height: size.height * 0.18,
         width: size.width * 0.28,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -33,13 +33,17 @@ class HomePageTopCard extends StatelessWidget {
             children: [
               const Icon(
                   size: 25.0,
-                  color: Color.fromRGBO(0, 163, 224, 1),
+                  color: BaiColors.defaultBlueColor,
                   Icons.account_balance_outlined),
+              const SizedBox(
+                height: 10.0,
+              ),
               RichText(
                 text: TextSpan(
-                  style: const TextStyle(
-                      color: Color.fromARGB(255, 190, 190, 190),
-                      fontSize: 13.0),
+                  style: TextStyle(
+                      color: BaiColors.baiBlueColor.withOpacity(0.8),
+                      fontSize: 13.0,
+                      fontWeight: FontWeight.bold),
                   children: [
                     TextSpan(
                       text: text1,

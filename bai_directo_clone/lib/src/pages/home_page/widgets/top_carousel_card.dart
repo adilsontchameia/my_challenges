@@ -6,15 +6,13 @@ import 'home_top_card.dart';
 class TopCardsCarousel extends StatelessWidget {
   const TopCardsCarousel({
     Key? key,
-    required this.size,
   }) : super(key: key);
-
-  final Size size;
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.14,
+      height: size.height * 0.13 + 3,
       width: double.infinity,
       color: Colors.transparent,
       child: ListView.builder(

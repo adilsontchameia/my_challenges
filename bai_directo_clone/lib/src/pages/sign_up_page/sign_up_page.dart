@@ -1,3 +1,4 @@
+import 'package:bai_directo_clone/utils/theme_config.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/sign_up_card.dart';
@@ -16,7 +17,7 @@ class SignUpPage extends StatelessWidget {
               Container(
                 height: size.height * 0.2,
                 width: double.infinity,
-                color: const Color.fromRGBO(0, 163, 224, 1),
+                color: BaiColors.defaultBlueColor,
               ),
               SafeArea(
                 child: Column(
@@ -53,7 +54,7 @@ class SignUpPage extends StatelessWidget {
                           children: [
                             const Icon(
                                 size: 55.0,
-                                color: Color.fromRGBO(0, 163, 224, 1),
+                                color: BaiColors.defaultBlueColor,
                                 Icons.account_balance_outlined),
                             const SizedBox(width: 10.0),
                             Column(
@@ -62,7 +63,7 @@ class SignUpPage extends StatelessWidget {
                                 Text(
                                   'Abrir Conta Bancária',
                                   style: TextStyle(
-                                    color: Color.fromRGBO(0, 163, 224, 1),
+                                    color: BaiColors.defaultBlueColor,
                                     fontWeight: FontWeight.w700,
                                     fontSize: 16.0,
                                   ),
@@ -71,8 +72,8 @@ class SignUpPage extends StatelessWidget {
                                 Text(
                                   'O seu banco no telemóvel ou no computador.',
                                   style: TextStyle(
-                                    color: Color.fromARGB(255, 190, 190, 190),
-                                    fontWeight: FontWeight.bold,
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w400,
                                     fontSize: 14.0,
                                   ),
                                 ),

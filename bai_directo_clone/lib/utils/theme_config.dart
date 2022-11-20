@@ -2,23 +2,22 @@ import 'package:flutter/material.dart';
 
 //Const for Colors
 class BaiColors {
-  static const blue = Color.fromRGBO(36, 49, 77, 1);
-  static const buttonColor = Color.fromRGBO(147, 196, 222, 1);
-  static const darkColor = Color.fromRGBO(23, 26, 53, 1);
-  static const darkColor2 = Color.fromARGB(255, 0, 32, 51);
-  static const grey = Color.fromARGB(255, 126, 126, 126);
-  static const lightGrey = Color.fromARGB(255, 176, 186, 185);
-  static const veryLightGrey = Color.fromARGB(255, 215, 236, 235);
-  static const white = Color.fromARGB(255, 255, 255, 255);
-  static const pink = Color.fromARGB(255, 255, 0, 179);
+  //Transactions Colors
+  static const naHoraColor = Color.fromRGBO(106, 87, 219, 1);
+  static const paymentColor = Color.fromRGBO(245, 119, 36, 1);
+  static const depositColor = Color.fromRGBO(175, 141, 71, 1);
+  static const serviceColor = Color.fromRGBO(207, 89, 205, 1);
+  //View Colors
+
+  static const scaffoldColor = Color.fromARGB(255, 244, 248, 252);
+  static const baiBlueColor = Color.fromRGBO(92, 124, 150, 1);
+  static const cardDescriptionColor = Color.fromRGBO(0, 50, 90, 1);
+  static const defaultBlueColor = Color.fromRGBO(0, 163, 224, 1);
 }
 
 final customDefaultTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,
     canvasColor: Colors.white,
-    drawerTheme: const DrawerThemeData(
-      backgroundColor: BaiColors.white,
-    ),
     inputDecorationTheme: const InputDecorationTheme(
       enabledBorder: UnderlineInputBorder(
         borderSide: BorderSide(color: Colors.white),
@@ -28,17 +27,9 @@ final customDefaultTheme = ThemeData(
       ),
     ),
     textTheme: const TextTheme(
-      
       bodyText1: TextStyle(),
       bodyText2: TextStyle(),
-    ).apply(bodyColor: Colors.white, displayColor: Colors.white),
-    appBarTheme: const AppBarTheme(
-      elevation: 0.0,
-      color: Color.fromARGB(255, 239, 239, 239),
-      iconTheme: IconThemeData(color: BaiColors.darkColor),
-      toolbarTextStyle: TextStyle(color: BaiColors.white),
-    ),
-    iconTheme: const IconThemeData(color: BaiColors.buttonColor),
-    colorScheme: ColorScheme.fromSwatch()
-        .copyWith(secondary: BaiColors.white)
-        .copyWith(secondary: BaiColors.buttonColor));
+    ).apply(
+      bodyColor: BaiColors.defaultBlueColor,
+      displayColor: BaiColors.defaultBlueColor,
+    ));

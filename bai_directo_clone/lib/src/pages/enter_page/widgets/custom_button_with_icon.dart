@@ -1,3 +1,4 @@
+import 'package:bai_directo_clone/utils/theme_config.dart';
 import 'package:flutter/material.dart';
 
 class ButtonWithIcon extends StatelessWidget {
@@ -16,8 +17,9 @@ class ButtonWithIcon extends StatelessWidget {
           height: 45.0,
           //  width: 200.0,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.0),
-              color: const Color.fromRGBO(0, 163, 224, 1)),
+            borderRadius: BorderRadius.circular(10.0),
+            color: BaiColors.defaultBlueColor,
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

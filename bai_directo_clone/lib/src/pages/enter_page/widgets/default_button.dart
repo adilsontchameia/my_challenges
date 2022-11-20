@@ -6,11 +6,11 @@ class DefaultButton extends StatelessWidget {
     required this.onTap,
     required this.text,
     required this.color,
-    required this.textColor,
+    this.textColor,
   }) : super(key: key);
   final VoidCallback onTap;
   final String text;
-  final Color color, textColor;
+  final Color? color, textColor;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,9 @@ class DefaultButton extends StatelessWidget {
           height: 45.0,
           //  width: 200.0,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.0), color: color),
+            borderRadius: BorderRadius.circular(10.0),
+            color: color,
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

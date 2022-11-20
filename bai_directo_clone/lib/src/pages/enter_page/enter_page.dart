@@ -50,10 +50,10 @@ class EnterPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 10.0),
                   DefaultButton(
-                      onTap: () => Navigator.pushNamed(context, signUpPage),
-                      text: 'ADERIR',
-                      color: Colors.white,
-                      textColor: const Color.fromRGBO(0, 163, 224, 1)),
+                    onTap: () => Navigator.pushNamed(context, signUpPage),
+                    text: 'ADERIR',
+                    color: Colors.white,
+                  ),
                   const SizedBox(height: 25),
                   const RecoverPassWidget()
                 ],
