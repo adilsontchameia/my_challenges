@@ -1,17 +1,20 @@
+import 'package:bai_directo_clone/src/models/home_card_model.dart';
 import 'package:bai_directo_clone/utils/theme_config.dart';
 import 'package:flutter/material.dart';
 
 class HomePageTopCard extends StatelessWidget {
-  const HomePageTopCard({Key? key, required this.text1, required this.text2})
-      : super(key: key);
-  final String text1, text2;
+  const HomePageTopCard({
+    Key? key,
+    required this.homeCardModel,
+  }) : super(key: key);
+  final HomeCardModel homeCardModel;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        width: size.width * 0.28,
+        width: size.width * 0.28 + 10,
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -31,10 +34,11 @@ class HomePageTopCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Icon(
-                  size: 25.0,
-                  color: BaiColors.defaultBlueColor,
-                  Icons.account_balance_outlined),
+              Icon(
+                size: 25.0,
+                color: BaiColors.defaultBlueColor,
+                homeCardModel.icon,
+              ),
               const SizedBox(
                 height: 10.0,
               ),
@@ -46,10 +50,10 @@ class HomePageTopCard extends StatelessWidget {
                       fontWeight: FontWeight.bold),
                   children: [
                     TextSpan(
-                      text: text1,
+                      text: homeCardModel.text1,
                     ),
                     TextSpan(
-                      text: '\n$text2',
+                      text: '\n${homeCardModel.text2}',
                     )
                   ],
                 ),

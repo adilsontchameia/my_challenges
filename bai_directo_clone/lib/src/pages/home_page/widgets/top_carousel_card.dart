@@ -20,7 +20,9 @@ class TopCardsCarousel extends StatelessWidget {
         shrinkWrap: true,
         itemCount: HomeCardModel.homeCardModel.length,
         itemBuilder: (context, index) {
-          return const HomePageTopCard(text1: 'aa', text2: 'text5');
+          return HomePageTopCard(
+            homeCardModel: HomeCardModel.homeCardModel[index],
+          );
         },
       ),
     );
