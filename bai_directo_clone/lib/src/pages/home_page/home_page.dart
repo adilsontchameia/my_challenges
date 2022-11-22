@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
             pinned: false,
           ),
           SliverFillRemaining(
-            hasScrollBody: true,
+            hasScrollBody: false,
             child: Padding(
               padding: EdgeInsets.symmetric(
                   vertical: size.height * 0.120, horizontal: 5.0),
@@ -37,41 +37,39 @@ class HomePage extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 35.0),
-                    child: SingleChildScrollView(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'MOVIMENTOS',
-                            style: TextStyle(
-                              color: Colors.black.withOpacity(0.5),
-                              fontSize: 25.0,
-                              fontWeight: FontWeight.w500,
-                            ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'MOVIMENTOS',
+                          style: TextStyle(
+                            color: Colors.black.withOpacity(0.5),
+                            fontSize: 25.0,
+                            fontWeight: FontWeight.w500,
                           ),
-                          const SizedBox(height: 3.0),
-                          Row(
-                            children: [
-                              Icon(
-                                size: 15.0,
-                                Icons.account_balance,
-                                color: BaiColors.baiBlueColor.withOpacity(0.5),
-                              ),
-                              const SizedBox(width: 2.0),
-                              const Text(
-                                'CONTA 1548651245 17 895',
-                                style: TextStyle(
-                                    color: BaiColors.baiBlueColor,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 13.0),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
+                        ),
+                        const SizedBox(height: 3.0),
+                        Row(
+                          children: [
+                            Icon(
+                              size: 15.0,
+                              Icons.account_balance,
+                              color: BaiColors.baiBlueColor.withOpacity(0.5),
+                            ),
+                            const SizedBox(width: 2.0),
+                            const Text(
+                              'CONTA 1548651245 17 895',
+                              style: TextStyle(
+                                  color: BaiColors.baiBlueColor,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 13.0),
+                            ),
+                          ],
+                        )
+                      ],
                     ),
                   ),
-                  const SizedBox(height: 10.0),
+                  const SizedBox(height: 18.0),
                   const HomePageCenterCard(isExpensive: true),
                   const HomePageCenterCard(isExpensive: false),
                   const HomePageCenterCard(isExpensive: true),
@@ -88,7 +86,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 20.0),
+                  const SizedBox(height: 22.0),
                   const HomePageCenterCard(isExpensive: false),
                 ],
               ),
@@ -148,109 +146,6 @@ class MySliverAppBar extends SliverPersistentHeaderDelegate {
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) => true;
 }
 
-/*
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 245, 245, 245),
-      appBar: AppBar(
-        elevation: 0,
-        centerTitle: true,
-        backgroundColor: Colors.red,
-        leading: const Icon(
-          Icons.star_border_outlined,
-          size: 30.0,
-        ),
-        title: const SearchBar(),
-      ),
-      body: CustomScrollView(
-        slivers: [
-          SliverPersistentHeader(
-            pinned: false,
-            floating: false,
-            delegate: CardsHeader(
-              cards: const Padding(
-                padding: EdgeInsets.only(top: 14.0),
-                child: TopCardsCarousel(),
-              ),
-            ),
-          ),
-          SliverFillRemaining(
-            hasScrollBody: true,
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 35.0, horizontal: 5.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 35.0),
-                    child: SingleChildScrollView(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'MOVIMENTOS',
-                            style: TextStyle(
-                              color: Colors.black.withOpacity(0.5),
-                              fontSize: 25.0,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          const SizedBox(height: 3.0),
-                          Row(
-                            children: [
-                              Icon(
-                                size: 15.0,
-                                Icons.account_balance,
-                                color: BaiColors.baiBlueColor.withOpacity(0.5),
-                              ),
-                              const SizedBox(width: 2.0),
-                              const Text(
-                                'CONTA 1548651245 17 895',
-                                style: TextStyle(
-                                    color: BaiColors.baiBlueColor,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 13.0),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 10.0),
-                  const HomePageCenterCard(isExpensive: true),
-                  const HomePageCenterCard(isExpensive: false),
-                  const HomePageCenterCard(isExpensive: true),
-                  const HomePageCenterCard(isExpensive: false),
-                  const SizedBox(height: 20.0),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    child: Text(
-                      'CONTAS',
-                      style: TextStyle(
-                        color: Colors.black.withOpacity(0.5),
-                        fontSize: 25.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 20.0),
-                  const HomePageCenterCard(isExpensive: false),
-                ],
-              ),
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
-*/
 class SearchBar extends StatelessWidget {
   const SearchBar({
     Key? key,
@@ -264,21 +159,18 @@ class SearchBar extends StatelessWidget {
       decoration: BoxDecoration(
           color: Colors.white.withOpacity(0.3),
           borderRadius: BorderRadius.circular(15.0)),
-      child: Expanded(
-        child: TextField(
-          // controller: _editingController,
-
-          // onChanged: (_) => setState(() {}),
-          decoration: InputDecoration(
-            prefixIcon: const Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
-            hintText: 'O QUE PROCURA?',
-            hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
-            enabledBorder: InputBorder.none,
-            focusedBorder: InputBorder.none,
+      child: TextField(
+        // controller: _editingController,
+        // onChanged: (_) => setState(() {}),
+        decoration: InputDecoration(
+          prefixIcon: const Icon(
+            Icons.search,
+            color: Colors.white,
           ),
+          hintText: 'O QUE PROCURA?',
+          hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
+          enabledBorder: InputBorder.none,
+          focusedBorder: InputBorder.none,
         ),
       ),
     );
