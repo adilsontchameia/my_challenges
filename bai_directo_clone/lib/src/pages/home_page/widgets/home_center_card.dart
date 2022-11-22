@@ -35,11 +35,11 @@ class HomePageCenterCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'HOJE, 20 NOVEMBRO 2022',
+                '20 NOVEMBRO 2022',
                 style: TextStyle(
-                  color: BaiColors.baiBlueColor,
-                  fontWeight: FontWeight.w600,
-                ),
+                    color: BaiColors.baiBlueColor,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 15.0),
               ),
               const SizedBox(height: 25.0),
               Row(

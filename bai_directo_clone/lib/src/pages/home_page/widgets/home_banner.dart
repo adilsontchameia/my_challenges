@@ -1,8 +1,8 @@
 import 'package:bai_directo_clone/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-class HomeMainBanner extends StatelessWidget {
-  const HomeMainBanner({
+class HomeBanner extends StatelessWidget {
+  const HomeBanner({
     Key? key,
   }) : super(key: key);
 

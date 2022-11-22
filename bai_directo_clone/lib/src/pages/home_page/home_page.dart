@@ -1,241 +1,171 @@
-import 'dart:math';
-
-import 'package:bai_directo_clone/src/pages/home_page/widgets/home_main_banner.dart';
-import 'package:bai_directo_clone/src/pages/home_page/widgets/top_carousel_card.dart';
+import 'package:bai_directo_clone/src/pages/home_page/bottom_nav_pages/menu_page.dart';
+import 'package:bai_directo_clone/src/pages/home_page/bottom_nav_pages/payments_page.dart';
+import 'package:bai_directo_clone/src/pages/home_page/bottom_nav_pages/resume_page.dart';
+import 'package:bai_directo_clone/src/pages/home_page/bottom_nav_pages/transfer_page.dart';
 import 'package:bai_directo_clone/utils/theme_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_boom_menu/flutter_boom_menu.dart' as boom_menu;
+import 'package:flutter_svg/flutter_svg.dart';
 
-import 'widgets/home_center_card.dart';
-
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int pageIndex = 0;
+
+  final pages = [
+    const ResumePage(),
+    const TransferPage(),
+    const PaymentsPage(),
+    const MenuPage(),
+  ];
+
+  @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 241, 241, 241),
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: BaiColors.defaultBlueColor,
-        leading: const Icon(Icons.star_border_outlined),
-        title: const SearchBar(),
-      ),
-      body: CustomScrollView(
-        slivers: [
-          SliverPersistentHeader(
-            delegate: MySliverAppBar(expandedHeight: 200),
-            pinned: false,
-          ),
-          SliverFillRemaining(
-            hasScrollBody: false,
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                  vertical: size.height * 0.120, horizontal: 5.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 35.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'MOVIMENTOS',
-                          style: TextStyle(
-                            color: Colors.black.withOpacity(0.5),
-                            fontSize: 25.0,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        const SizedBox(height: 3.0),
-                        Row(
-                          children: [
-                            Icon(
-                              size: 15.0,
-                              Icons.account_balance,
-                              color: BaiColors.baiBlueColor.withOpacity(0.5),
-                            ),
-                            const SizedBox(width: 2.0),
-                            const Text(
-                              'CONTA 1548651245 17 895',
-                              style: TextStyle(
-                                  color: BaiColors.baiBlueColor,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 13.0),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 18.0),
-                  const HomePageCenterCard(isExpensive: true),
-                  const HomePageCenterCard(isExpensive: false),
-                  const HomePageCenterCard(isExpensive: true),
-                  const HomePageCenterCard(isExpensive: false),
-                  const SizedBox(height: 20.0),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    child: Text(
-                      'CONTAS',
-                      style: TextStyle(
-                        color: Colors.black.withOpacity(0.5),
-                        fontSize: 25.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 22.0),
-                  const HomePageCenterCard(isExpensive: false),
-                ],
-              ),
+        floatingActionButton: boom_menu.BoomMenu(
+          animatedIcon: AnimatedIcons.menu_close,
+          animatedIconTheme: const IconThemeData(size: 22.0),
+          //child: Icon(Icons.add),
+          onOpen: () => print('OPENING DIAL'),
+          onClose: () => print('DIAL CLOSED'),
+          // scrollVisible: scrollVisible,
+          overlayColor: Colors.black,
+          overlayOpacity: 0.7,
+          children: [
+            boom_menu.MenuItem(
+              child: const Icon(Icons.accessibility, color: Colors.black),
+              title: "Profiles",
+              titleColor: Colors.white,
+              subtitle: "You Can View the Noel Profile",
+              subTitleColor: Colors.white,
+              backgroundColor: Colors.deepOrange,
+              onTap: () => print('FIRST CHILD'),
             ),
-          )
-        ],
-      ),
-    );
+            boom_menu.MenuItem(
+              child: const Icon(Icons.brush, color: Colors.black),
+              title: "Profiles",
+              titleColor: Colors.white,
+              subtitle: "You Can View the Noel Profile",
+              subTitleColor: Colors.white,
+              backgroundColor: Colors.green,
+              onTap: () => print('SECOND CHILD'),
+            ),
+            boom_menu.MenuItem(
+              child: const Icon(Icons.keyboard_voice, color: Colors.black),
+              title: "Profile",
+              titleColor: Colors.white,
+              subtitle: "You Can View the Noel Profile",
+              subTitleColor: Colors.white,
+              backgroundColor: Colors.blue,
+              onTap: () => print('THIRD CHILD'),
+            ),
+            boom_menu.MenuItem(
+              child: const Icon(Icons.ac_unit, color: Colors.black),
+              title: "Profiles",
+              titleColor: Colors.white,
+              subtitle: "You Can View the Noel Profile",
+              subTitleColor: Colors.white,
+              backgroundColor: Colors.blue,
+              onTap: () => print('FOURTH CHILD'),
+            )
+          ],
+        ),
+        backgroundColor: BaiColors.scaffoldHomeColor,
+        bottomNavigationBar: _buildMyNavBar(context),
+        body: pages[pageIndex]);
+  }
+
+  Container _buildMyNavBar(BuildContext context) {
+    return Container(
+        height: 55,
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              NavIconButton(
+                  title: 'RESUMO',
+                  imgUrl: 'assets/home.svg',
+                  pageIndex: 0,
+                  onPressed: (() => setState(() {
+                        pageIndex = 0;
+                      }))),
+              NavIconButton(
+                  title: 'TRANSFERIR',
+                  imgUrl: 'assets/home.svg',
+                  pageIndex: 1,
+                  onPressed: (() => setState(() {
+                        pageIndex = 1;
+                      }))),
+              NavIconButton(
+                  title: 'PAGAR',
+                  imgUrl: 'assets/payments.svg',
+                  pageIndex: pageIndex,
+                  onPressed: (() => setState(() {
+                        pageIndex = 2;
+                      }))),
+              NavIconButton(
+                  title: 'MENU',
+                  imgUrl: 'assets/home.svg',
+                  pageIndex: pageIndex,
+                  onPressed: (() => setState(() {
+                        pageIndex = 3;
+                      }))),
+            ],
+          ),
+        ));
   }
 }
 
-class MySliverAppBar extends SliverPersistentHeaderDelegate {
-  final double expandedHeight;
-
-  MySliverAppBar({required this.expandedHeight});
-
-  @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return Stack(
-      clipBehavior: Clip.none,
-      fit: StackFit.expand,
-      children: [
-        Container(
-          color: BaiColors.defaultBlueColor,
-        ),
-        Center(
-          child: Opacity(
-            opacity: shrinkOffset / expandedHeight,
-            child: const Text(
-              "MySliverAppBar",
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w700,
-                fontSize: 23,
-              ),
-            ),
-          ),
-        ),
-        Positioned(
-            top: expandedHeight / 1.2 - shrinkOffset,
-            child: Opacity(
-              opacity: (1 - shrinkOffset / expandedHeight),
-              child: const TopCardsCarousel(),
-            )),
-      ],
-    );
-  }
-
-  @override
-  double get maxExtent => expandedHeight;
-
-  @override
-  double get minExtent => kToolbarHeight;
-
-  @override
-  bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) => true;
-}
-
-class SearchBar extends StatelessWidget {
-  const SearchBar({
+class NavIconButton extends StatelessWidget {
+  const NavIconButton({
     Key? key,
+    required this.imgUrl,
+    required this.pageIndex,
+    required this.onPressed,
+    required this.title,
   }) : super(key: key);
+  final String imgUrl, title;
+  final int pageIndex;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 30,
-      width: 300,
-      decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.3),
-          borderRadius: BorderRadius.circular(15.0)),
-      child: TextField(
-        // controller: _editingController,
-        // onChanged: (_) => setState(() {}),
-        decoration: InputDecoration(
-          prefixIcon: const Icon(
-            Icons.search,
-            color: Colors.white,
-          ),
-          hintText: 'O QUE PROCURA?',
-          hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
-          enabledBorder: InputBorder.none,
-          focusedBorder: InputBorder.none,
-        ),
-      ),
-    );
-  }
-}
-
-class CardsHeader extends SliverPersistentHeaderDelegate {
-  final double minTopBarHeight = 100;
-  final double maxTopBarHeight = 200;
-
-  final Widget cards;
-
-  CardsHeader({
-    required this.cards,
-  });
-
-  @override
-  Widget build(
-    BuildContext context,
-    double shrinkOffset,
-    bool overlapsContent,
-  ) {
-    var shrinkFactor = min(1, shrinkOffset / (maxExtent - minExtent));
-
-    var topBar = Positioned(
-      top: 0,
-      left: 0,
-      right: 0,
-      child: Container(
-        alignment: Alignment.center,
-        //  height: max(maxTopBarHeight * (2 - shrinkFactor * 1.45), minTopBarHeight),
-        height: 300,
-        width: double.infinity,
-        color: BaiColors.defaultBlueColor,
-        child: const Center(child: HomeMainBanner()),
-      ),
-    );
-    return SizedBox(
-      //height: max(maxExtent - shrinkOffset, minExtent),
-      height: 300,
-      child: Stack(
-        fit: StackFit.loose,
+    return InkWell(
+      onTap: onPressed,
+      child: Column(
         children: [
-          if (shrinkFactor <= 0.5) topBar,
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Padding(
-              padding: const EdgeInsets.only(
-                top: 30,
-              ),
-              child: cards,
-            ),
+          SvgPicture.asset(
+            height: 25,
+            imgUrl,
+            color: pageIndex != pageIndex
+                ? BaiColors.defaultBlueColor
+                : Colors.black.withOpacity(0.5),
           ),
-          if (shrinkFactor > 0.5) topBar,
+          Text(
+            title,
+            style: TextStyle(
+                color: pageIndex != pageIndex
+                    ? BaiColors.defaultBlueColor
+                    : Colors.black.withOpacity(0.5),
+                fontSize: 12,
+                overflow: TextOverflow.ellipsis,
+                fontWeight: FontWeight.bold),
+          ),
         ],
       ),
     );
   }
-
-  @override
-  double get maxExtent => 230;
-
-  @override
-  double get minExtent => 100;
-
-  @override
-  bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) => true;
 }

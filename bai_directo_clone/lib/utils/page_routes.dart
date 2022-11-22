@@ -21,7 +21,8 @@ class PageRouter {
         return MaterialPageRoute(
             builder: (_) => Scaffold(
                   body: Center(
-                      child: Text('No route defined for ${settings.name}')),
+                      child: Text(
+                          ' Sorry :-( ! No route defined for ${settings.name}')),
                 ));
     }
   }

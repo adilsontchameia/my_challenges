@@ -9,7 +9,7 @@ class BaiColors {
   static const serviceColor = Color.fromRGBO(207, 89, 205, 1);
   //View Colors
 
-  static const scaffoldColor = Color.fromARGB(255, 244, 248, 252);
+  static const scaffoldHomeColor = Color.fromARGB(255, 241, 241, 241);
   static const baiBlueColor = Color.fromRGBO(92, 124, 150, 1);
   static const cardDescriptionColor = Color.fromRGBO(0, 50, 90, 1);
   static const defaultBlueColor = Color.fromRGBO(0, 163, 224, 1);
