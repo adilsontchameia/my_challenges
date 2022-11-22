@@ -12,8 +12,8 @@ class TopCardsCarousel extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.13 + 3,
-      width: double.infinity,
+      height: size.height * 0.13 + 5,
+      //  width: double.infinity,
       color: Colors.transparent,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,

@@ -98,13 +98,13 @@ class HomePageCenterCard extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
-                              SizedBox(width: size.width * 0.4),
+                              SizedBox(width: size.width * 0.3 + 30),
                               const Padding(
                                 padding: EdgeInsets.only(left: 16),
                                 child: Icon(
                                   size: 18.0,
                                   Icons.arrow_forward_ios,
-                                  color: Colors.red,
+                                  color: BaiColors.baiBlueColor,
                                 ),
                               )
                             ],

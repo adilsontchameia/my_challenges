@@ -2,7 +2,7 @@
 <defs>
 <radialGradient id="a" r="53.316%" fx="50%" fy="50%"
   gradientTransform="matrix(0 1 -.99999 0 1 0)">
-  <stop offset="100%" stop-color="#00A3E0" stop-opacity=".1"></stop>
+  <stop offset="0%" stop-color="#00A3E0" stop-opacity=".1"></stop>
   <stop offset="100%" stop-color="#00A3E0" stop-opacity=".0"></stop>
 </radialGradient>  
 </defs>  
