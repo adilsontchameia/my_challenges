@@ -21,6 +21,9 @@ class TextFieldWidget extends StatelessWidget {
           width: 1.0,
           color: Colors.grey,
         )),
+        focusedBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey),
+        ),
         prefixIcon: Icon(
           icon,
           color: Colors.grey,
