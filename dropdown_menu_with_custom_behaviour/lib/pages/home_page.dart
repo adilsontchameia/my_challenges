@@ -1,3 +1,4 @@
+import 'package:dropdown_menu_with_custom_behaviour/widgets/custom_circle_avatar/custom_circle_avatar.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/screen_size.dart';
@@ -27,64 +28,73 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Center(
-                    child: Card(
-                      color: Colors.white,
-                      child: SizedBox(
-                        // height: 560.0,
-                        width: 350.0,
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Icon(Icons.arrow_back),
-                              Center(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Center(
-                                      child: CircleAvatar(
-                                        radius: 55,
-                                        backgroundColor: Colors.red,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.3),
+                            spreadRadius: 0.6,
+                            blurRadius: 10,
+                            offset: const Offset(0, 0.2),
+                          ),
+                        ],
+                      ),
+                      child: Card(
+                        color: Colors.white,
+                        child: SizedBox(
+                          // height: 560.0,
+                          width: 350.0,
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Icon(Icons.arrow_back),
+                                Center(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const Center(
+                                          child: CustomCircleAvatar(
+                                              imgUrl:
+                                                  'assets/profile_pic.jpg')),
+                                      const SizedBox(height: 20.0),
+                                      const TitleWidget(title: 'Name'),
+                                      const SizedBox(height: 15),
+                                      TextFieldWidget(
+                                          text: "Full Name",
+                                          icon: Icons.person,
+                                          isNumeric: false),
+                                      const SizedBox(height: 20),
+                                      const TitleWidget(title: 'Ocupation'),
+                                      const SizedBox(height: 5),
+                                      const DropdownWidget(),
+                                      const SizedBox(height: 20),
+                                      const TitleWidget(title: 'Phone Number'),
+                                      const SizedBox(height: 5),
+                                      TextFieldWidget(
+                                          text: "+244 942 *** ***",
+                                          icon: Icons.phone,
+                                          isNumeric: true),
+                                      const SizedBox(height: 20),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          CancelButton(
+                                            onTap: (() => print('Canceled.')),
+                                          ),
+                                          ContinueButton(
+                                            onTap: () => print('Continued.'),
+                                          ),
+                                        ],
                                       ),
-                                    ),
-                                    const SizedBox(height: 20.0),
-                                    const TitleWidget(title: 'Name'),
-                                    const SizedBox(height: 15),
-                                    TextFieldWidget(
-                                      text: "Full Name",
-                                      icon: Icons.person,
-                                      isNumeric: false,
-                                    ),
-                                    const SizedBox(height: 20),
-                                    const TitleWidget(title: 'Ocupation'),
-                                    const SizedBox(height: 5),
-                                    const DropdownWidget(),
-                                    const SizedBox(height: 20),
-                                    const TitleWidget(title: 'Phone Number'),
-                                    const SizedBox(height: 5),
-                                    TextFieldWidget(
-                                      text: "+244 942 *** ***",
-                                      icon: Icons.phone,
-                                      isNumeric: true,
-                                    ),
-                                    const SizedBox(height: 20),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        CancelButton(
-                                          onTap: (() => print('Canceled.')),
-                                        ),
-                                        ContinueButton(
-                                          onTap: () => print('Continued.'),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
