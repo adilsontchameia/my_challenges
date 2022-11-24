@@ -55,10 +55,11 @@ class HomePage extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      const Center(
+                                      Center(
                                           child: CustomCircleAvatar(
-                                              imgUrl:
-                                                  'assets/profile_pic.jpg')),
+                                        imgUrl: 'assets/profile_pic.jpg',
+                                        onTap: () => print('Tapped'),
+                                      )),
                                       const SizedBox(height: 20.0),
                                       const TitleWidget(title: 'Name'),
                                       const SizedBox(height: 15),
