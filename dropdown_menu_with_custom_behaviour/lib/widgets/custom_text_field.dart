@@ -13,6 +13,9 @@ class TextFieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      focusNode: FocusNode(
+        canRequestFocus: false,
+      ),
       cursorColor: Colors.amber,
       keyboardType: isNumeric ? TextInputType.number : TextInputType.name,
       decoration: InputDecoration(

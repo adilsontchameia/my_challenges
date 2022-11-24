@@ -9,6 +9,9 @@ class DropdownWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return DropdownButtonFormField<String>(
       decoration: const InputDecoration(
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey),
+        ),
         prefixIcon: Icon(
           Icons.badge,
           color: Colors.grey,
