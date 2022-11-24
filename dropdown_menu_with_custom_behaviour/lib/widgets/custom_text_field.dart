@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 
 class TextFieldWidget extends StatelessWidget {
-  const TextFieldWidget({
-    Key? key,
-  }) : super(key: key);
-
+  TextFieldWidget({Key? key, required this.text, required this.icon})
+      : super(key: key);
+  String text;
+  IconData icon;
   @override
   Widget build(BuildContext context) {
-    return const TextField(
+    return TextField(
       cursorColor: Colors.amber,
       decoration: InputDecoration(
-        enabledBorder: OutlineInputBorder(
+        enabledBorder: const OutlineInputBorder(
             borderSide: BorderSide(
           width: 1.0,
           color: Colors.grey,
         )),
         prefixIcon: Icon(
-          Icons.person,
+          icon,
           color: Colors.grey,
         ),
-        hintText: "Full Name",
+        hintText: text,
       ),
     );
   }
