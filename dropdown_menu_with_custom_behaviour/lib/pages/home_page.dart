@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../utils/screen_size.dart';
+import '../widgets/buttons/cancel_button.dart';
+import '../widgets/buttons/continue_button.dart';
 import '../widgets/custom_dropdown.dart';
 import '../widgets/custom_text_field.dart';
 import '../widgets/title_above_textfield.dart';
@@ -52,6 +54,7 @@ class HomePage extends StatelessWidget {
                                     TextFieldWidget(
                                       text: "Full Name",
                                       icon: Icons.person,
+                                      isNumeric: false,
                                     ),
                                     const SizedBox(height: 20),
                                     const TitleWidget(title: 'Ocupation'),
@@ -63,14 +66,19 @@ class HomePage extends StatelessWidget {
                                     TextFieldWidget(
                                       text: "+244 942 *** ***",
                                       icon: Icons.phone,
+                                      isNumeric: true,
                                     ),
                                     const SizedBox(height: 20),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
-                                      children: const [
-                                        CancelButton(),
-                                        ContinueButton(),
+                                      children: [
+                                        CancelButton(
+                                          onTap: (() => print('Canceled.')),
+                                        ),
+                                        ContinueButton(
+                                          onTap: () => print('Continued.'),
+                                        ),
                                       ],
                                     ),
                                   ],
@@ -88,48 +96,6 @@ class HomePage extends StatelessWidget {
           ),
         ]),
       ),
-    );
-  }
-}
-
-class ContinueButton extends StatelessWidget {
-  const ContinueButton({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 135,
-      height: 40,
-      color: Colors.amber,
-      child: const Center(
-          child: Text(
-        'Continue',
-        style: TextStyle(
-            color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15.0),
-      )),
-    );
-  }
-}
-
-class CancelButton extends StatelessWidget {
-  const CancelButton({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 135,
-      height: 40,
-      decoration: BoxDecoration(border: Border.all()),
-      child: const Center(
-          child: Text(
-        'Cancel',
-        style: TextStyle(
-            color: Colors.black, fontWeight: FontWeight.bold, fontSize: 15.0),
-      )),
     );
   }
 }

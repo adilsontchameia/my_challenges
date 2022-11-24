@@ -11,12 +11,12 @@ class DropdownWidget extends StatelessWidget {
       decoration: const InputDecoration(
         prefixIcon: Icon(
           Icons.badge,
-          color: Colors.amber,
+          color: Colors.grey,
         ),
       ),
-      hint: const Text('Please choose account type'),
+      hint: const Text('Please Choose Your Occupation'),
       style: const TextStyle(color: Colors.grey),
-      items: <String>['A', 'B', 'C', 'D'].map((String value) {
+      items: <String>['Occupation A', 'Ocupation B'].map((String value) {
         return DropdownMenuItem<String>(
           value: value,
           child: Text(value),
