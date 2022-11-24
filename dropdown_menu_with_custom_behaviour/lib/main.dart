@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+import 'widgets/custom_dropdown.dart';
+import 'widgets/custom_text_field.dart';
+import 'widgets/title_above_textfield.dart';
 
-class MyApp extends StatelessWidget {
+void main() => runApp(const HomePage());
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Sample",
       home: Scaffold(
         body: Stack(children: [
           Container(
@@ -43,94 +48,24 @@ class MyApp extends StatelessWidget {
                                       ),
                                     ),
                                     const SizedBox(height: 20.0),
-                                    const Text(
-                                      'Name',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.grey,
-                                      ),
-                                    ),
+                                    const TitleWidget(title: 'Name'),
                                     const SizedBox(height: 15),
-                                    TextField(
-                                      focusNode:
-                                          FocusNode(canRequestFocus: false),
-                                      decoration: const InputDecoration(
-                                        enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                          width: 1.0,
-                                        )),
-                                        prefixIcon: Icon(Icons.person),
-                                        hintText: "your name",
-                                      ),
-                                    ),
+                                    const TextFieldWidget(),
                                     const SizedBox(height: 20),
-                                    const Text(
-                                      'Ocupation',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
-                                    ),
+                                    const TitleWidget(title: 'Ocupation'),
                                     const SizedBox(height: 5),
-                                    Container(
-                                      child: DropdownButton(
-                                        onChanged: (val) {},
-                                        items: const [
-                                          DropdownMenuItem(
-                                            child: Text("User"),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
+                                    const DropdownWidget(),
                                     const SizedBox(height: 20),
-                                    const Text(
-                                      'Phone Number',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
-                                    ),
+                                    const TitleWidget(title: 'Phone Number'),
                                     const SizedBox(height: 5),
-                                    TextField(
-                                      focusNode:
-                                          FocusNode(canRequestFocus: false),
-                                      decoration: const InputDecoration(
-                                        enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                          width: 1.0,
-                                        )),
-                                        prefixIcon: Icon(Icons.phone),
-                                        hintText: "+244 924 *** ***",
-                                      ),
-                                    ),
+                                    const TextFieldWidget(),
                                     const SizedBox(height: 20),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Container(
-                                          width: 135,
-                                          height: 40,
-                                          decoration: BoxDecoration(
-                                              border: Border.all()),
-                                          child: const Center(
-                                              child: Text(
-                                            'Continue',
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 15.0),
-                                          )),
-                                        ),
-                                        Container(
-                                          width: 135,
-                                          height: 40,
-                                          color: Colors.amber,
-                                          child: const Center(
-                                              child: Text(
-                                            'Continue',
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 15.0),
-                                          )),
-                                        ),
+                                      children: const [
+                                        CancelButton(),
+                                        ContinueButton(),
                                       ],
                                     ),
                                   ],
@@ -148,6 +83,48 @@ class MyApp extends StatelessWidget {
           ),
         ]),
       ),
+    );
+  }
+}
+
+class ContinueButton extends StatelessWidget {
+  const ContinueButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 135,
+      height: 40,
+      color: Colors.amber,
+      child: const Center(
+          child: Text(
+        'Continue',
+        style: TextStyle(
+            color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15.0),
+      )),
+    );
+  }
+}
+
+class CancelButton extends StatelessWidget {
+  const CancelButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 135,
+      height: 40,
+      decoration: BoxDecoration(border: Border.all()),
+      child: const Center(
+          child: Text(
+        'Continue',
+        style: TextStyle(
+            color: Colors.black, fontWeight: FontWeight.bold, fontSize: 15.0),
+      )),
     );
   }
 }
