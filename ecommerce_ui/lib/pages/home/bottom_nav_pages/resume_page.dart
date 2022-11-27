@@ -53,67 +53,8 @@ class ResumePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Center(
-              child: Container(
-                height: 90,
-                width: 350,
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadiusDirectional.circular(10.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Image.asset(
-                        'assets/headphone_blue2.png',
-                        height: 170,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'See the the products !',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          const SizedBox(height: 5.0),
-                          Text(
-                            'This is a text that serves as example.',
-                            softWrap: true,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              color: Colors.white.withOpacity(0.8),
-                              fontSize: 12.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(height: 5.0),
-                          Container(
-                            height: 30.0,
-                            width: 90.0,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(5.0)),
-                            child: const Center(
-                              child: Text(
-                                'Explore',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 13.5,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-              ),
+            const Center(
+              child: BannerWidget(),
             ),
             const SizedBox(height: 20),
             Padding(
@@ -130,11 +71,114 @@ class ResumePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            Container(
-              height: 220,
+            SizedBox(
+              height: 260,
               width: double.infinity,
-              color: Colors.red,
+              child: SingleChildScrollView(
+                padding: EdgeInsets.zero,
+                scrollDirection: Axis.horizontal,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                  child: Row(
+                    children: [
+                      MostPopularsCard(
+                        descriptionText: 'Guitar Hero',
+                        imgUrl: 'assets/guitar.png',
+                        priceText: '\$122.78',
+                        containerColor: const Color.fromARGB(255, 212, 231, 255)
+                            .withOpacity(0.7),
+                      ),
+                      const SizedBox(width: 10),
+                      MostPopularsCard(
+                        descriptionText: 'Microphone 2x',
+                        priceText: '\$122.78',
+                        imgUrl: 'assets/microphone.png',
+                        containerColor: const Color.fromARGB(255, 240, 240, 240)
+                            .withOpacity(0.7),
+                      ),
+                      const SizedBox(width: 10),
+                      MostPopularsCard(
+                        descriptionText: 'Airpods Red',
+                        imgUrl: 'assets/airpods.png',
+                        priceText: '\$122.78',
+                        containerColor: const Color.fromARGB(255, 255, 204, 195)
+                            .withOpacity(0.7),
+                      ),
+                      const SizedBox(width: 10),
+                    ],
+                  ),
+                ),
+              ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class BannerWidget extends StatelessWidget {
+  const BannerWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 90,
+      width: 350,
+      decoration: BoxDecoration(
+        color: Colors.red,
+        borderRadius: BorderRadiusDirectional.circular(10.0),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Image.asset(
+              'assets/headphone_blue2.png',
+              height: 170,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'See the the products !',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 5.0),
+                Text(
+                  'This is a text that serves as example.',
+                  softWrap: true,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.8),
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 5.0),
+                Container(
+                  height: 30.0,
+                  width: 90.0,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5.0)),
+                  child: const Center(
+                    child: Text(
+                      'Explore',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 13.5,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            )
           ],
         ),
       ),
@@ -179,6 +223,75 @@ class PromotionCard extends StatelessWidget {
             width: 170,
           ),
         ],
+      ),
+    );
+  }
+}
+
+class MostPopularsCard extends StatelessWidget {
+  const MostPopularsCard({
+    Key? key,
+    required this.descriptionText,
+    required this.imgUrl,
+    required this.priceText,
+    required this.containerColor,
+  }) : super(key: key);
+  final String descriptionText, imgUrl, priceText;
+  final Color containerColor;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 240.0,
+      width: 170.0,
+      decoration: BoxDecoration(
+        color: containerColor,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Align(
+                alignment: Alignment.topRight,
+                child: Container(
+                  height: 20,
+                  width: 20,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: Colors.white),
+                  child: Center(
+                    child: IconButton(
+                        iconSize: 20,
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.favorite_rounded,
+                          color: Colors.red,
+                        )),
+                  ),
+                ),
+              ),
+            ),
+            Image.asset(
+              imgUrl,
+              height: 170,
+              width: 170,
+            ),
+            Text(
+              descriptionText,
+              style: const TextStyle(
+                  color: Colors.black, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 5),
+            Text(
+              priceText,
+              style: const TextStyle(
+                  color: Colors.black, fontWeight: FontWeight.bold),
+            )
+          ],
+        ),
       ),
     );
   }
