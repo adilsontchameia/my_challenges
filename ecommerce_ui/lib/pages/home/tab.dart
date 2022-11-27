@@ -1,3 +1,4 @@
+import 'package:ecommerce_ui/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 class TabLayoutExample extends StatefulWidget {
@@ -22,83 +23,81 @@ class _TabLayoutExampleState extends State<TabLayoutExample>
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 7,
-      child: Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.red,
-          bottom: PreferredSize(
-            preferredSize: const Size.fromHeight(300),
-            child: Expanded(
+    return Scaffold(
+      body: DefaultTabController(
+        length: 7,
+        child: Scaffold(
+          appBar: AppBar(
+            elevation: 0,
+            flexibleSpace: SafeArea(
               child: Padding(
-                padding: const EdgeInsets.all(1.0),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 15.0, vertical: 15.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Align(
+                  children: [
+                    const Align(
                       alignment: Alignment.topRight,
                       child: CircleAvatar(
-                        radius: 5,
+                        radius: 18,
                         backgroundImage: AssetImage('assets/profile_pic.jpg'),
                       ),
                     ),
-                    SizedBox(height: 20.0),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15),
-                      child: TextField(
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            prefixIcon: Icon(Icons.search),
-                            hintText: 'Search itens....',
-                            suffixIcon:
-                                Icon(Icons.settings_applications_sharp)),
+                    const SizedBox(height: 15),
+                    const TextField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          prefixIcon: Icon(Icons.search),
+                          hintText: 'Search itens....',
+                          suffixIcon: Icon(Icons.settings_applications_sharp)),
+                    ),
+                    const SizedBox(height: 15),
+                    const Text(
+                      'Categories',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: Text(
-                        'Categories',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 50),
                     TabBar(
+                      padding: EdgeInsets.zero,
                       isScrollable: true,
                       indicatorColor: Colors.black,
                       labelColor: Colors.black,
                       indicatorSize: TabBarIndicatorSize.label,
                       indicatorWeight: 3,
                       tabs: [
-                        Tab(text: 'All'),
-                        Tab(text: 'Headphones'),
-                        Tab(text: 'Guitar'),
-                        Tab(text: 'Pianos'),
-                        Tab(text: 'Microphones'),
-                        Tab(text: 'Speaker'),
-                        Tab(text: 'Sound'),
+                        const Tab(text: 'All'),
+                        GestureDetector(
+                          child: const Tab(text: 'Headphones'),
+                          onTap: () => print('Clicked'),
+                        ),
+                        const Tab(text: 'Guitar'),
+                        const Tab(text: 'Pianos'),
+                        const Tab(text: 'Microphones'),
+                        const Tab(text: 'Speaker'),
+                        const Tab(text: 'Sound'),
                       ],
                     ),
                   ],
                 ),
               ),
             ),
+            backgroundColor: Colors.white,
+            bottom: PreferredSize(
+                preferredSize: const Size.fromHeight(175), child: Container()),
           ),
-        ),
-        body: const TabBarView(
-          children: [
-            //   ResumePage(),
-            Icon(Icons.directions_transit, size: 350),
-            Icon(Icons.directions_transit, size: 350),
-            Icon(Icons.directions_car, size: 350),
-            Icon(Icons.flight, size: 350),
-            Icon(Icons.directions_transit, size: 350),
-            Icon(Icons.directions_car, size: 350),
-            Icon(Icons.directions_car, size: 350),
-          ],
+          body: const TabBarView(
+            children: [
+              HomePage(),
+              Icon(Icons.directions_transit, size: 350),
+              Icon(Icons.directions_car, size: 350),
+              Icon(Icons.flight, size: 350),
+              Icon(Icons.directions_transit, size: 350),
+              Icon(Icons.directions_car, size: 350),
+              Icon(Icons.directions_car, size: 350),
+            ],
+          ),
         ),
       ),
     );
