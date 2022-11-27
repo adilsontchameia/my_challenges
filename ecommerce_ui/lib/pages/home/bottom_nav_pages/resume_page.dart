@@ -7,21 +7,23 @@ class ResumePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text('On Promotion',
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 0.0),
+              child: Text('On Promotion',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-              const SizedBox(height: 10),
-              Container(
-                height: 250,
-                width: 350,
-                color: Colors.red,
-              ),
-              const SizedBox(height: 20),
-              Container(
+            ),
+            const SizedBox(height: 10),
+            Container(
+              height: 250,
+              width: double.infinity,
+              color: Colors.red,
+            ),
+            const SizedBox(height: 20),
+            Center(
+              child: Container(
                 height: 90,
                 width: 350,
                 decoration: BoxDecoration(
@@ -29,8 +31,12 @@ class ResumePage extends StatelessWidget {
                   borderRadius: BorderRadiusDirectional.circular(10.0),
                 ),
               ),
-              const SizedBox(height: 20),
-              Row(
+            ),
+            const SizedBox(height: 20),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 15.0, vertical: 0.0),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
                   Text('Most Populars',
@@ -39,10 +45,14 @@ class ResumePage extends StatelessWidget {
                   Icon(Icons.arrow_forward_rounded)
                 ],
               ),
-              const SizedBox(height: 10),
-              Container(height: 220, width: 350, color: Colors.red),
-            ],
-          ),
+            ),
+            const SizedBox(height: 10),
+            Container(
+              height: 220,
+              width: double.infinity,
+              color: Colors.red,
+            ),
+          ],
         ),
       ),
     );
