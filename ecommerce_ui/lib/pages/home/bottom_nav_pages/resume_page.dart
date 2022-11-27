@@ -13,38 +13,13 @@ class ResumePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Align(
-                  alignment: Alignment.topRight,
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage('assets/profile_pic.jpg'),
-                  ),
-                ),
                 const SizedBox(height: 13.0),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15),
-                  child: TextField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        prefixIcon: Icon(Icons.search),
-                        hintText: 'Search itens....',
-                        suffixIcon: Icon(Icons.settings_applications_sharp)),
-                  ),
-                ),
                 const SizedBox(height: 10.0),
                 Padding(
                   padding: const EdgeInsets.only(top: 10.0, left: 10.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Categories',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      Container(height: 35, width: 350, color: Colors.red),
                       const SizedBox(height: 10),
                       const Text('On Promotion',
                           style: TextStyle(
