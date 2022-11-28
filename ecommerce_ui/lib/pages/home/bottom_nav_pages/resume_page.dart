@@ -128,7 +128,13 @@ class BannerWidget extends StatelessWidget {
       height: 90,
       width: 350,
       decoration: BoxDecoration(
-        color: Colors.red,
+        gradient: const LinearGradient(
+          begin: Alignment.topCenter,
+          colors: [
+            Color.fromRGBO(206, 34, 195, 1),
+            Color.fromRGBO(72, 39, 189, 1)
+          ],
+        ),
         borderRadius: BorderRadiusDirectional.circular(10.0),
       ),
       child: Padding(
@@ -199,7 +205,7 @@ class PromotionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 250.0,
-      width: 170.0,
+      width: 165.0,
       decoration: BoxDecoration(
         color: containerColor,
         borderRadius: BorderRadius.circular(20),

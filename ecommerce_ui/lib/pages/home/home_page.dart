@@ -1,7 +1,7 @@
 import 'package:ecommerce_ui/pages/home/bottom_nav_pages/favourites_page.dart';
-import 'package:ecommerce_ui/pages/home/bottom_nav_pages/resume_page.dart';
 import 'package:ecommerce_ui/pages/home/bottom_nav_pages/products_page.dart';
 import 'package:ecommerce_ui/pages/home/bottom_nav_pages/profile_page.dart';
+import 'package:ecommerce_ui/pages/home/bottom_nav_pages/resume_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -94,9 +94,9 @@ class NavIconButton extends StatelessWidget {
           Image.asset(
             height: 25,
             imgUrl,
-            color:
-                pageIndex != pageIndex ? Colors.purple : Colors.purple.shade900,
-            //Colors.black.withOpacity(0.5),
+            color: pageIndex == pageIndex
+                ? Colors.grey.shade700
+                : Colors.purple.shade800,
           ),
         ],
       ),
