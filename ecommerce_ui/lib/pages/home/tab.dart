@@ -44,13 +44,7 @@ class _TabLayoutExampleState extends State<TabLayoutExample>
                       ),
                     ),
                     const SizedBox(height: 15),
-                    const TextField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          prefixIcon: Icon(Icons.search),
-                          hintText: 'Search itens....',
-                          suffixIcon: Icon(Icons.settings_applications_sharp)),
-                    ),
+                    const CustomTextField(),
                     const SizedBox(height: 15),
                     const Text(
                       'Categories',
@@ -60,7 +54,7 @@ class _TabLayoutExampleState extends State<TabLayoutExample>
                       ),
                     ),
                     TabBar(
-                      padding: EdgeInsets.zero,
+                      automaticIndicatorColorAdjustment: true,
                       isScrollable: true,
                       indicatorColor: Colors.black,
                       labelColor: Colors.black,
@@ -100,6 +94,27 @@ class _TabLayoutExampleState extends State<TabLayoutExample>
           ),
         ),
       ),
+    );
+  }
+}
+
+class CustomTextField extends StatelessWidget {
+  const CustomTextField({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      focusNode: FocusNode(canRequestFocus: false),
+      decoration: const InputDecoration(
+          border: OutlineInputBorder(),
+          prefixIcon: Icon(Icons.search),
+          fillColor: Colors.red,
+          hoverColor: Colors.red,
+          focusColor: Colors.red,
+          hintText: 'Search itens....',
+          suffixIcon: Icon(Icons.settings_applications_sharp)),
     );
   }
 }

@@ -254,50 +254,62 @@ class MostPopularsCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 8.0),
-              child: Align(
-                alignment: Alignment.topRight,
-                child: Container(
-                  height: 20,
-                  width: 20,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Colors.white),
-                  child: Center(
-                    child: IconButton(
-                        iconSize: 20,
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.favorite_rounded,
-                          color: Colors.red,
-                        )),
-                  ),
-                ),
+        padding: const EdgeInsets.symmetric(horizontal: 30.0),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(top: 5.0, left: 10),
+                child: Align(
+                    alignment: Alignment.topRight, child: FavouriteButton()),
               ),
-            ),
-            Image.asset(
-              imgUrl,
-              height: 170,
-              width: 170,
-            ),
-            Text(
-              descriptionText,
-              style: const TextStyle(
-                  color: Colors.black, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 5),
-            Text(
-              priceText,
-              style: const TextStyle(
-                  color: Colors.black, fontWeight: FontWeight.bold),
-            )
-          ],
+              Image.asset(
+                imgUrl,
+                height: 165,
+                width: 170,
+              ),
+              Text(
+                descriptionText,
+                style: const TextStyle(
+                    color: Colors.black, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 5),
+              Text(
+                priceText,
+                style: const TextStyle(
+                    color: Colors.black, fontWeight: FontWeight.bold),
+              )
+            ],
+          ),
         ),
+      ),
+    );
+  }
+}
+
+class FavouriteButton extends StatelessWidget {
+  const FavouriteButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 30,
+      width: 35,
+      child: Container(
+        height: 40,
+        width: 40,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5), color: Colors.white),
+        child: IconButton(
+            iconSize: 20,
+            onPressed: () {},
+            icon: const Icon(
+              Icons.favorite_rounded,
+              color: Colors.red,
+            )),
       ),
     );
   }
