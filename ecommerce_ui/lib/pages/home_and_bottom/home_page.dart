@@ -1,8 +1,11 @@
-import 'package:ecommerce_ui/pages/home/bottom_nav_pages/favourites_page.dart';
-import 'package:ecommerce_ui/pages/home/bottom_nav_pages/products_page.dart';
-import 'package:ecommerce_ui/pages/home/bottom_nav_pages/profile_page.dart';
-import 'package:ecommerce_ui/pages/home/bottom_nav_pages/resume_page.dart';
+
+import 'package:ecommerce_ui/pages/resume_page/resume_page.dart';
 import 'package:flutter/material.dart';
+
+import '../favoutites_page/favourites_page.dart';
+import '../products_page/products_page.dart';
+import '../profile_page/profile_page.dart';
+import 'bottom_nav_icon.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -71,35 +74,5 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ));
-  }
-}
-
-class NavIconButton extends StatelessWidget {
-  const NavIconButton({
-    Key? key,
-    required this.imgUrl,
-    required this.pageIndex,
-    required this.onPressed,
-  }) : super(key: key);
-  final String imgUrl;
-  final int pageIndex;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onPressed,
-      child: Column(
-        children: [
-          Image.asset(
-            height: 25,
-            imgUrl,
-            color: pageIndex == pageIndex
-                ? Colors.grey.shade700
-                : Colors.purple.shade800,
-          ),
-        ],
-      ),
-    );
   }
 }

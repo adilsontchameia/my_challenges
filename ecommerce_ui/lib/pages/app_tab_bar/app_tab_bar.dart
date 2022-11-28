@@ -1,17 +1,18 @@
-import 'package:ecommerce_ui/pages/home/home_page.dart';
+import 'package:ecommerce_ui/pages/home_and_bottom/home_page.dart';
 import 'package:flutter/material.dart';
 
-class TabLayoutExample extends StatefulWidget {
-  const TabLayoutExample({super.key});
+import '../resume_page/widgets/custom_text_field.dart';
+
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
 
   @override
   State<StatefulWidget> createState() {
-    return _TabLayoutExampleState();
+    return _MainScreenState();
   }
 }
 
-class _TabLayoutExampleState extends State<TabLayoutExample>
-    with TickerProviderStateMixin {
+class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -94,27 +95,6 @@ class _TabLayoutExampleState extends State<TabLayoutExample>
           ),
         ),
       ),
-    );
-  }
-}
-
-class CustomTextField extends StatelessWidget {
-  const CustomTextField({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      focusNode: FocusNode(canRequestFocus: false),
-      decoration: const InputDecoration(
-          border: OutlineInputBorder(),
-          prefixIcon: Icon(Icons.search),
-          fillColor: Colors.red,
-          hoverColor: Colors.red,
-          focusColor: Colors.red,
-          hintText: 'Search itens....',
-          suffixIcon: Icon(Icons.settings_applications_sharp)),
     );
   }
 }

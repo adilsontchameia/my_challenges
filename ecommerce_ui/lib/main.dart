@@ -1,4 +1,4 @@
-import 'package:ecommerce_ui/pages/home/tab.dart';
+import 'package:ecommerce_ui/pages/app_tab_bar/app_tab_bar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: TabLayoutExample(),
+      home: MainScreen(),
     );
   }
 }
