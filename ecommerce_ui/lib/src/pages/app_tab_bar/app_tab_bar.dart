@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../home_and_bottom/home_page.dart';
 import '../resume_page/widgets/custom_text_field.dart';
+import 'widgets/custom_tab.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -62,16 +63,25 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
                       indicatorSize: TabBarIndicatorSize.label,
                       indicatorWeight: 3,
                       tabs: [
-                        const Tab(text: 'All'),
-                        GestureDetector(
-                          child: const Tab(text: 'Headphones'),
-                          onTap: () => print('Clicked'),
-                        ),
-                        const Tab(text: 'Guitar'),
-                        const Tab(text: 'Pianos'),
-                        const Tab(text: 'Microphones'),
-                        const Tab(text: 'Speaker'),
-                        const Tab(text: 'Sound'),
+                        CustomTab(
+                            text: 'All', onTap: () => print('Clicked All')),
+                        CustomTab(
+                            text: 'Headphones',
+                            onTap: () => print('Clicked Headphones')),
+                        CustomTab(
+                            text: 'Guitar',
+                            onTap: () => print('Clicked Guitar')),
+                        CustomTab(
+                            text: 'Pianos',
+                            onTap: () => print('Clicked Pianos')),
+                        CustomTab(
+                            text: 'Microphones',
+                            onTap: () => print('Clicked Microphones')),
+                        CustomTab(
+                            text: 'Speaker',
+                            onTap: () => print('Clicked Speaker')),
+                        CustomTab(
+                            text: 'Sound', onTap: () => print('Clicked Sound')),
                       ],
                     ),
                   ],
@@ -84,13 +94,13 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
           ),
           body: const TabBarView(
             children: [
-              HomePage(),
+              ResumePage(),
               Icon(Icons.directions_transit, size: 350),
               Icon(Icons.directions_car, size: 350),
               Icon(Icons.flight, size: 350),
               Icon(Icons.directions_transit, size: 350),
-              Icon(Icons.directions_car, size: 350),
-              Icon(Icons.directions_car, size: 350),
+              Icon(Icons.volume_down, size: 350),
+              Icon(Icons.music_note, size: 350),
             ],
           ),
         ),
@@ -98,3 +108,4 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
     );
   }
 }
+

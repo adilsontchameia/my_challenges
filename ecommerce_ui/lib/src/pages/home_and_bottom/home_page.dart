@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-import '../favoutites_page/favourites_page.dart';
-import '../products_page/products_page.dart';
-import '../profile_page/profile_page.dart';
+import '../nav_bottom_pages/favoutites_page/favourites_page.dart';
+import '../nav_bottom_pages/products_page/products_page.dart';
+import '../nav_bottom_pages/profile_page/profile_page.dart';
 import '../resume_page/resume_page.dart';
 import 'bottom_nav_icon.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class ResumePage extends StatefulWidget {
+  const ResumePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<ResumePage> createState() => _ResumePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _ResumePageState extends State<ResumePage> {
   int pageIndex = 0;
 
   final pages = [
