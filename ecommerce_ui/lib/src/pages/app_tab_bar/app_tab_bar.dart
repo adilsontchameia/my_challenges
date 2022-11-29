@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../home_and_bottom/home_page.dart';
+import '../../utils/constants.dart';
+import '../resume_and_bottom/resume_page.dart';
 import '../resume_page/widgets/custom_text_field.dart';
 import 'widgets/custom_tab.dart';
 
@@ -67,7 +68,8 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
                             text: 'All', onTap: () => print('Clicked All')),
                         CustomTab(
                             text: 'Headphones',
-                            onTap: () => print('Clicked Headphones')),
+                            onTap: () =>
+                                Navigator.pushNamed(context, headphonesPage)),
                         CustomTab(
                             text: 'Guitar',
                             onTap: () => print('Clicked Guitar')),
@@ -108,4 +110,3 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
     );
   }
 }
-

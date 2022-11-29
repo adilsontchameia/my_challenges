@@ -10,7 +10,7 @@ class PageRouter {
     switch (settings.name) {
       case splashScreen:
         return MaterialPageRoute(builder: (_) => const SplashScreen());
-      case headphonesTab:
+      case headphonesPage:
         return MaterialPageRoute(builder: (_) => const HeadPhonesPage());
       case productDetails:
         return MaterialPageRoute(builder: (_) => const ProductDetailsPage());
