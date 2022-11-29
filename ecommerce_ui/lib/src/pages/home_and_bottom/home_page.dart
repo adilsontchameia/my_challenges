@@ -1,10 +1,9 @@
-
-import 'package:ecommerce_ui/pages/resume_page/resume_page.dart';
 import 'package:flutter/material.dart';
 
 import '../favoutites_page/favourites_page.dart';
 import '../products_page/products_page.dart';
 import '../profile_page/profile_page.dart';
+import '../resume_page/resume_page.dart';
 import 'bottom_nav_icon.dart';
 
 class HomePage extends StatefulWidget {

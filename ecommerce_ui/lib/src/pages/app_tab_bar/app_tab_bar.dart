@@ -1,6 +1,6 @@
-import 'package:ecommerce_ui/pages/home_and_bottom/home_page.dart';
 import 'package:flutter/material.dart';
 
+import '../home_and_bottom/home_page.dart';
 import '../resume_page/widgets/custom_text_field.dart';
 
 class MainScreen extends StatefulWidget {
