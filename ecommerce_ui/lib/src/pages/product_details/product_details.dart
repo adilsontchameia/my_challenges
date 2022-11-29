@@ -1,9 +1,16 @@
 import 'package:ecommerce_ui/src/pages/resume_page/widgets/favourites_button.dart';
 import 'package:flutter/material.dart';
 
-class ProductDetailsPage extends StatelessWidget {
+class ProductDetailsPage extends StatefulWidget {
   const ProductDetailsPage({super.key});
 
+  @override
+  State<ProductDetailsPage> createState() => _ProductDetailsPageState();
+}
+
+int value = 0;
+
+class _ProductDetailsPageState extends State<ProductDetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,34 +85,7 @@ class ProductDetailsPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        height: 30,
-                        width: 95,
-                        decoration: BoxDecoration(
-                          color: Colors.grey.shade200,
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: const [
-                            Icon(
-                              Icons.add,
-                              color: Colors.black,
-                            ),
-                            Text(
-                              '1',
-                              style: TextStyle(
-                                fontSize: 15.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Icon(
-                              Icons.add,
-                              color: Colors.black,
-                            ),
-                          ],
-                        ),
-                      ),
+                      quantityButton(),
                       const Text(
                         '\$100,35',
                         style: TextStyle(
@@ -148,6 +128,47 @@ class ProductDetailsPage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Container quantityButton() {
+    return Container(
+      height: 30,
+      width: 95,
+      decoration: BoxDecoration(
+        color: Colors.grey.shade200,
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          GestureDetector(
+            onTap: () => setState(() {
+              value--;
+            }),
+            child: const Icon(
+              Icons.remove,
+              color: Colors.black,
+            ),
+          ),
+          Text(
+            '$value',
+            style: const TextStyle(
+              fontSize: 15.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          GestureDetector(
+            onTap: () => setState(() {
+              value++;
+            }),
+            child: const Icon(
+              Icons.add,
+              color: Colors.black,
+            ),
+          ),
+        ],
       ),
     );
   }
