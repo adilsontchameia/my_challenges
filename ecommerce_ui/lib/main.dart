@@ -1,4 +1,4 @@
-import 'package:ecommerce_ui/src/pages/head_phones/head_phones.dart';
+import 'package:ecommerce_ui/src/pages/product_details/product_details.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HeadPhonesPage(),
+      home: ProductDetailsPage(),
     );
   }
 }
