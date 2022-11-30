@@ -24,5 +24,11 @@ class ProductsModel {
         productDescription: '',
         imgUrl: '',
         backGroundColor: const Color.fromRGBO(4, 4, 5, 1)),
+    ProductsModel(
+        productName: 'JBL x90',
+        productPrice: 90,
+        productDescription: '',
+        imgUrl: '',
+        backGroundColor: const Color.fromRGBO(4, 4, 5, 1)),
   ];
 }
