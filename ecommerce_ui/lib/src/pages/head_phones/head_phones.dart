@@ -1,3 +1,4 @@
+import 'package:ecommerce_ui/src/models/headphone_card_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -66,19 +67,8 @@ class _HeadPhonesPageState extends State<HeadPhonesPage>
           bottom: PreferredSize(
               preferredSize: const Size.fromHeight(120), child: Container()),
         ),
-        body: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: StaggeredGridView.countBuilder(
-              crossAxisCount: 2,
-              crossAxisSpacing: 8,
-              mainAxisSpacing: 8,
-              itemCount: 10,
-              itemBuilder: ((context, index) => const HeadPhonesWidget()),
-              staggeredTileBuilder: (index) => StaggeredTile.count(
-                1,
-                index.isEven ? 1.3 : 1.2,
-              ),
-            )),
+        body: const Padding(
+            padding: EdgeInsets.all(8.0), child: StaggeredGridWidget()),
       ),
     ));
   }
@@ -89,11 +79,33 @@ class _HeadPhonesPageState extends State<HeadPhonesPage>
   }
 }
 
-class HeadPhonesWidget extends StatelessWidget {
-  const HeadPhonesWidget({
+class StaggeredGridWidget extends StatelessWidget {
+  const StaggeredGridWidget({
     Key? key,
+    this.headphoneModel,
   }) : super(key: key);
+  final HeadphoneModel? headphoneModel;
+  @override
+  Widget build(BuildContext context) {
+    return StaggeredGridView.countBuilder(
+      crossAxisCount: 2,
+      crossAxisSpacing: 8,
+      mainAxisSpacing: 8,
+      itemCount: HeadphoneModel.headphonesModel.length,
+      itemBuilder: ((context, index) => HeadPhonesWidget(
+            headphoneModel: HeadphoneModel.headphonesModel[index],
+          )),
+      staggeredTileBuilder: (index) => StaggeredTile.count(
+        1,
+        index.isEven ? 1.3 : 1.2,
+      ),
+    );
+  }
+}
 
+class HeadPhonesWidget extends StatelessWidget {
+  const HeadPhonesWidget({Key? key, this.headphoneModel}) : super(key: key);
+  final HeadphoneModel? headphoneModel;
   @override
   Widget build(BuildContext context) {
     return Container(
