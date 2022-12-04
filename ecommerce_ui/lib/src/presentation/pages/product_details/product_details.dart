@@ -1,4 +1,4 @@
-import 'package:ecommerce_ui/src/pages/resume_page/widgets/favourites_button.dart';
+import 'package:ecommerce_ui/src/presentation/pages/resume_page/widgets/favourites_button.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/add_and_buy_button.dart';

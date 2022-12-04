@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/constants.dart';
+import '../../../utils/constants.dart';
 import '../resume_and_bottom/resume_page.dart';
 import '../resume_page/widgets/custom_text_field.dart';
 import 'widgets/custom_tab.dart';

@@ -1,6 +1,6 @@
-import 'package:ecommerce_ui/src/pages/head_phones/head_phones.dart';
-import 'package:ecommerce_ui/src/pages/product_details/product_details.dart';
-import 'package:ecommerce_ui/src/pages/splash_screen/splash_screen.dart';
+import 'package:ecommerce_ui/src/presentation/pages/head_phones/head_phones.dart';
+import 'package:ecommerce_ui/src/presentation/pages/product_details/product_details.dart';
+import 'package:ecommerce_ui/src/presentation/pages/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
