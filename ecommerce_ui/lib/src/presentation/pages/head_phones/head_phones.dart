@@ -110,7 +110,7 @@ class HeadPhonesWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.red,
+        color: headphoneModel!.backGroundColor,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(
