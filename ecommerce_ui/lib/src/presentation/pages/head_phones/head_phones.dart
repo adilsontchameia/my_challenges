@@ -129,20 +129,20 @@ class HeadPhonesWidget extends StatelessWidget {
                 ),
               ),
               Image.asset(
-                'assets/airpods.png',
+                headphoneModel!.imgUrl,
                 height: 140,
                 width: 170,
               ),
-              const Text(
-                'descriptionText',
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              Text(
+                headphoneModel!.productName,
+                style: const TextStyle(
+                    color: Colors.black, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 5),
-              const Text(
-                'priceText',
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              Text(
+                headphoneModel!.productPrice.toString(),
+                style: const TextStyle(
+                    color: Colors.black, fontWeight: FontWeight.bold),
               )
             ],
           ),
