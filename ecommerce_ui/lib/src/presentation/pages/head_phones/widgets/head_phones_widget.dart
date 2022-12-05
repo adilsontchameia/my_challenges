@@ -1,57 +1,47 @@
 import 'package:flutter/material.dart';
 
+import '../../../../models/headphone_card_model.dart';
 import '../../resume_page/widgets/favourites_button.dart';
-class HeadPhonesPages extends StatefulWidget {
-  const HeadPhonesPages({
-    Key? key,
-    required this.descriptionText,
-    required this.imgUrl,
-    required this.priceText,
-    required this.containerColor,
-  }) : super(key: key);
-  final String descriptionText, imgUrl, priceText;
-  final Color containerColor;
 
-  @override
-  State<HeadPhonesPages> createState() => _HeadPhonesPagesState();
-}
-
-class _HeadPhonesPagesState extends State<HeadPhonesPages> {
+class HeadPhonesWidget extends StatelessWidget {
+  const HeadPhonesWidget({Key? key, this.headphoneModel}) : super(key: key);
+  final HeadphoneModel? headphoneModel;
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 240.0,
-      width: 170.0,
       decoration: BoxDecoration(
-        color: widget.containerColor,
+        color: headphoneModel!.backGroundColor,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+        padding: const EdgeInsets.symmetric(horizontal: 13.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Padding(
-                padding: EdgeInsets.only(top: 4.0, left: 20),
+                padding: EdgeInsets.only(
+                  top: 5.0,
+                ),
                 child: Align(
                   alignment: Alignment.topRight,
                   child: FavouriteButton(),
                 ),
               ),
               Image.asset(
-                widget.imgUrl,
-                height: 165,
+                headphoneModel!.imgUrl,
+                height: 140,
                 width: 170,
               ),
+              const SizedBox(height: 5.0),
               Text(
-                widget.descriptionText,
+                headphoneModel!.productName,
                 style: const TextStyle(
                     color: Colors.black, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 5),
               Text(
-                widget.priceText,
+                headphoneModel!.productPrice.toString(),
                 style: const TextStyle(
                     color: Colors.black, fontWeight: FontWeight.bold),
               )

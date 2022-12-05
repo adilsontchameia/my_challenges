@@ -30,7 +30,7 @@ class HeadphoneModel {
       productName: 'HeadPhones JBL',
       productPrice: 123.76,
       imgUrl: 'assets/headphone_red.png',
-      backGroundColor: const Color.fromARGB(255, 255, 200, 200),
+      backGroundColor: const Color.fromARGB(255, 252, 222, 237),
     ),
     HeadphoneModel(
       productName: 'HeadPhones JBL',
