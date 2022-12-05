@@ -9,11 +9,13 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       focusNode: FocusNode(canRequestFocus: false),
-      decoration: const InputDecoration(
-          border: OutlineInputBorder(),
-          prefixIcon: Icon(Icons.search),
+      decoration: InputDecoration(
+          border: const OutlineInputBorder(),
+          prefixIcon: const Icon(Icons.search),
           hintText: 'Search itens....',
-          suffixIcon: Icon(Icons.settings_applications_sharp)),
+          suffixIcon: Image.asset(
+            'assets/settings_icon.png',
+          )),
     );
   }
 }
