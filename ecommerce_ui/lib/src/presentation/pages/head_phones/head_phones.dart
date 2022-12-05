@@ -97,7 +97,7 @@ class StaggeredGridWidget extends StatelessWidget {
           )),
       staggeredTileBuilder: (index) => StaggeredTile.count(
         1,
-        index.isEven ? 1.3 : 1.2,
+        index.isEven ? 1.4 : 1.2,
       ),
     );
   }
@@ -133,6 +133,7 @@ class HeadPhonesWidget extends StatelessWidget {
                 height: 140,
                 width: 170,
               ),
+              const SizedBox(height: 5.0),
               Text(
                 headphoneModel!.productName,
                 style: const TextStyle(
