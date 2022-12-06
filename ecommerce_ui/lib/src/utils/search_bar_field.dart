@@ -8,7 +8,9 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      focusNode: FocusNode(canRequestFocus: false),
+      focusNode: FocusNode(
+        canRequestFocus: false,
+      ),
       decoration: InputDecoration(
           border: const OutlineInputBorder(),
           prefixIcon: const Icon(Icons.search),

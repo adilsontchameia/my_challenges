@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-const String splashScreen = '/';
-const String resumePage = '/';
+const String splashPage = '/';
+const String resumePage = '/resume_page';
 const String headphonesPage = '/headphones_page';
-const String productDetails = '/product_details';
+const String productDetailsPage = '/product_details';
 
 Size screenSize(BuildContext? context) {
   final size = MediaQuery.of(context!).size;
