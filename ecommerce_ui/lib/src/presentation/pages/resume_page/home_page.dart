@@ -43,20 +43,16 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               const SizedBox(height: 14),
-              Row(
-                children: const [
-                  CategorySelector(category: [
-                    'All',
-                    'Headphones',
-                    'Guitar',
-                    'Pianos',
-                    'Microphones',
-                    'Speaker',
-                    'Sound',
-                  ]),
-                ],
-              ),
-              const SizedBox(height: 20),
+              const CategorySelector(category: [
+                'All',
+                'Headphones',
+                'Guitar',
+                'Pianos',
+                'Microphones',
+                'Speaker',
+                'Sound',
+              ]),
+              const SizedBox(height: 10),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 0.0),
                 child: CategorieTitle(text: 'On Promotion'),

@@ -18,7 +18,7 @@ class _CategorySelectorState extends State<CategorySelector> {
       _isSelected = _currentIndex == index;
       return Padding(
         padding: const EdgeInsets.only(
-          left: 12,
+          left: 13,
         ),
         child: GestureDetector(
           onTap: () {
@@ -27,18 +27,20 @@ class _CategorySelectorState extends State<CategorySelector> {
             });
           },
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 category,
                 style: TextStyle(
                   color: _isSelected ? Colors.black : Colors.grey,
-                  fontSize: _isSelected ? 15 : 13,
+                  fontSize: _isSelected ? 16 : 14,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Container(
-                width: 5,
-                color: Colors.black,
+                width: 20.0,
+                height: 2.5,
+                color: _isSelected ? Colors.black : Colors.transparent,
               )
             ],
           ),
@@ -49,7 +51,9 @@ class _CategorySelectorState extends State<CategorySelector> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return SizedBox(
+      width: 400,
+      height: 30.0,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
