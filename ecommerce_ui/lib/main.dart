@@ -1,4 +1,4 @@
-import 'package:ecommerce_ui/src/utils/constants.dart';
+import 'package:ecommerce_ui/src/presentation/pages/onboard_page/onboard_page.dart';
 import 'package:flutter/material.dart';
 
 import 'src/utils/page_routes.dart';
@@ -12,10 +12,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: PageRouter.generateRoute,
-      initialRoute: homePage,
+      //initialRoute: resumePage,
+      home: OnboardPage(),
     );
   }
 }

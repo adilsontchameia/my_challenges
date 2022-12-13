@@ -1,8 +1,9 @@
+import 'package:ecommerce_ui/src/presentation/pages/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 
-import '../nav_bottom_pages/favoutites_page/favourites_page.dart';
-import '../nav_bottom_pages/products_page/products_page.dart';
-import '../nav_bottom_pages/profile_page/profile_page.dart';
+import '../bottom_nav_pages/favoutites_page/favourites_page.dart';
+import '../bottom_nav_pages/products_page/products_page.dart';
+import '../bottom_nav_pages/profile_page/profile_page.dart';
 import 'bottom_nav_icon.dart';
 
 class ResumePage extends StatefulWidget {
@@ -16,7 +17,7 @@ class _ResumePageState extends State<ResumePage> {
   int pageIndex = 0;
 
   final pages = [
-    const ResumePage(),
+    const HomePage(),
     const FavouritesPage(),
     const ProductsPage(),
     const ProfilePage(),

@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 
 class CategorySelector extends StatefulWidget {
   final List<String>? category;
-  const CategorySelector({super.key, this.category});
+
+  const CategorySelector({
+    super.key,
+    this.category,
+  });
 
   @override
   State<CategorySelector> createState() => _CategorySelectorState();

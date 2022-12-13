@@ -1,4 +1,4 @@
-import 'package:ecommerce_ui/src/models/headphone_card_model.dart';
+import 'package:ecommerce_ui/src/data/models/headphone_card_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 

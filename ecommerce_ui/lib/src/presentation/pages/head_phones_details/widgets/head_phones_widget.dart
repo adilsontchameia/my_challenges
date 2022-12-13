@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../models/headphone_card_model.dart';
-import '../../resume_page/widgets/favourites_button.dart';
+import '../../../../data/models/headphone_card_model.dart';
+import '../../home_page/widgets/favourites_button.dart';
 
 class HeadPhonesWidget extends StatefulWidget {
   const HeadPhonesWidget({Key? key, this.headphoneModel}) : super(key: key);
