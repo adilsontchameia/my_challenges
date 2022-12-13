@@ -1,6 +1,7 @@
 import 'package:ecommerce_ui/src/presentation/pages/head_phones/head_phones.dart';
 import 'package:ecommerce_ui/src/presentation/pages/product_details/product_details.dart';
 import 'package:ecommerce_ui/src/presentation/pages/resume_and_bottom/resume_page.dart';
+import 'package:ecommerce_ui/src/presentation/pages/resume_page/home_page.dart';
 import 'package:ecommerce_ui/src/presentation/pages/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,8 @@ class PageRouter {
     switch (settings.name) {
       case splashPage:
         return MaterialPageRoute(builder: (_) => const SplashScreen());
+      case homePage:
+        return MaterialPageRoute(builder: (_) => const HomePage());
       case resumePage:
         return MaterialPageRoute(builder: (_) => const ResumePage());
       case headphonesPage:
