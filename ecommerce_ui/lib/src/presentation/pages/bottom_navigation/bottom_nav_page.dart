@@ -1,19 +1,19 @@
 import 'package:ecommerce_ui/src/presentation/pages/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 
-import '../bottom_nav_pages/favoutites_page/favourites_page.dart';
-import '../bottom_nav_pages/products_page/products_page.dart';
-import '../bottom_nav_pages/profile_page/profile_page.dart';
+import 'bottom_nav_pages/favoutites_page/favourites_page.dart';
+import 'bottom_nav_pages/products_page/products_page.dart';
+import 'bottom_nav_pages/profile_page/profile_page.dart';
 import 'bottom_nav_icon.dart';
 
-class ResumePage extends StatefulWidget {
-  const ResumePage({super.key});
+class BottonNavPage extends StatefulWidget {
+  const BottonNavPage({super.key});
 
   @override
-  State<ResumePage> createState() => _ResumePageState();
+  State<BottonNavPage> createState() => _BottonNavPageState();
 }
 
-class _ResumePageState extends State<ResumePage> {
+class _BottonNavPageState extends State<BottonNavPage> {
   int pageIndex = 0;
 
   final pages = [

@@ -1,7 +1,7 @@
+import 'package:ecommerce_ui/src/presentation/pages/bottom_navigation/bottom_nav_page.dart';
 import 'package:ecommerce_ui/src/presentation/pages/head_phones_details/head_phones.dart';
-import 'package:ecommerce_ui/src/presentation/pages/product_details/product_details.dart';
-import 'package:ecommerce_ui/src/presentation/pages/bottom_navigation/resume_page.dart';
 import 'package:ecommerce_ui/src/presentation/pages/home_page/home_page.dart';
+import 'package:ecommerce_ui/src/presentation/pages/product_details/product_details.dart';
 import 'package:ecommerce_ui/src/presentation/pages/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,8 +14,8 @@ class PageRouter {
         return MaterialPageRoute(builder: (_) => const SplashScreen());
       case homePage:
         return MaterialPageRoute(builder: (_) => const HomePage());
-      case resumePage:
-        return MaterialPageRoute(builder: (_) => const ResumePage());
+      case bottomNav:
+        return MaterialPageRoute(builder: (_) => const BottonNavPage());
       case headphonesPage:
         return MaterialPageRoute(builder: (_) => const HeadPhonesPage());
       case productDetailsPage:
