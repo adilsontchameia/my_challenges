@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 const String splashPage = '/';
 const String bottomNav = '/bottomNav_page';
+const String sliderPage = '/slider_page';
 const String homePage = '/home_page';
 const String headphonesPage = '/headphones_page';
 const String productDetailsPage = '/product_details';
