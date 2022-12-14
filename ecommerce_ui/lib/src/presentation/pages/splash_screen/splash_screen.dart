@@ -49,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
             ),
             Transform.rotate(
-              angle: -0.5,
+              angle: -0.2,
               alignment: Alignment.centerLeft,
               child: Opacity(
                 opacity: 0.7,
@@ -57,31 +57,17 @@ class _SplashScreenState extends State<SplashScreen> {
                   alignment: Alignment.topCenter,
                   child: Image.asset(
                     fit: BoxFit.cover,
-                    height: 590,
-                    'assets/headphone_red.png',
+                    height: 570,
+                    'assets/headphone_purple.png',
                   ),
                 ),
               ),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text(
-                  'SOUND',
-                  style: TextStyle(
-                    fontSize: 80.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const Text(
-                  'SHOP',
-                  style: TextStyle(
-                    fontSize: 80.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                SizedBox(child: Image.asset('assets/app_logo.png')),
                 Text(
                   'Loren Ipsun Loren Ipsun Loren Ipsun Loren Ipsun Loren IpsunLoren Ipsun Loren Ipsun',
                   textAlign: TextAlign.center,
@@ -98,7 +84,7 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Padding(
                 padding: const EdgeInsets.all(25.0),
                 child: Container(
-                  height: 2.0,
+                  height: 1.0,
                   width: 120.0,
                   color: Colors.white,
                 ),

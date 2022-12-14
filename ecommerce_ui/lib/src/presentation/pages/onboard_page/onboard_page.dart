@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_carousel_intro/flutter_carousel_intro.dart';
 
+import 'widgets/slides_widget.dart';
 import 'widgets/start_button.dart';
 
 class OnboardPage extends StatelessWidget {
@@ -65,27 +66,6 @@ class OnboardPage extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class Slides extends StatelessWidget {
-  const Slides({Key? key, required this.imgUrl, required this.text})
-      : super(key: key);
-  final String imgUrl, text;
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Image.asset(imgUrl),
-        Text(text,
-            style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 18.0,
-                color: Colors.white)),
-      ],
     );
   }
 }
