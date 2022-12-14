@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math' as math;
 
 import 'package:ecommerce_ui/src/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,9 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
+  late AnimationController animationController;
   @override
   Widget build(BuildContext context) {
     return initScreen(context);
@@ -18,8 +21,19 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
+    animationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 2))
+          ..repeat();
+
+    // startTimer();
     super.initState();
-    startTimer();
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+
+    super.dispose();
   }
 
   startTimer() async {
@@ -42,8 +56,9 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Opacity(
                 opacity: 0.5,
                 child: Image.asset(
-                  fit: BoxFit.cover,
-                  height: 700,
+                  fit: BoxFit.fitHeight,
+                  height: 700.0,
+                  width: double.infinity,
                   'assets/breakfast.png',
                 ),
               ),
@@ -64,17 +79,41 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
             ),
             Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(child: Image.asset('assets/app_logo.png')),
-                Text(
-                  'Loren Ipsun Loren Ipsun Loren Ipsun Loren Ipsun Loren IpsunLoren Ipsun Loren Ipsun',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 15.0,
-                    color: Colors.white.withOpacity(0.7),
-                    fontWeight: FontWeight.bold,
+                Column(
+                  children: [
+                    const SizedBox(height: 150.0),
+                    SizedBox(
+                      child: Image.asset(height: 100.0, 'assets/app_logo.png'),
+                    ),
+                    Text(
+                      'Loren Ipsun Loren Ipsun Loren Ipsun Loren Ipsun Loren IpsunLoren Ipsun Loren Ipsun',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        color: Colors.white.withOpacity(0.7),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  ],
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: AnimatedBuilder(
+                    animation: animationController,
+                    builder: ((context, child) {
+                      return Transform.rotate(
+                        angle: animationController.value * 2 * math.pi,
+                        child: Image.asset(
+                          fit: BoxFit.fitHeight,
+                          height: 50.0,
+                          width: double.infinity,
+                          'assets/breakfast.png',
+                        ),
+                      );
+                    }),
                   ),
                 ),
               ],

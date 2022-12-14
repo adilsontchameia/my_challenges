@@ -1,10 +1,10 @@
 import 'package:ecommerce_ui/src/presentation/pages/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 
+import 'bottom_nav_icon.dart';
 import 'bottom_nav_pages/favoutites_page/favourites_page.dart';
 import 'bottom_nav_pages/products_page/products_page.dart';
 import 'bottom_nav_pages/profile_page/profile_page.dart';
-import 'bottom_nav_icon.dart';
 
 class BottonNavPage extends StatefulWidget {
   const BottonNavPage({super.key});
@@ -31,6 +31,7 @@ class _BottonNavPageState extends State<BottonNavPage> {
     );
   }
 
+  int _currentIndex = 0;
   Container _buildMyNavBar(BuildContext context) {
     return Container(
         height: 55,
@@ -47,17 +48,25 @@ class _BottonNavPageState extends State<BottonNavPage> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               NavIconButton(
-                  imgUrl: 'assets/vector.png',
-                  pageIndex: 0,
-                  onPressed: (() => setState(() {
-                        pageIndex = 0;
-                      }))),
+                imgUrl: 'assets/vector.png',
+                pageIndex: 0,
+                onPressed: (() => setState(() {
+                      pageIndex = 0;
+                      _currentIndex = pageIndex;
+                    })),
+                color:
+                    _currentIndex == 1 ? Colors.grey : Colors.purple.shade900,
+              ),
               NavIconButton(
-                  imgUrl: 'assets/bag.png',
-                  pageIndex: 1,
-                  onPressed: (() => setState(() {
-                        pageIndex = 1;
-                      }))),
+                imgUrl: 'assets/bag.png',
+                pageIndex: 1,
+                onPressed: (() => setState(() {
+                      pageIndex = 1;
+                      _currentIndex = pageIndex;
+                    })),
+                color:
+                    _currentIndex != 2 ? Colors.grey : Colors.purple.shade900,
+              ),
               NavIconButton(
                   imgUrl: 'assets/like.png',
                   pageIndex: pageIndex,
