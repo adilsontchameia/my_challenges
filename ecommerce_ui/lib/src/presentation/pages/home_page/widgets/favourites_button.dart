@@ -9,6 +9,7 @@ class FavoriteButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LikeButton(
+      mainAxisAlignment: MainAxisAlignment.end,
       size: 30,
       circleColor:
           const CircleColor(start: Color(0xff00ddff), end: Color(0xff0099cc)),
