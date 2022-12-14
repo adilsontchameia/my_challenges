@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class HeadphoneModel {
-  String productName, imgUrl;
-  String productDescription;
-  double productPrice;
-  Color backGroundColor;
+  String? productName, imgUrl;
+  String? productDescription;
+  double? productPrice;
+  Color? backGroundColor;
   HeadphoneModel({
-    required this.productName,
-    required this.imgUrl,
-    required this.productPrice,
-    required this.productDescription,
-    required this.backGroundColor,
+   this.productName,
+    this.imgUrl,
+     this.productPrice,
+     this.productDescription,
+     this.backGroundColor,
   });
 }
 

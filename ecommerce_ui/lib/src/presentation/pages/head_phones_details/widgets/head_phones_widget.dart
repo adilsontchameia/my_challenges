@@ -35,13 +35,13 @@ class _HeadPhonesWidgetState extends State<HeadPhonesWidget> {
                 ),
               ),
               Image.asset(
-                widget.headphoneModel!.imgUrl,
+                widget.headphoneModel!.imgUrl!,
                 height: 140,
                 width: 170,
               ),
               const SizedBox(height: 5.0),
               Text(
-                widget.headphoneModel!.productName,
+                widget.headphoneModel!.productName!,
                 style: const TextStyle(
                     color: Colors.black, fontWeight: FontWeight.bold),
               ),

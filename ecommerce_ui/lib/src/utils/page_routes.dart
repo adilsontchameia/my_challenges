@@ -22,7 +22,7 @@ class PageRouter {
       case headphonesPage:
         return MaterialPageRoute(builder: (_) => const HeadPhonesPage());
       case productDetailsPage:
-        return MaterialPageRoute(builder: (_) => const ProductDetailsPage());
+        return MaterialPageRoute(builder: (_) =>  ProductDetailsPage());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(

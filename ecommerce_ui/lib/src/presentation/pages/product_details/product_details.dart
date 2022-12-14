@@ -1,16 +1,17 @@
+import 'package:ecommerce_ui/src/data/models/headphone_model.dart';
 import 'package:ecommerce_ui/src/presentation/pages/home_page/widgets/favourites_button.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/add_and_buy_button.dart';
 
 class ProductDetailsPage extends StatefulWidget {
-  const ProductDetailsPage({super.key});
-
+  const ProductDetailsPage({super.key, this.headphones});
+  final HeadphoneModel? headphones;
   @override
   State<ProductDetailsPage> createState() => _ProductDetailsPageState();
 }
 
-int value = 0;
+double value = 0;
 
 class _ProductDetailsPageState extends State<ProductDetailsPage> {
   @override
@@ -24,8 +25,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 Container(
                   height: 330.0,
                   width: double.infinity,
-                  color:
-                      const Color.fromARGB(255, 224, 238, 255).withOpacity(0.7),
+                  color: widget.headphones!.backGroundColor!,
                   child: Padding(
                     padding: const EdgeInsets.only(top: 30.0),
                     child: Image.asset('assets/headphone_blue.png'),
@@ -36,9 +36,10 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     padding: const EdgeInsets.all(10.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Icon(Icons.arrow_back_rounded),
-                        FavoriteButton(),
+                      children: [
+                        GestureDetector(
+                            child: const Icon(Icons.arrow_back_rounded)),
+                        const FavoriteButton(),
                       ],
                     ),
                   ),
@@ -51,9 +52,9 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'HeadPhones JBL XY20 Sky Blue',
-                    style: TextStyle(
+                  Text(
+                    widget.headphones!.productName!,
+                    style: const TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
                     ),
@@ -88,9 +89,9 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       quantityButton(),
-                      const Text(
-                        '\$100,35',
-                        style: TextStyle(
+                      Text(
+                        calculate(3).toString(),
+                        style: const TextStyle(
                           fontSize: 19.0,
                           fontWeight: FontWeight.bold,
                         ),
@@ -106,10 +107,10 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     ),
                   ),
                   const SizedBox(height: 5.0),
-                  const Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.',
+                  Text(
+                    widget.headphones!.productDescription!,
                     textAlign: TextAlign.justify,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.w500,
                     ),
@@ -173,5 +174,13 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
         ],
       ),
     );
+  }
+
+  //This function return the total amount to pay
+  double calculate(double quantity) {
+    double total;
+    double value = widget.headphones!.productPrice!;
+    total = value * quantity;
+    return total;
   }
 }
