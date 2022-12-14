@@ -34,10 +34,11 @@ class _BuildPopularListState extends State<BuildPopularList> {
               child: GestureDetector(
                 onTap: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              ProductDetailsPage(headphones: headphones)));
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            ProductDetailsPage(headphones: headphones)),
+                  );
                 },
                 child: Column(
                   children: [

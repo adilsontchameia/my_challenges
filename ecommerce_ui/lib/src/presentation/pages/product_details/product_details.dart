@@ -90,7 +90,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     children: [
                       quantityButton(),
                       Text(
-                        calculate(3).toString(),
+                        '\$${widget.headphones!.productPrice! * calculate()}',
                         style: const TextStyle(
                           fontSize: 19.0,
                           fontWeight: FontWeight.bold,
@@ -135,7 +135,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     );
   }
 
-  Container quantityButton() {
+  quantityButton() {
     return Container(
       height: 30,
       width: 95,
@@ -177,10 +177,11 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   }
 
   //This function return the total amount to pay
-  double calculate(double quantity) {
+  double calculate() {
     double total;
-    double value = widget.headphones!.productPrice!;
-    total = value * quantity;
-    return total;
+    double unitPrice = widget.headphones!.productPrice!;
+    total = unitPrice * value;
+
+    return total.ceilToDouble();
   }
 }

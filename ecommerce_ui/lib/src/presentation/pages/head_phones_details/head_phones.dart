@@ -38,7 +38,7 @@ class _HeadPhonesPageState extends State<HeadPhonesPage>
                         alignment: Alignment.topLeft,
                         child: GestureDetector(
                             onTap: () => _close(),
-                            child: const Icon(Icons.arrow_back_sharp)),
+                            child: const Icon(Icons.arrow_back_ios_new)),
                       ),
                       const Align(
                         alignment: Alignment.topRight,
