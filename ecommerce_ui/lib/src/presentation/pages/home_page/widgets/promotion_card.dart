@@ -15,12 +15,8 @@ class PromotionCard extends StatefulWidget {
 }
 
 class _PromotionCardState extends State<PromotionCard> {
-  final int _currentIndex = 0;
-  final bool _isSelected = true;
-  int indexx = 0;
   @override
   Widget build(BuildContext context) {
-    var index = _currentIndex == indexx;
     return Container(
       height: 280.0,
       width: 165.0,

@@ -1,14 +1,24 @@
+import 'package:ecommerce_ui/src/data/models/products_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../utils/search_bar_field.dart';
 import 'widgets/banner_widget.dart';
 import 'widgets/categories_selector.dart';
 import 'widgets/most_populars.dart';
-import 'widgets/promotion_card.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
+  HomePage({
+    super.key,
+  });
+  final List<String> categories = [
+    'All',
+    'Headphones',
+    'Guitar',
+    'Pianos',
+    'Microphone',
+    'Speaker',
+    'Sound Box',
+  ];
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -31,7 +41,7 @@ class _HomePageState extends State<HomePage> {
         body: SingleChildScrollView(
           child: Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 15.0, vertical: 0.0),
+                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 0.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -40,64 +50,18 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 15),
                 const CategorieTitle(text: 'Categories'),
                 const SizedBox(height: 14),
-                const CategorySelector(
-                  category: [
-                    'All',
-                    'Headphones',
-                    'Guitar',
-                    'Pianos',
-                    'Microphone',
-                    'Speaker',
-                    'Sound Box',
-                  ],
-                ),
-                const SizedBox(height: 20),
+                CategorySelector(category: widget.categories),
+                const SizedBox(height: 10),
                 const CategorieTitle(text: 'On Promotion'),
                 const SizedBox(height: 10),
-                SizedBox(
-                  height: 260,
-                  width: double.infinity,
-                  child: SingleChildScrollView(
-                    padding: EdgeInsets.zero,
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        PromotionCard(
-                          descriptionText: 'JbL x50',
-                          imgUrl: 'assets/headphone_blue2.png',
-                          containerColor:
-                              const Color.fromARGB(255, 123, 180, 255)
-                                  .withOpacity(0.7),
-                        ),
-                        const SizedBox(width: 10),
-                        PromotionCard(
-                          descriptionText: 'JbL x90',
-                          imgUrl: 'assets/headphone_blue.png',
-                          containerColor:
-                              const Color.fromARGB(255, 224, 238, 255)
-                                  .withOpacity(0.7),
-                        ),
-                        const SizedBox(width: 10),
-                        PromotionCard(
-                          descriptionText: 'Sound Box',
-                          imgUrl: 'assets/monitor.png',
-                          containerColor:
-                              const Color.fromARGB(255, 253, 255, 131)
-                                  .withOpacity(0.7),
-                        ),
-                        const SizedBox(width: 10),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 20),
+                const BuildPromotionList(),
+                const SizedBox(height: 10),
                 const Center(
                   child: BannerWidget(),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 15.0, vertical: 0.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: const [
@@ -106,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 5),
                 SizedBox(
                   height: 260,
                   width: double.infinity,
@@ -153,6 +117,60 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class BuildPromotionList extends StatelessWidget {
+  const BuildPromotionList({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 280,
+      width: double.infinity,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          ProductsModel products = prodcutsList[index];
+          return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                height: 280.0,
+                width: 165.0,
+                decoration: BoxDecoration(
+                  color: products.backGroundColor,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10.0, vertical: 10.0),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          products.productName,
+                          style: TextStyle(
+                            color: Colors.grey.shade800,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Image.asset(
+                      products.imgUrl,
+                      height: 170,
+                      width: 170,
+                    ),
+                  ],
+                ),
+              ));
+        },
+        itemCount: prodcutsList.length,
+        shrinkWrap: true,
       ),
     );
   }

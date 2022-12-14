@@ -21,8 +21,8 @@ class _CategorySelectorState extends State<CategorySelector> {
       var index = widget.category!.indexOf(category);
       _isSelected = _currentIndex == index;
       return Padding(
-        padding: const EdgeInsets.only(
-          left: 13,
+        padding: const EdgeInsets.symmetric(
+          horizontal: 4,
         ),
         child: GestureDetector(
           onTap: () {
@@ -37,13 +37,13 @@ class _CategorySelectorState extends State<CategorySelector> {
                 category,
                 style: TextStyle(
                   color: _isSelected ? Colors.black : Colors.grey,
-                  fontSize: _isSelected ? 16 : 14,
+                  fontSize: _isSelected ? 17 : 14,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Container(
                 width: 20.0,
-                height: 2.5,
+                height: 1.5,
                 color: _isSelected ? Colors.black : Colors.transparent,
               )
             ],
@@ -62,6 +62,7 @@ class _CategorySelectorState extends State<CategorySelector> {
         scrollDirection: Axis.horizontal,
         children: [
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: _buildCategories(),
           ),
         ],

@@ -24,7 +24,7 @@ class HomePageTopCard extends StatelessWidget {
               spreadRadius: 2,
               offset: const Offset(0.0, 2),
               color: Colors.black.withOpacity(0.1),
-            )
+            ),
           ],
           borderRadius: const BorderRadius.all(
             Radius.circular(10.0),

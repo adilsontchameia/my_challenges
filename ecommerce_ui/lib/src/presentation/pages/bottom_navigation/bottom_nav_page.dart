@@ -17,7 +17,7 @@ class _BottonNavPageState extends State<BottonNavPage> {
   int pageIndex = 0;
 
   final pages = [
-    const HomePage(),
+    HomePage(),
     const FavouritesPage(),
     const ProductsPage(),
     const ProfilePage(),
