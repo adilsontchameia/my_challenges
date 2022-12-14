@@ -1,4 +1,4 @@
-import 'package:ecommerce_ui/src/data/models/headphone_card_model.dart';
+import 'package:ecommerce_ui/src/data/models/headphone_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -82,18 +82,17 @@ class _HeadPhonesPageState extends State<HeadPhonesPage>
 class StaggeredGridWidget extends StatelessWidget {
   const StaggeredGridWidget({
     Key? key,
-    this.headphoneModel,
   }) : super(key: key);
-  final HeadphoneModel? headphoneModel;
+
   @override
   Widget build(BuildContext context) {
     return StaggeredGridView.countBuilder(
       crossAxisCount: 2,
       crossAxisSpacing: 8,
       mainAxisSpacing: 8,
-      itemCount: HeadphoneModel.headphonesModel.length,
+      itemCount: headphonesList.length,
       itemBuilder: ((context, index) => HeadPhonesWidget(
-            headphoneModel: HeadphoneModel.headphonesModel[index],
+            headphoneModel: headphonesList[index],
           )),
       staggeredTileBuilder: (index) => StaggeredTile.count(
         1,

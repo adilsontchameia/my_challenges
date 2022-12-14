@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../data/models/headphone_card_model.dart';
+import '../../../../data/models/headphone_model.dart';
 import '../../home_page/widgets/favourites_button.dart';
 
 class HeadPhonesWidget extends StatefulWidget {

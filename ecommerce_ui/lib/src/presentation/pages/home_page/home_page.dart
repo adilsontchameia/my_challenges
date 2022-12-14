@@ -1,10 +1,11 @@
+import 'package:ecommerce_ui/src/data/models/headphone_model.dart';
 import 'package:ecommerce_ui/src/data/models/products_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../utils/search_bar_field.dart';
 import 'widgets/banner_widget.dart';
 import 'widgets/categories_selector.dart';
-import 'widgets/most_populars.dart';
+import 'widgets/favourites_button.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({
@@ -71,52 +72,82 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 const SizedBox(height: 5),
-                SizedBox(
+                const SizedBox(
                   height: 260,
                   width: double.infinity,
-                  child: SingleChildScrollView(
-                    padding: EdgeInsets.zero,
-                    scrollDirection: Axis.horizontal,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                      child: Row(
-                        children: [
-                          MostPopularsCard(
-                            descriptionText: 'Guitar Hero',
-                            imgUrl: 'assets/guitar.png',
-                            priceText: '\$122.78',
-                            containerColor:
-                                const Color.fromARGB(255, 212, 231, 255)
-                                    .withOpacity(0.7),
-                          ),
-                          const SizedBox(width: 10),
-                          MostPopularsCard(
-                            descriptionText: 'Microphone 2x',
-                            priceText: '\$122.78',
-                            imgUrl: 'assets/microphone.png',
-                            containerColor:
-                                const Color.fromARGB(255, 240, 240, 240)
-                                    .withOpacity(0.7),
-                          ),
-                          const SizedBox(width: 10),
-                          MostPopularsCard(
-                            descriptionText: 'Airpods Red',
-                            imgUrl: 'assets/airpods.png',
-                            priceText: '\$122.78',
-                            containerColor:
-                                const Color.fromARGB(255, 255, 204, 195)
-                                    .withOpacity(0.7),
-                          ),
-                          const SizedBox(width: 10),
-                        ],
-                      ),
-                    ),
-                  ),
+                  child: BuildPopularList(),
                 ),
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class BuildPopularList extends StatelessWidget {
+  const BuildPopularList({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 280,
+      width: double.infinity,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          HeadphoneModel headphones = headphonesList[index];
+          return Container(
+            height: 240.0,
+            width: 170.0,
+            decoration: BoxDecoration(
+              color: headphones.backGroundColor,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 4.0, left: 20),
+                      child: Align(
+                        alignment: Alignment.topRight,
+                        child: FavoriteButton(
+                          onTap: (() {
+                            print('object');
+                          }),
+                        ),
+                      ),
+                    ),
+                    Image.asset(
+                      headphones.imgUrl,
+                      height: 165,
+                      width: 170,
+                    ),
+                    Text(
+                      headphones.productDescription,
+                      style: const TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 5),
+                    Text(
+                      headphones.productPrice.toString(),
+                      style: const TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
+        itemCount: prodcutsList.length,
+        shrinkWrap: true,
       ),
     );
   }
