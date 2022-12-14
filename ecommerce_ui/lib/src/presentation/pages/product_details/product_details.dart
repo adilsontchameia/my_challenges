@@ -11,7 +11,7 @@ class ProductDetailsPage extends StatefulWidget {
   State<ProductDetailsPage> createState() => _ProductDetailsPageState();
 }
 
-double value = 0;
+int value = 1;
 
 class _ProductDetailsPageState extends State<ProductDetailsPage> {
   @override
@@ -28,7 +28,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                   color: widget.headphones!.backGroundColor!,
                   child: Padding(
                     padding: const EdgeInsets.only(top: 30.0),
-                    child: Image.asset('assets/headphone_blue.png'),
+                    child: Image.asset(widget.headphones!.imgUrl!),
                   ),
                 ),
                 SafeArea(
@@ -91,7 +91,9 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     children: [
                       quantityButton(),
                       Text(
-                        '\$${widget.headphones!.productPrice! * calculate()}',
+                        value == 0
+                            ? '\$${widget.headphones!.productPrice!}'
+                            : '\$${widget.headphones!.productPrice! * value}',
                         style: const TextStyle(
                           fontSize: 19.0,
                           fontWeight: FontWeight.bold,
@@ -157,7 +159,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
             ),
           ),
           Text(
-            '$value',
+            '$value ',
             style: const TextStyle(
               fontSize: 15.0,
               fontWeight: FontWeight.bold,
@@ -180,14 +182,5 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   //Function to close and show mainMenu
   void _close() {
     Navigator.pop(context);
-  }
-
-  //This function return the total amount to pay
-  double calculate() {
-    double total;
-    double unitPrice = widget.headphones!.productPrice!;
-    total = unitPrice * value;
-
-    return total.ceilToDouble();
   }
 }
