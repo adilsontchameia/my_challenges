@@ -45,16 +45,16 @@ class OnboardPage extends StatelessWidget {
                       text: 'The Most Powerful of Our Store'),
                   Slides(
                       imgUrl: 'assets/headphone_blue.png',
-                      text: 'The Most Powerful of Our Store'),
+                      text: 'The Best Experience Ever !'),
                   Slides(
                       imgUrl: 'assets/headphone_blue2.png',
-                      text: 'The Most Powerful of Our Store'),
+                      text: 'Affortable at All'),
                   Slides(
-                      imgUrl: 'assets/headphone_purple',
-                      text: 'The Most Powerful of Our Store'),
+                      imgUrl: 'assets/headphone_purple.png',
+                      text: 'Difference is our name !'),
                   Slides(
                       imgUrl: 'assets/headphone_red.png',
-                      text: 'The Most Powerful of Our Store'),
+                      text: 'Start Shopping to Imerse...'),
                 ],
               ),
             ),
@@ -75,6 +75,17 @@ class Slides extends StatelessWidget {
   final String imgUrl, text;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(child: Image.asset(imgUrl));
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Image.asset(imgUrl),
+        Text(text,
+            style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18.0,
+                color: Colors.white)),
+      ],
+    );
   }
 }
