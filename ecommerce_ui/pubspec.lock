@@ -81,13 +81,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  intl:
-    dependency: transitive
-    description:
-      name: intl
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.17.0"
   like_button:
     dependency: "direct main"
     description:
@@ -123,13 +116,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
-  money_formatter:
-    dependency: "direct main"
-    description:
-      name: money_formatter
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.3"
   nested:
     dependency: transitive
     description:

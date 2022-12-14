@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   route() {
-    Navigator.pushReplacementNamed(context, sliderPage);
+    Navigator.pushReplacementNamed(context, onboardPage);
   }
 
   initScreen(BuildContext context) {
