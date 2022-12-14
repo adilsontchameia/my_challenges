@@ -38,6 +38,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         GestureDetector(
+                            onTap: () => _close(),
                             child: const Icon(Icons.arrow_back_rounded)),
                         const FavoriteButton(),
                       ],
@@ -174,6 +175,11 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
         ],
       ),
     );
+  }
+
+  //Function to close and show mainMenu
+  void _close() {
+    Navigator.pop(context);
   }
 
   //This function return the total amount to pay

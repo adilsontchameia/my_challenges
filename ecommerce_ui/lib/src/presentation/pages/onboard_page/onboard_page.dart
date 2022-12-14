@@ -50,5 +50,3 @@ class OnboardPage extends StatelessWidget {
     );
   }
 }
-
-

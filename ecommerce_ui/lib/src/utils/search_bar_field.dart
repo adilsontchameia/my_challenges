@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomTextField extends StatelessWidget {
-  const CustomTextField({
+class CustomSearchBar extends StatelessWidget {
+  const CustomSearchBar({
     Key? key,
   }) : super(key: key);
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../utils/constants.dart';
 import '../../../utils/search_bar_field.dart';
 import 'widgets/banner_widget.dart';
 import 'widgets/categories_selector.dart';
@@ -48,7 +49,7 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 15),
-                const CustomTextField(),
+                const CustomSearchBar(),
                 const SizedBox(height: 15),
                 const CategorieTitle(text: 'Categories'),
                 const SizedBox(height: 14),
@@ -66,9 +67,12 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.symmetric(horizontal: 15.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      CategorieTitle(text: 'Most Populars'),
-                      Icon(Icons.arrow_forward_rounded)
+                    children: [
+                      const CategorieTitle(text: 'Most Populars'),
+                      GestureDetector(
+                          onTap: () =>
+                              Navigator.pushNamed(context, headphonesPage),
+                          child: const Icon(Icons.arrow_forward_rounded))
                     ],
                   ),
                 ),
