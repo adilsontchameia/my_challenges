@@ -1,4 +1,3 @@
-import 'package:ecommerce_ui/src/presentation/pages/head_phones_details/head_phones.dart';
 import 'package:flutter/material.dart';
 
 class CategorySelector extends StatefulWidget {
@@ -29,19 +28,6 @@ class _CategorySelectorState extends State<CategorySelector> {
           onTap: () {
             setState(() {
               _currentIndex = index;
-              //Number of categories created in HomePage
-              List<int> pagesIndex = [0, 1, 2, 3, 4, 5, 6];
-              if (_currentIndex == pagesIndex[0]) {
-                return;
-              } else if (_currentIndex == pagesIndex[1]) {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const HeadPhonesPage()),
-                );
-                //After closing new page will return to All section in categories.
-                _currentIndex = 0;
-              }
             });
           },
           child: Column(
