@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen>
         AnimationController(vsync: this, duration: const Duration(seconds: 2))
           ..repeat();
 
-    // startTimer();
+    startTimer();
     super.initState();
   }
 
@@ -37,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   startTimer() async {
-    var duration = const Duration(seconds: 2);
+    var duration = const Duration(seconds:2 );
     return Timer(duration, route);
   }
 
