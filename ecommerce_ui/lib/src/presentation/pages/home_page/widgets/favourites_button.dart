@@ -9,7 +9,7 @@ class FavoriteButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LikeButton(
-      size: 20,
+      size: 30,
       circleColor:
           const CircleColor(start: Color(0xff00ddff), end: Color(0xff0099cc)),
       bubblesColor: const BubblesColor(
@@ -20,7 +20,8 @@ class FavoriteButton extends StatelessWidget {
         return Container(
           height: 35,
           width: 35,
-          color: Colors.white,
+          decoration: BoxDecoration(
+              color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
           child: Icon(
             Icons.favorite,
             color: isLiked ? Colors.red : Colors.grey,
