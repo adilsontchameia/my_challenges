@@ -25,17 +25,13 @@ class _HeadPhonesWidgetState extends State<HeadPhonesWidget> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(
+              const Padding(
+                padding: EdgeInsets.only(
                   top: 5.0,
                 ),
                 child: Align(
                   alignment: Alignment.topRight,
-                  child: FavoriteButton(
-                    onTap: (() {
-                      print('object');
-                    }),
-                  ),
+                  child: FavoriteButton(),
                 ),
               ),
               Image.asset(

@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                 const Center(
                   child: BannerWidget(),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 15),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15.0),
                   child: Row(
@@ -72,9 +72,9 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 5),
+                const SizedBox(height: 8),
                 const SizedBox(
-                  height: 260,
+                  height: 240,
                   width: double.infinity,
                   child: BuildPopularList(),
                 ),

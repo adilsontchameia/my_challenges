@@ -36,13 +36,9 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     padding: const EdgeInsets.all(10.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Icon(Icons.arrow_back_rounded),
-                        FavoriteButton(
-                          onTap: (() {
-                            print('object');
-                          }),
-                        ),
+                      children: const [
+                        Icon(Icons.arrow_back_rounded),
+                        FavoriteButton(),
                       ],
                     ),
                   ),

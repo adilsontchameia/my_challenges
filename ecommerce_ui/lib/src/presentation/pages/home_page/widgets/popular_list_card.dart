@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:like_button/like_button.dart';
 
 import '../../../../data/models/headphone_model.dart';
 import '../../../../data/models/products_model.dart';
-import 'favourites_button.dart';
 
-class BuildPopularList extends StatelessWidget {
+class BuildPopularList extends StatefulWidget {
   const BuildPopularList({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<BuildPopularList> createState() => _BuildPopularListState();
+}
+
+class _BuildPopularListState extends State<BuildPopularList> {
+  final int _currentIndex = 0;
+  bool _isSelected = true;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -17,49 +24,55 @@ class BuildPopularList extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
+          _isSelected = _currentIndex == index;
           HeadphoneModel headphones = headphonesList[index];
           return Container(
-            height: 240.0,
             width: 170.0,
             decoration: BoxDecoration(
               color: headphones.backGroundColor,
               borderRadius: BorderRadius.circular(20),
             ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0),
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 4.0, left: 20),
-                      child: Align(
-                        alignment: Alignment.topRight,
-                        child: FavoriteButton(
-                          onTap: (() {
-                            print('object');
-                          }),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  LikeButton(
+                    size: 20,
+                    circleColor: const CircleColor(
+                        start: Color(0xff00ddff), end: Color(0xff0099cc)),
+                    bubblesColor: const BubblesColor(
+                      dotPrimaryColor: Color(0xff33b5e5),
+                      dotSecondaryColor: Color(0xff0099cc),
+                    ),
+                    likeBuilder: (bool isLiked) {
+                      return Container(
+                        height: 35,
+                        width: 35,
+                        color: Colors.white,
+                        child: Icon(
+                          Icons.favorite,
+                          color: isLiked ? Colors.red : Colors.grey,
+                          size: 20,
                         ),
-                      ),
-                    ),
-                    Image.asset(
-                      headphones.imgUrl,
-                      height: 165,
-                      width: 170,
-                    ),
-                    Text(
-                      headphones.productName,
-                      style: const TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(height: 5),
-                    Text(
-                      headphones.productPrice.toString(),
-                      style: const TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
+                      );
+                    },
+                  ),
+                  Image.asset(
+                    headphones.imgUrl,
+                    height: 165,
+                    width: 170,
+                  ),
+                  Text(
+                    headphones.productName,
+                    style: const TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 5),
+                  Text(
+                    headphones.productPrice.toString(),
+                    style: const TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  )
+                ],
               ),
             ),
           );

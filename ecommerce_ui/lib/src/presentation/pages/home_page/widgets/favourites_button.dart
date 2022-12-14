@@ -1,27 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:like_button/like_button.dart';
 
 class FavoriteButton extends StatelessWidget {
-  const FavoriteButton({super.key, required this.onTap});
-  final VoidCallback onTap;
+  const FavoriteButton({
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 32,
-      width: 35,
-      child: GestureDetector(
-        onTap: onTap,
-        child: Container(
-          decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(20.0)),
-          child: IconButton(
-              iconSize: 20,
-              onPressed: () {},
-              icon: const Icon(
-                Icons.favorite_rounded,
-                color: Colors.red,
-              )),
-        ),
+    return LikeButton(
+      size: 20,
+      circleColor:
+          const CircleColor(start: Color(0xff00ddff), end: Color(0xff0099cc)),
+      bubblesColor: const BubblesColor(
+        dotPrimaryColor: Color(0xff33b5e5),
+        dotSecondaryColor: Color(0xff0099cc),
       ),
+      likeBuilder: (bool isLiked) {
+        return Container(
+          height: 35,
+          width: 35,
+          color: Colors.white,
+          child: Icon(
+            Icons.favorite,
+            color: isLiked ? Colors.red : Colors.grey,
+            size: 20,
+          ),
+        );
+      },
     );
   }
 }
