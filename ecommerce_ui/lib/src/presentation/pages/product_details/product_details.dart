@@ -93,7 +93,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                       Text(
                         value == 0
                             ? '\$${widget.headphones!.productPrice!}'
-                            : '\$${widget.headphones!.productPrice! * value}',
+                            : double.parse(calculus().toStringAsFixed(2))
+                                .toString(),
                         style: const TextStyle(
                           fontSize: 19.0,
                           fontWeight: FontWeight.bold,
@@ -179,8 +180,14 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     );
   }
 
+  double calculus() {
+    return widget.headphones!.productPrice! * value;
+  }
+
   //Function to close and show mainMenu
   void _close() {
     Navigator.pop(context);
+    //After closing the page the defatul value will be given.
+    value = 1;
   }
 }
