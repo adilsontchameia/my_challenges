@@ -43,6 +43,7 @@ class _HomePageState extends State<HomePage> {
           systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
         body: SingleChildScrollView(
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           child: Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 15.0, vertical: 0.0),
