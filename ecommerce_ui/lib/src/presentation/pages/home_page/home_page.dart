@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../../utils/constants.dart';
-import '../../../utils/search_bar_field.dart';
+import '../../../utils/search_bar.dart';
 import 'widgets/banner_widget.dart';
 import 'widgets/categories_selector.dart';
 import 'widgets/categories_title.dart';
@@ -33,7 +33,6 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.white,
           elevation: 0.0,
           actions: const [
             Padding(

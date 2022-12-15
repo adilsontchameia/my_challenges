@@ -2,7 +2,7 @@ import 'package:ecommerce_ui/src/data/models/headphone_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-import '../../../utils/search_bar_field.dart';
+import '../../../utils/search_bar.dart';
 import '../home_page/widgets/rounded_profile_pic.dart';
 import 'widgets/head_phones_widget.dart';
 

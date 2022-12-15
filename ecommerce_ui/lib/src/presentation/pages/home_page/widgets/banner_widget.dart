@@ -1,3 +1,4 @@
+import 'package:ecommerce_ui/src/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class BannerWidget extends StatelessWidget {
@@ -13,10 +14,7 @@ class BannerWidget extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           begin: Alignment.topCenter,
-          colors: [
-            Color.fromRGBO(206, 34, 195, 1),
-            Color.fromRGBO(72, 39, 189, 1)
-          ],
+          colors: [customPinkColor, customPurpleColor],
         ),
         borderRadius: BorderRadiusDirectional.circular(10.0),
       ),
