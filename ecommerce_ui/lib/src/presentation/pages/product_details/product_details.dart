@@ -134,12 +134,12 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                   Center(
                     child: Column(
                       children: [
-                        FadeInLeft(
+                        BounceInLeft(
                           child: AddAndBuyButton(
                               text: 'Add to Cart', color: Colors.blue),
                         ),
                         SizedBox(height: 15.0),
-                        FadeInRight(
+                        BounceInRight(
                             child: AddAndBuyButton(
                                 text: 'Buy it Now', color: Colors.red)),
                       ],

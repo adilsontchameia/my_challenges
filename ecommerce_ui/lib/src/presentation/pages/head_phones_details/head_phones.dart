@@ -50,32 +50,35 @@ class _HeadPhonesPageState extends State<HeadPhonesPage>
         backgroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Material(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
-          child: Column(
-            children: [
-              ElasticInDown(child: CustomSearchBar()),
-              SizedBox(height: 15.0),
-              Align(
-                alignment: Alignment.topLeft,
-                child: BounceInDown(
-                  delay: Duration(milliseconds: 350),
-                  child: Text(
-                    'Found 474 Products',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 17.0,
-                        fontWeight: FontWeight.bold),
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+              child: Column(
+                children: [
+                  ElasticInDown(child: CustomSearchBar()),
+                  SizedBox(height: 15.0),
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: BounceInDown(
+                      duration: Duration(milliseconds: 2000),
+                      delay: Duration(milliseconds: 350),
+                      child: Text(
+                        'Found ${headphonesList.length} Products',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 17.0,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
                   ),
-                ),
+                  SizedBox(height: 15.0),
+                  StaggeredGridWidget(),
+                ],
               ),
-              SizedBox(height: 15.0),
-              StaggeredGridWidget(),
-            ],
-          ),
-        ),
-      )),
+            ),
+          )),
     );
   }
 }
