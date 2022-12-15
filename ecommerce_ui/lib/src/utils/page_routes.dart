@@ -26,9 +26,9 @@ class PageRouter {
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
-                  body: Center(
-                      child: Text(
-                          ' Sorry :-( ! No route defined for ${settings.name}')),
+                  //Route Error: Takes the error message from consts.
+                  //settings.name: Takes the route name meant.
+                  body: Center(child: Text('$routeError ${settings.name}')),
                 ));
     }
   }

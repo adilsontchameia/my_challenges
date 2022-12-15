@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../../utils/constants.dart';
 import '../../../utils/search_bar_field.dart';
@@ -40,6 +41,7 @@ class _HomePageState extends State<HomePage> {
               child: CustomAvatar(),
             ),
           ],
+          systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
         body: SingleChildScrollView(
           child: Padding(
