@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 class CategorySelector extends StatefulWidget {
@@ -30,23 +31,25 @@ class _CategorySelectorState extends State<CategorySelector> {
               _currentIndex = index;
             });
           },
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                category,
-                style: TextStyle(
-                  color: _isSelected ? Colors.black : Colors.grey,
-                  fontSize: _isSelected ? 17 : 14,
-                  fontWeight: FontWeight.bold,
+          child: SlideInLeft(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  category,
+                  style: TextStyle(
+                    color: _isSelected ? Colors.black : Colors.grey,
+                    fontSize: _isSelected ? 17 : 14,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              Container(
-                width: 20.0,
-                height: 1.5,
-                color: _isSelected ? Colors.black : Colors.transparent,
-              )
-            ],
+                Container(
+                  width: 20.0,
+                  height: 1.5,
+                  color: _isSelected ? Colors.black : Colors.transparent,
+                )
+              ],
+            ),
           ),
         ),
       );

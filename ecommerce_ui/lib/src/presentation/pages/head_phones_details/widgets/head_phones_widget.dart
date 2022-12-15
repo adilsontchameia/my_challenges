@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../data/models/headphone_model.dart';
@@ -22,36 +23,38 @@ class _HeadPhonesWidgetState extends State<HeadPhonesWidget> {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 13.0),
         child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(
-                  top: 5.0,
+          child: ElasticIn(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: 5.0,
+                  ),
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: BounceInLeft(child: FavoriteButton()),
+                  ),
                 ),
-                child: Align(
-                  alignment: Alignment.topRight,
-                  child: FavoriteButton(),
+                Image.asset(
+                  widget.headphoneModel!.imgUrl!,
+                  height: 140,
+                  width: 170,
                 ),
-              ),
-              Image.asset(
-                widget.headphoneModel!.imgUrl!,
-                height: 140,
-                width: 170,
-              ),
-              const SizedBox(height: 5.0),
-              Text(
-                widget.headphoneModel!.productName!,
-                style: const TextStyle(
-                    color: Colors.black, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 5),
-              Text(
-                widget.headphoneModel!.productPrice.toString(),
-                style: const TextStyle(
-                    color: Colors.black, fontWeight: FontWeight.bold),
-              )
-            ],
+                const SizedBox(height: 5.0),
+                Text(
+                  widget.headphoneModel!.productName!,
+                  style: const TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 5),
+                Text(
+                  widget.headphoneModel!.productPrice.toString(),
+                  style: const TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
           ),
         ),
       ),

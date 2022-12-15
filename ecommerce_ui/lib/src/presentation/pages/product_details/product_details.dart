@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:ecommerce_ui/src/data/models/headphone_model.dart';
 import 'package:ecommerce_ui/src/presentation/pages/home_page/widgets/favourites_button.dart';
 import 'package:flutter/material.dart';
@@ -36,14 +37,16 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 SafeArea(
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        GestureDetector(
-                            onTap: () => _close(),
-                            child: const Icon(Icons.arrow_back_rounded)),
-                        const FavoriteButton(),
-                      ],
+                    child: ElasticInDown(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          GestureDetector(
+                              onTap: () => _close(),
+                              child: const Icon(Icons.arrow_back_rounded)),
+                          const FavoriteButton(),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -63,22 +66,24 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     ),
                   ),
                   const SizedBox(height: 5.0),
-                  Row(
-                    children: const [
-                      Text(
-                        'By JBL Corp',
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.w500,
+                  BounceInDown(
+                    child: Row(
+                      children: const [
+                        Text(
+                          'By JBL Corp',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      SizedBox(width: 5.0),
-                      Icon(
-                        Icons.check_box_rounded,
-                        size: 18,
-                        color: Colors.blue,
-                      ),
-                    ],
+                        SizedBox(width: 5.0),
+                        Icon(
+                          Icons.check_box_rounded,
+                          size: 18,
+                          color: Colors.blue,
+                        ),
+                      ],
+                    ),
                   ),
                   const SizedBox(height: 18.0),
                   const Text(
@@ -88,21 +93,23 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      quantityButton(),
-                      Text(
-                        value == 0
-                            ? '\$${widget.headphones!.productPrice!}'
-                            : double.parse(calculus().toStringAsFixed(2))
-                                .toString(),
-                        style: const TextStyle(
-                          fontSize: 19.0,
-                          fontWeight: FontWeight.bold,
+                  BounceInDown(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        quantityButton(),
+                        Text(
+                          value == 0
+                              ? '\$${widget.headphones!.productPrice!}'
+                              : double.parse(calculus().toStringAsFixed(2))
+                                  .toString(),
+                          style: const TextStyle(
+                            fontSize: 19.0,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                   const SizedBox(height: 35),
                   const Text(
@@ -113,22 +120,28 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     ),
                   ),
                   const SizedBox(height: 5.0),
-                  Text(
-                    widget.headphones!.productDescription!,
-                    textAlign: TextAlign.justify,
-                    style: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
+                  BounceInDown(
+                    child: Text(
+                      widget.headphones!.productDescription!,
+                      textAlign: TextAlign.justify,
+                      style: const TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 35),
                   Center(
                     child: Column(
-                      children: const [
-                        AddAndBuyButton(
-                            text: 'Add to Cart', color: Colors.blue),
+                      children: [
+                        FadeInLeft(
+                          child: AddAndBuyButton(
+                              text: 'Add to Cart', color: Colors.blue),
+                        ),
                         SizedBox(height: 15.0),
-                        AddAndBuyButton(text: 'Buy it Now', color: Colors.red),
+                        FadeInRight(
+                            child: AddAndBuyButton(
+                                text: 'Buy it Now', color: Colors.red)),
                       ],
                     ),
                   ),

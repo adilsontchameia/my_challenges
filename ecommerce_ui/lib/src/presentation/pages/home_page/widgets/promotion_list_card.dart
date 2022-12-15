@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../data/models/products_model.dart';
@@ -31,18 +32,22 @@ class BuildPromotionList extends StatelessWidget {
                           horizontal: 10.0, vertical: 10.0),
                       child: Align(
                         alignment: Alignment.topLeft,
-                        child: Text(
-                          products.productName,
-                          style: TextStyle(
-                            color: Colors.grey.shade800,
+                        child: ElasticInDown(
+                          child: Text(
+                            products.productName,
+                            style: TextStyle(
+                              color: Colors.grey.shade800,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                    Image.asset(
-                      products.imgUrl,
-                      height: 170,
-                      width: 170,
+                    FadeInDown(
+                      child: Image.asset(
+                        products.imgUrl,
+                        height: 170,
+                        width: 170,
+                      ),
                     ),
                   ],
                 ),
