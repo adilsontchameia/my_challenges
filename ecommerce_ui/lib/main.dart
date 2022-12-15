@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'src/utils/page_routes.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(
     const MyApp(),
   );
@@ -17,7 +18,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
           scaffoldBackgroundColor: scaffoldColor,
-          
           appBarTheme: const AppBarTheme(
             backgroundColor: scaffoldColor,
           )),

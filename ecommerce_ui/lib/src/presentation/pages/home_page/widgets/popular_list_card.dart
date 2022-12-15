@@ -49,10 +49,13 @@ class _BuildPopularListState extends State<BuildPopularList> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const FavoriteButton(),
-                        Image.asset(
-                          headphones.imgUrl!,
-                          height: 155,
-                          width: 170,
+                        Hero(
+                          tag: headphones.id!,
+                          child: Image.asset(
+                            headphones.imgUrl!,
+                            height: 155,
+                            width: 170,
+                          ),
                         ),
                         Text(
                           headphones.productName!,

@@ -28,7 +28,9 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                   color: widget.headphones!.backGroundColor!,
                   child: Padding(
                     padding: const EdgeInsets.only(top: 30.0),
-                    child: Image.asset(widget.headphones!.imgUrl!),
+                    child: Hero(
+                        tag: widget.headphones!.id!,
+                        child: Image.asset(widget.headphones!.imgUrl!)),
                   ),
                 ),
                 SafeArea(
